@@ -6,8 +6,8 @@ Banner One
 .banner-one {
     position: relative;
     display: block;
-    background: rgb(18, 33, 38);
-    background: linear-gradient(90deg, rgba(18, 33, 38, 1) 0%, rgba(18, 33, 38, 1) 35%, rgba(10, 44, 54, 1) 60%, rgba(10, 44, 54, 1) 100%);
+    background: rgb(67, 67, 67);
+    /*background: linear-gradient(90deg, rgba(18, 33, 38, 1) 0%, rgba(18, 33, 38, 1) 35%, rgba(10, 44, 54, 1) 60%, rgba(10, 44, 54, 1) 100%);*/
     padding: 512px 0px 94px;
     z-index: 2;
 }

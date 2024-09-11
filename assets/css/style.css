@@ -21,7 +21,7 @@
   --logistiq-font: "DM Sans", sans-serif;
   --logistiq-base: #FD5523;
   --logistiq-base-rgb: 253, 85, 35;
-  --logistiq-black: #062E39;
+  --logistiq-black: #434343;
   --logistiq-black-rgb: 6, 46, 57;
   --logistiq-gray: #565969;
   --logistiq-gray-rgb: 86, 89, 105;
@@ -1245,7 +1245,6 @@ animation: spinner 1s infinite linear;
   left: -40px;
   bottom: -20px;
   right: 0;
-  background: var(--logistiq-base);
   clip-path: polygon(0 0, 100% 0%, 87% 100%, 0% 100%);
   z-index: -1;
   content: "";
