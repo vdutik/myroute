@@ -75,44 +75,44 @@ Banner One
 
 .banner-one__location-single.style1 {
     position: absolute;
-    top: 115px;
-    left: 40px;
+    top: 167px;
+    left: 483px;
 }
 
 .banner-one__location-single.style2 {
     position: absolute;
-    top: 60px;
-    left: 360px;
+    top: 140px;
+    left: 560px;
 }
 
 .banner-one__location-single.style3 {
     position: absolute;
-    top: 150px;
-    left: 570px;
+    top: 158px;
+    left: 543px;
 }
 
 .banner-one__location-single.style4 {
     position: absolute;
-    left: 315px;
-    bottom: 150px;
+    left: 540px;
+    bottom: 285px;
 }
 
 .banner-one__location-single.style5 {
     position: absolute;
-    left: 545px;
-    bottom: 145px;
+    left: 550px;
+    bottom: 270px;
 }
 
 .banner-one__location-single.style6 {
     position: absolute;
-    top: 160px;
-    right: 265px;
+    top: 185px;
+    right: 443px;
 }
 
 .banner-one__location-single.style7 {
     position: absolute;
-    right: 240px;
-    bottom: 185px;
+    right: 430px;
+    bottom: 275px;
 }
 
 .banner-one__location-single.style8 {
@@ -175,9 +175,9 @@ Banner One
 .banner-one__location-single .content-box {
     position: absolute;
     top: 55px;
-    left: -100%;
+    /*left: -100%;*/
     background: var(--logistiq-white);
-    padding: 0px 15px 18px;
+    padding: 0px 15px;
     border: 2px solid var(--logistiq-base);
     text-align: center;
     transition: all 0.2s ease;
