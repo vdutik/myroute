@@ -1,7 +1,0 @@
-AddDefaultCharset utf-8
-Options +Indexes
-DirectoryIndex index.html
-RewriteEngine On
-RewriteCond %{HTTPS} =off 
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [QSA,L]
-IndexOptions +HTMLTable +FancyIndexing
