@@ -179,6 +179,7 @@ Contact Page
 .contact-page__bottom-single {
     position: relative;
     display: block;
+    width: 100%;
 }
 
 .contact-page__bottom-single .icon {
