@@ -1228,14 +1228,17 @@
 
     .about-one__img2 .shape3 {
         display: none;
+        filter: sepia(100%) saturate(400%) hue-rotate(40deg) brightness(170%) contrast(40%)
     }
 
     .about-one__img .shape1 {
         display: none;
+        filter: sepia(100%) saturate(400%) hue-rotate(40deg) brightness(170%) contrast(40%);
     }
 
     .about-one__img .shape2 {
         display: none;
+        filter: sepia(100%) saturate(400%) hue-rotate(40deg) brightness(170%) contrast(40%);
     }
 
     .about-one__img {
