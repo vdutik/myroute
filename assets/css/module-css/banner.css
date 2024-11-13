@@ -6,8 +6,8 @@ Banner One
 .banner-one {
     position: relative;
     display: block;
-    background: rgb(18, 33, 38);
-    background: linear-gradient(90deg, rgba(18, 33, 38, 1) 0%, rgba(18, 33, 38, 1) 35%, rgba(10, 44, 54, 1) 60%, rgba(10, 44, 54, 1) 100%);
+    background: rgb(67, 67, 67);
+    /*background: linear-gradient(90deg, rgba(18, 33, 38, 1) 0%, rgba(18, 33, 38, 1) 35%, rgba(10, 44, 54, 1) 60%, rgba(10, 44, 54, 1) 100%);*/
     padding: 512px 0px 94px;
     z-index: 2;
 }
@@ -75,50 +75,143 @@ Banner One
 
 .banner-one__location-single.style1 {
     position: absolute;
-    top: 115px;
-    left: 40px;
+    top: 167px;
+    left: 483px;
 }
 
 .banner-one__location-single.style2 {
     position: absolute;
-    top: 60px;
-    left: 360px;
+    top: 140px;
+    left: 560px;
 }
 
 .banner-one__location-single.style3 {
     position: absolute;
-    top: 150px;
-    left: 570px;
+    top: 158px;
+    left: 543px;
 }
 
 .banner-one__location-single.style4 {
     position: absolute;
-    left: 315px;
-    bottom: 150px;
+    left: 540px;
+    bottom: 285px;
 }
 
 .banner-one__location-single.style5 {
     position: absolute;
-    left: 545px;
-    bottom: 145px;
+    left: 550px;
+    bottom: 270px;
 }
 
 .banner-one__location-single.style6 {
     position: absolute;
-    top: 160px;
-    right: 265px;
+    top: 185px;
+    right: 443px;
 }
 
 .banner-one__location-single.style7 {
     position: absolute;
-    right: 240px;
-    bottom: 185px;
+    right: 430px;
+    bottom: 275px;
 }
 
-.banner-one__location-single.style8 {
-    position: absolute;
-    top: 115px;
-    right: 25px;
+@media (max-width: 1024px) {
+    .banner-one__location-single.style1 {
+        top: 171px;
+        left: 476px;
+    }
+
+    .banner-one__location-single.style2 {
+        top: 147px;
+        left: 550px;
+    }
+
+    .banner-one__location-single.style3 {
+        top: 164px;
+        left: 524px;
+    }
+
+    .banner-one__location-single.style4 {
+        top: 168px;
+        left: 528px;
+    }
+
+    .banner-one__location-single.style5 {
+        left: 529px;
+        bottom: 268px;
+    }
+
+    .banner-one__location-single.style6 {
+        top: 189px;
+        right: 425px;
+    }
+
+    .banner-one__location-single.style7 {
+        right: 416px;
+        bottom: 275px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-one__location-single.style1 {
+        top: 96px !important;
+        left: 203px !important;
+    }
+    .banner-one__location-single.style2 {
+        top: 85px !important;
+        left: 234px !important;
+    }
+    .banner-one__location-single.style3 {
+        top: 95px !important;
+        left: 219px !important;
+    }
+    .banner-one__location-single.style4 {
+        top: 96px !important;
+        left: 222px !important;
+    }
+    .banner-one__location-single.style5 {
+        top: 99px !important;
+        left: 232px !important;
+    }
+    .banner-one__location-single.style6 {
+        top: 104px !important;
+        left: 237px !important;
+    }
+    .banner-one__location-single.style7 {
+        top: 98px !important;
+        left: 244px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .banner-one__location-single.style1 {
+        top: 91px !important; /* віднімаємо 5px від top */
+        left: 182px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style2 {
+        top: 80px !important; /* віднімаємо 5px від top */
+        left: 213px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style3 {
+        top: 90px !important; /* віднімаємо 5px від top */
+        left: 198px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style4 {
+        top: 91px !important; /* віднімаємо 5px від top */
+        left: 201px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style5 {
+        top: 94px !important; /* віднімаємо 5px від top */
+        left: 211px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style6 {
+        top: 99px !important; /* віднімаємо 5px від top */
+        left: 216px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style7 {
+        top: 93px !important; /* віднімаємо 5px від top */
+        left: 223px !important; /* віднімаємо 21px від left */
+    }
 }
 
 
@@ -130,6 +223,13 @@ Banner One
     background: var(--logistiq-base);
     border-radius: 50%;
     cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .banner-one__location-single .round-box {
+        width: 5px;
+        height: 5px;
+    }
 }
 
 .banner-one__location-single .round-box::before,
@@ -175,9 +275,9 @@ Banner One
 .banner-one__location-single .content-box {
     position: absolute;
     top: 55px;
-    left: -100%;
+    /*left: -100%;*/
     background: var(--logistiq-white);
-    padding: 0px 15px 18px;
+    padding: 0px 15px;
     border: 2px solid var(--logistiq-base);
     text-align: center;
     transition: all 0.2s ease;
@@ -296,7 +396,6 @@ Banner One
     font-size: 16px;
     line-height: 22px;
     font-weight: 700;
-    text-transform: capitalize;
 }
 
 .banner-one__content-right {

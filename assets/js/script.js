@@ -536,20 +536,29 @@
             Self.addClass(accrodionName);
             Self.find(".accrodion .accrodion-content").hide();
             Self.find(".accrodion.active").find(".accrodion-content").show();
+
             accordion.each(function () {
                 $(this)
                     .find(".accrodion-title")
                     .on("click", function () {
-                        if ($(this).parent().hasClass("active") === false) {
+                        var $parent = $(this).parent();
+                        var $content = $parent.find(".accrodion-content");
+
+                        // Якщо натискаємо на вже активний секцію
+                        if ($parent.hasClass("active")) {
+                            $parent.removeClass("active");
+                            $content.slideUp();
+                        } else {
+                            // Закриваємо всі інші секції
                             $(".accrodion-grp." + accrodionName)
                                 .find(".accrodion")
-                                .removeClass("active");
-                            $(".accrodion-grp." + accrodionName)
-                                .find(".accrodion")
+                                .removeClass("active")
                                 .find(".accrodion-content")
                                 .slideUp();
-                            $(this).parent().addClass("active");
-                            $(this).parent().find(".accrodion-content").slideDown();
+
+                            // Відкриваємо натиснуту секцію
+                            $parent.addClass("active");
+                            $content.slideDown();
                         }
                     });
             });

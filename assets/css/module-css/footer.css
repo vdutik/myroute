@@ -163,7 +163,6 @@ Footer One
     font-size: 17px;
     line-height: 28px;
     font-weight: 400;
-    text-transform: capitalize;
 }
 
 .footer-one__quick-links-list li a:hover {

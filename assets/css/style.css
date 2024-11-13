@@ -19,9 +19,9 @@
 --------------------------------------------------------------*/
 :root {
   --logistiq-font: "DM Sans", sans-serif;
-  --logistiq-base: #FD5523;
+  --logistiq-base: #859e3fc2;
   --logistiq-base-rgb: 253, 85, 35;
-  --logistiq-black: #062E39;
+  --logistiq-black: #434343;
   --logistiq-black-rgb: 6, 46, 57;
   --logistiq-gray: #565969;
   --logistiq-gray-rgb: 86, 89, 105;
@@ -291,7 +291,6 @@ button {
   padding: 1px 35px 0px;
   overflow: hidden;
   font-family: var(--logistiq-font);
-  text-transform: capitalize;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -1220,6 +1219,7 @@ animation: spinner 1s infinite linear;
 }
 
 .main-header-one__bottom-inner {
+  height: 70px;
   position: relative;
   display: flex;
   align-items: center;
@@ -1245,7 +1245,6 @@ animation: spinner 1s infinite linear;
   left: -40px;
   bottom: -20px;
   right: 0;
-  background: var(--logistiq-base);
   clip-path: polygon(0 0, 100% 0%, 87% 100%, 0% 100%);
   z-index: -1;
   content: "";
@@ -1434,7 +1433,6 @@ animation: spinner 1s infinite linear;
   color: var(--logistiq-white);
   font-size: 17px;
   font-weight: 700;
-  text-transform: capitalize;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
