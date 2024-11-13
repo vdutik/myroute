@@ -152,40 +152,65 @@ Banner One
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .banner-one__location-single.style1 {
-        top: 135px;
-        left: 355px;
+        top: 96px !important;
+        left: 203px !important;
     }
-
     .banner-one__location-single.style2 {
-        top: 115px;
-        left: 407px;
+        top: 85px !important;
+        left: 234px !important;
     }
-
     .banner-one__location-single.style3 {
-        top: 129px;
-        left: 395px;
+        top: 95px !important;
+        left: 219px !important;
     }
-
     .banner-one__location-single.style4 {
-        left: 180px;
-        bottom: 150px;
+        top: 96px !important;
+        left: 222px !important;
     }
-
     .banner-one__location-single.style5 {
-        left: 190px;
-        bottom: 140px;
+        top: 99px !important;
+        left: 232px !important;
     }
-
     .banner-one__location-single.style6 {
-        top: 100px;
-        right: 150px;
+        top: 104px !important;
+        left: 237px !important;
     }
-
     .banner-one__location-single.style7 {
-        right: 140px;
-        bottom: 150px;
+        top: 98px !important;
+        left: 244px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .banner-one__location-single.style1 {
+        top: 91px !important; /* віднімаємо 5px від top */
+        left: 182px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style2 {
+        top: 80px !important; /* віднімаємо 5px від top */
+        left: 213px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style3 {
+        top: 90px !important; /* віднімаємо 5px від top */
+        left: 198px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style4 {
+        top: 91px !important; /* віднімаємо 5px від top */
+        left: 201px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style5 {
+        top: 94px !important; /* віднімаємо 5px від top */
+        left: 211px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style6 {
+        top: 99px !important; /* віднімаємо 5px від top */
+        left: 216px !important; /* віднімаємо 21px від left */
+    }
+    .banner-one__location-single.style7 {
+        top: 93px !important; /* віднімаємо 5px від top */
+        left: 223px !important; /* віднімаємо 21px від left */
     }
 }
 
@@ -198,6 +223,13 @@ Banner One
     background: var(--logistiq-base);
     border-radius: 50%;
     cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .banner-one__location-single .round-box {
+        width: 5px;
+        height: 5px;
+    }
 }
 
 .banner-one__location-single .round-box::before,
@@ -364,7 +396,6 @@ Banner One
     font-size: 16px;
     line-height: 22px;
     font-weight: 700;
-    text-transform: capitalize;
 }
 
 .banner-one__content-right {

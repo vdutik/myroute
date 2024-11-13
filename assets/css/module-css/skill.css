@@ -174,7 +174,6 @@ Skill One
     font-size: 16px;
     line-height: 26px;
     font-weight: 700;
-    text-transform: capitalize;
 }
 
 .skill-one__progress-single .bar {

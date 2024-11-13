@@ -1434,7 +1434,6 @@ animation: spinner 1s infinite linear;
   color: var(--logistiq-white);
   font-size: 17px;
   font-weight: 700;
-  text-transform: capitalize;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
