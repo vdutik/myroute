@@ -291,7 +291,6 @@ button {
   padding: 1px 35px 0px;
   overflow: hidden;
   font-family: var(--logistiq-font);
-  text-transform: capitalize;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
