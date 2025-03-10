@@ -2768,3 +2768,162 @@ Main Header Three
 .stricky-header--style3 .main-header-three__bottom-right {
   display: none;
 }
+
+/* Truck Services Section Styles */
+.truck-services {
+  padding: 100px 0;
+  background-color: #f7f7f9;
+  position: relative;
+}
+
+.truck-service-card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Необхідно для розміщення кнопки внизу картки */
+}
+
+.truck-service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.truck-service-card__img-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.truck-service-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.truck-service-card:hover .truck-service-card__img {
+  transform: scale(1.05);
+}
+
+.truck-service-card__availability {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.truck-service-card__availability:before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.truck-service-card__price {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: #ffb400;
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.truck-service-card__content {
+  padding: 30px 30px 20px;
+  flex-grow: 1; /* Дозволяє контенту розширюватись, але залишає кнопку внизу */
+}
+
+.truck-service-card__title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1b1c1e;
+}
+
+.truck-service-card__specs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.truck-service-card__specs li {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: flex-start;
+}
+
+.truck-service-card__specs .icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: #ffb400;
+  flex-shrink: 0;
+}
+
+.truck-service-card__specs .label {
+  font-weight: 600;
+  color: #1b1c1e;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.truck-service-card__specs .value {
+  color: #666;
+  flex-grow: 1;
+}
+
+.truck-service-card__btn-container {
+  padding: 0 30px 30px;
+  margin-top: auto; /* Залишає кнопку внизу картки */
+}
+
+.truck-service-card__btn {
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .truck-services {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .truck-services {
+    padding: 60px 0;
+  }
+
+  .truck-service-card__img-container {
+    height: 200px;
+  }
+
+  .truck-service-card__content {
+    padding: 20px 20px 15px;
+  }
+
+  .truck-service-card__btn-container {
+    padding: 0 20px 20px;
+  }
+
+  .truck-service-card__title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+}
