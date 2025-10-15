@@ -49,20 +49,33 @@ $(document).ready(function() {
 function closePreloader() {
     const preloader = $('.loader-wrap');
     if (preloader.length && preloader.is(':visible')) {
-        console.log('Closing preloader with fadeOut');
-        preloader.fadeOut(300, function() {
-            $(this).remove();
+        console.log('Closing preloader with smooth fade out');
+        
+        // Add fade-out class for smooth CSS transition
+        preloader.addClass('fade-out');
+        
+        // Remove after transition completes
+        setTimeout(function() {
+            preloader.remove();
             console.log('Preloader removed');
-        });
+        }, 800); // Match CSS transition duration
     }
 }
 
 function forceClosePreloader() {
     const preloader = $('.loader-wrap');
     if (preloader.length) {
-        console.log('Force closing preloader');
-        preloader.addClass('hidden').remove();
-        $('body').addClass('loaded');
+        console.log('Force closing preloader with smooth fade');
+        
+        // Add fade-out class for smooth transition
+        preloader.addClass('fade-out');
+        
+        // Remove after transition
+        setTimeout(function() {
+            preloader.remove();
+            $('body').addClass('loaded');
+            console.log('Preloader force removed');
+        }, 800);
     }
 }
 

@@ -124,6 +124,44 @@
             }
         </style>
         
+        <!-- Preloader smooth fade out styles -->
+        <style>
+            .loader-wrap {
+                transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+            }
+            
+            .loader-wrap.fade-out {
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .animation-preloader {
+                transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+            }
+            
+            .loader-wrap.fade-out .animation-preloader {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            
+            .spinner {
+                transition: opacity 0.4s ease-out;
+            }
+            
+            .loader-wrap.fade-out .spinner {
+                opacity: 0;
+            }
+            
+            .letters-loading {
+                transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            }
+            
+            .loader-wrap.fade-out .letters-loading {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        </style>
+        
         <!-- Select fix styles - highest priority -->
         <link rel="stylesheet" href="assets/css/select-fix.css" />
 
