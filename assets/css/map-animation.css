@@ -1,0 +1,171 @@
+/* Map Animation Styles */
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.map-overlay svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Schematic country shapes */
+#schematic-countries polygon {
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+#schematic-countries polygon:hover {
+    opacity: 1;
+    stroke-width: 3;
+}
+
+/* Dark blue countries (Netherlands, Germany, Poland, Czech, Slovakia, Hungary, Romania, Moldova) */
+#schematic-countries polygon[fill="#1a2a4a"] {
+    fill: #1a2a4a;
+    stroke: #2a3a5a;
+}
+
+/* Ukraine - orange/brown color */
+#schematic-countries polygon[fill="#8b4513"] {
+    fill: #8b4513;
+    stroke: #a0522d;
+}
+
+/* City styles */
+.city.core {
+    fill: #ffd66b;
+    stroke: #ff5c33;
+    stroke-width: 2;
+    filter: url(#soft-glow);
+}
+
+.city {
+    fill: #ffd66b;
+    opacity: 0.8;
+}
+
+.city-label {
+    fill: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    pointer-events: none;
+}
+
+/* Route styles */
+.route {
+    stroke: url(#routeStroke);
+    stroke-width: 3;
+    fill: none;
+    filter: url(#soft-glow);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Pulse animations */
+.pulse {
+    fill: none;
+    stroke: #ffd66b;
+    stroke-width: 2;
+    opacity: 0;
+}
+
+/* Fly animations */
+.fly {
+    filter: url(#soft-glow-strong);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .map-overlay {
+        transform: scale(1.3);
+        transform-origin: center top;
+        overflow: hidden;
+    }
+    
+    .city-label {
+        font-size: 10px;
+    }
+    
+    .city.core {
+        stroke-width: 1.5;
+    }
+    
+    .route {
+        stroke-width: 2;
+    }
+    
+    /* Focus on UA-PL region for mobile */
+    .map-overlay svg {
+        transform: translate(-100px, -50px);
+    }
+}
+
+@media (max-width: 480px) {
+    .map-overlay {
+        transform: scale(1.6);
+        transform-origin: center top;
+        overflow: hidden;
+    }
+    
+    .city-label {
+        font-size: 8px;
+    }
+    
+    .city.core {
+        stroke-width: 1;
+    }
+    
+    .route {
+        stroke-width: 1.5;
+    }
+    
+    /* Further focus on UA-PL region for small mobile */
+    .map-overlay svg {
+        transform: translate(-150px, -80px);
+    }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .map-overlay {
+        transform: scale(1.1);
+        transform-origin: center;
+    }
+}
+
+/* Animation keyframes */
+@keyframes routeGlow {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes cityPulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Dark theme adjustments */
+.dark-theme .city-label {
+    fill: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+}
+
+.dark-theme #countries path {
+    fill: rgba(255,255,255,0.05);
+    stroke: rgba(255,255,255,0.2);
+}
+
+.dark-theme #countries path:hover {
+    fill: rgba(255,255,255,0.1);
+    stroke: rgba(255,255,255,0.4);
+}

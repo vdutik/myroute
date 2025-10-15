@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8" />
@@ -60,7 +60,73 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
-</head>
+    <link rel="stylesheet" href="assets/css/custom-styles.css" />
+    <link rel="stylesheet" href="assets/css/map-animation.css" />
+    
+    <!-- Dark theme styles - must be last to override other styles -->
+    <link rel="stylesheet" href="assets/css/dark-theme.css" />
+    
+        <!-- Calculator override styles - highest priority -->
+        <link rel="stylesheet" href="assets/css/calculator-override.css" />
+        
+        <!-- Map container styles -->
+        <style>
+            .banner-one {
+                position: relative;
+                overflow: hidden;
+                height: 100vh; /* Повна висота екрану */
+                display: flex;
+                align-items: center;
+            }
+            
+            .banner-one__content {
+                position: relative;
+                z-index: 10;
+            }
+            
+            .map-background {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+            
+            .map-overlay {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+            
+            .map-overlay svg {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+            
+            @media (max-width: 768px) {
+                .banner-one {
+                    height: 100vh; /* На мобільних також повна висота */
+                }
+                
+                .banner-one__pattern2 {
+                    position: relative;
+                    z-index: 5; /* Вищий z-index ніж у карти */
+                }
+                
+                .map-background {
+                    position: absolute;
+                    top: 0;
+                    left: 150px;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1; /* Нижчий z-index ніж у pattern2 */
+                }
+            }
+        </style>
+        
+        <!-- Select fix styles - highest priority -->
+        <link rel="stylesheet" href="assets/css/select-fix.css" />
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKK462W9LW"></script>
 <script>
@@ -70,6 +136,8 @@
 
     gtag('config', 'G-RKK462W9LW');
 </script>
+</head>
+
 <body>
 
     <!-- Start Preloader -->
@@ -163,37 +231,19 @@
                                                     <a href="#" class="mobile-nav__toggler"><i
                                                             class="fa fa-bars"></i></a>
                                                     <ul class="main-menu__list">
-                                                        <li class="dropdown">
-                                                            <a href="index.html">Головна </a>
-<!--                                                            <ul>-->
-<!--                                                                <li><a href="index.html">Home One</a></li>-->
-<!--                                                                <li><a href="index2.html">Home Two</a></li>-->
-<!--                                                                <li><a href="index3.html">Home Three</a></li>-->
-<!--                                                                <li><a href="index-dark.html">Home Dark</a></li>-->
-<!--                                                                <li class="dropdown">-->
-<!--                                                                    <a href="#">Header Styles</a>-->
-<!--                                                                    <ul>-->
-<!--                                                                        <li><a href="index.html">Header One</a></li>-->
-<!--                                                                        <li><a href="index2.html">Header Two</a></li>-->
-<!--                                                                        <li><a href="index3.html">Header Three</a></li>-->
-<!--                                                                    </ul>-->
-<!--                                                                </li>-->
-<!--                                                                <li class="dropdown">-->
-<!--                                                                    <a href="#">One Page Styles</a>-->
-<!--                                                                    <ul>-->
-<!--                                                                        <li><a href="index-one-page.html">One Page-->
-<!--                                                                                Styles One</a>-->
-<!--                                                                        </li>-->
-<!--                                                                        <li><a href="index2-one-page.html">One Page-->
-<!--                                                                                Styles Two</a></li>-->
-<!--                                                                        <li><a href="index3-one-page.html">One Page-->
-<!--                                                                                Styles Three</a></li>-->
-<!--                                                                    </ul>-->
-<!--                                                                </li>-->
-<!--                                                            </ul>-->
+                                                        <li>
+                                                            <a href="index.html">Головна</a>
                                                         </li>
                                                         <li>
                                                             <a href="#about-section">Про нас</a>
+                                                        </li>
+                                                        <li class="dropdown">
+                                                            <a href="#">Інформація</a>
+                                                            <ul>
+                                                                <li><a href="container-sizes.html">Розміри контейнерів</a></li>
+                                                                <li><a href="truck-specs.html">Розміри тентів</a></li>
+                                                                <li><a href="heavy-cargo-transport.html">Важкі вантажі</a></li>
+                                                            </ul>
                                                         </li>
                                                         <li>
                                                             <a href="contact.html">Контакти</a>
@@ -233,109 +283,12 @@
         <section class="banner-one">
             <div class="banner-one__pattern"
                 style="background-image: url(assets/images/pattern/banner-v1-pattern.png);"></div>
-            <div class="banner-one__pattern2"><img src="assets/images/pattern/banner-v1-pattern2.png" alt="#"></div>
+            <!-- Map as background for banner -->
+            
+            <div class="banner-one__pattern2">
+                <!-- Banner content without map -->
 
-<!--            <div class="banner-one__img1"><img class="float-bob-x" src="assets/images/banner/banner-v1-img1.png"-->
-<!--                    alt="#"></div>-->
-<!--            <div class="banner-one__img5"><img class="float-bob-y" src="assets/images/banner/banner-v1-img5.png"-->
-<!--                    alt="#"></div>-->
-<!--            <div class="shape1 rotate-me"><img src="assets/images/shapes/banner-v1-shape1.png" alt="#"></div>-->
             <div class="container">
-                <div class="banner-one__location clearfix">
-
-                    <!-- Start Banner One Location single -->
-                    <div class="banner-one__location-single style1">
-                        <div class="round-box">
-                            <div class="bdr"></div>
-                        </div>
-                        <div class="content-box">
-                            <div class="text-box">
-                                <h4>Лондон</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Banner One Location single -->
-
-                    <!-- Start Banner One Location single -->
-                    <div class="banner-one__location-single style2">
-                        <div class="round-box">
-                            <div class="bdr"></div>
-                        </div>
-                        <div class="content-box">
-                            <div class="text-box">
-                                <h4>Таллінн</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Banner One Location single -->
-
-                    <!-- Start Banner One Location single -->
-                    <div class="banner-one__location-single style3">
-                        <div class="round-box">
-                            <div class="bdr"></div>
-                        </div>
-                        <div class="content-box">
-                            <div class="text-box">
-                                <h4>Ґдиня</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Banner One Location single -->
-
-                    <!-- Start Banner One Location single -->
-                    <div class="banner-one__location-single style4">
-                        <div class="round-box">
-                            <div class="bdr"></div>
-                        </div>
-                        <div class="content-box">
-                            <div class="text-box">
-                                <h4>Ґданськ</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Banner One Location single -->
-
-                    <!-- Start Banner One Location single -->
-                    <div class="banner-one__location-single style5">
-                        <div class="round-box">
-                            <div class="bdr"></div>
-                        </div>
-                        <div class="content-box">
-                            <div class="text-box">
-                                <h4>Варшава</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Banner One Location single -->
-
-                    <!-- Start Banner One Location single -->
-                    <div class="banner-one__location-single style6">
-                        <div class="round-box">
-                            <div class="bdr"></div>
-                        </div>
-
-                        <div class="content-box">
-                            <div class="text-box">
-                                <h4>Одеса</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Banner One Location single -->
-
-                    <!-- Start Banner One Location single -->
-                    <div class="banner-one__location-single style7">
-                        <div class="round-box">
-                            <div class="bdr"></div>
-                        </div>
-                        <div class="content-box">
-                            <div class="text-box">
-                                <h4>Київ</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Banner One Location single -->
-                </div>
-                <!-- End Banner One Location single -->
 
                 <div class="banner-one__content">
                     <div class="banner-one__content-left wow fadeInLeft" data-wow-delay="0ms"
@@ -364,170 +317,218 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <!--End Banner One-->
+            </div>
+            <div class="map-background">
+                <div class="map-overlay">
+                    <svg viewBox="0 0 1600 1000" aria-label="Схематична карта Європи з маршрутами">
+                            <defs>
+                                <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="3" result="b"/>
+                                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <filter id="soft-glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="6" result="b"/>
+                                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <linearGradient id="routeStroke" x1="0" y1="0" x2="1" y2="0">
+                                    <stop offset="0%" stop-color="#ffd66b"/>
+                                    <stop offset="100%" stop-color="#ff5c33"/>
+                                </linearGradient>
+                                <radialGradient id="pulseGradient" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#ffd77a"/>
+                                    <stop offset="60%" stop-color="#ff954a"/>
+                                    <stop offset="100%" stop-color="#ff954a" stop-opacity="0"/>
+                                </radialGradient>
+                            </defs>
 
-        <!-- Start Truck Services Section -->
-        <section class="truck-services">
-            <div class="container">
-                <div class="sec-title center text-center tg-heading-subheading animation-style2">
-                    <div class="sec-title__tagline">
-                        <div class="line"></div>
-                        <div class="text tg-element-title">
-                            <h4>Наші послуги</h4>
-                        </div>
-                        <div class="icon">
-                            <span class="icon-plane2 float-bob-x3"></span>
-                        </div>
-                    </div>
-                    <h2 class="sec-title__title tg-element-title">Вантажні перевезення <span>від МІЙ КУРС</span></h2>
-                </div>
 
-                <div class="row">
-                    <!-- Card 1 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="truck-service-card">
-                            <div class="truck-service-card__img-container">
-                                <img src="assets/images/gallery/img.png" alt="Вантажівка до 22 тонн" class="truck-service-card__img"/>
-                                <div class="truck-service-card__availability">Доступно</div>
-                            </div>
-                            <div class="truck-service-card__content">
-                                <h3 class="truck-service-card__title">До 22 тонн</h3>
-                                <ul class="truck-service-card__specs">
-                                    <li>
-                                        <span class="icon"><i class="icon-shipment"></i></span>
-                                        <span class="label">Тип кузова:</span>
-                                        <span class="value">тент, рефрижератор, ізотерм, відкритий, цільнометалевий</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-box"></i></span>
-                                        <span class="label">Д/Ш/В:</span>
-                                        <span class="value">13,6 х 2,5 х 2,7</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-worldwide-shipping-1"></i></span>
-                                        <span class="label">Об'єм:</span>
-                                        <span class="value">від 86м3 до 120м3</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-box"></i></span>
-                                        <span class="label">Кількість палетомісць:</span>
-                                        <span class="value">до 34</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-delivery-man"></i></span>
-                                        <span class="label">Дод.опції:</span>
-                                        <span class="value">гідроборт</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="truck-service-card__btn-container">
-                                <a href="contact.html" class="thm-btn truck-service-card__btn">
-                                    Замовити авто
-                                    <i class="icon-right-arrow21"></i>
-                                    <span class="hover-btn hover-bx"></span>
-                                    <span class="hover-btn hover-bx2"></span>
-                                    <span class="hover-btn hover-bx3"></span>
-                                    <span class="hover-btn hover-bx4"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                            <g id="schematic-countries">
+                                <!-- Netherlands - Dark blue geometric shape (expanded) -->
+                                <polygon points="288,192 480,192 480,336 384,336 384,288 288,288" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Belgium - Dark blue geometric shape -->
+                                <polygon points="384,336 480,336 480,432 432,432 432,384 384,384" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Germany - Dark blue geometric shape (expanded) -->
+                                <polygon points="480,240 768,240 768,480 672,480 672,432 480,432" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Switzerland - Dark blue geometric shape -->
+                                <polygon points="576,528 672,528 672,624 624,624 624,576 576,576" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Austria - Dark blue geometric shape -->
+                                <polygon points="672,480 864,480 864,672 768,672 768,576 672,576" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Poland - Dark blue geometric shape -->
+                                <polygon points="768,192 1152,192 1152,480 960,480 960,384 768,384" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Czech Republic - Dark blue geometric shape -->
+                                <polygon points="672,432 960,432 960,672 768,672 768,576 672,576" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Slovakia - Dark blue geometric shape -->
+                                <polygon points="960,480 1152,480 1152,720 1056,720 1056,624 960,624" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Hungary - Dark blue geometric shape -->
+                                <polygon points="768,672 1056,672 1056,912 864,912 864,816 768,816" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Romania - Dark blue geometric shape -->
+                                <polygon points="1152,720 1440,720 1440,960 1248,960 1248,864 1152,864" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Moldova - Dark blue geometric shape -->
+                                <polygon points="1440,720 1632,720 1632,864 1536,864 1536,816 1440,816" 
+                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- France - Light blue geometric shape -->
+                                <polygon points="192,480 480,480 480,720 384,720 384,672 192,672" 
+                                         fill="#2a4a6a" stroke="#3a5a7a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Italy - Light blue geometric shape -->
+                                <polygon points="480,720 672,720 672,960 576,960 576,864 480,864" 
+                                         fill="#2a4a6a" stroke="#3a5a7a" stroke-width="3" opacity="0.8"/>
+                                
+                                <!-- Ukraine - Large orange/brown geometric shape -->
+                                <polygon points="1152,384 1440,384 1440,480 1632,480 1632,720 1536,720 1536,960 1248,960 1248,864 1152,864 1152,720 1152,576" 
+                                         fill="#8b4513" stroke="#a0522d" stroke-width="3" opacity="0.8"/>
+                            </g>
 
-                    <!-- Card 2 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="truck-service-card">
-                            <div class="truck-service-card__img-container">
-                                <img src="assets/images/gallery/img_1.png" alt="Зерновоз / автоцистерна" class="truck-service-card__img">
-                                <div class="truck-service-card__availability">Доступно</div>
-                            </div>
-                            <div class="truck-service-card__content">
-                                <h3 class="truck-service-card__title">Зерновоз / автоцистерна</h3>
-                                <ul class="truck-service-card__specs">
-                                    <li>
-                                        <span class="icon"><i class="icon-shipment"></i></span>
-                                        <span class="label">Тип кузова:</span>
-                                        <span class="value">за запитом</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-box"></i></span>
-                                        <span class="label">Д/Ш/В:</span>
-                                        <span class="value">за запитом</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-worldwide-shipping-1"></i></span>
-                                        <span class="label">Об'єм:</span>
-                                        <span class="value">за запитом</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-box"></i></span>
-                                        <span class="label">Дод.опції:</span>
-                                        <span class="value">за запитом</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="truck-service-card__btn-container">
-                                <a href="contact.html" class="thm-btn truck-service-card__btn">
-                                    Замовити авто
-                                    <i class="icon-right-arrow21"></i>
-                                    <span class="hover-btn hover-bx"></span>
-                                    <span class="hover-btn hover-bx2"></span>
-                                    <span class="hover-btn hover-bx3"></span>
-                                    <span class="hover-btn hover-bx4"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                            <g id="map-content-wrapper">
+                            <g id="cities">
+                                <g id="rotterdam" transform="translate(272,272)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Ротердам</text></g>
+                                <g id="hamburg" transform="translate(400,240)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Гамбург</text></g>
+                                <g id="berlin" transform="translate(448,288)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Берлін</text></g>
+                                <g id="nuremberg" transform="translate(480,320)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Нюрнберг</text></g>
+                                <g id="paris" transform="translate(224,384)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Париж</text></g>
+                                <g id="rome" transform="translate(384,560)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Рим</text></g>
+                                <g id="gdansk" transform="translate(688,288)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Гданськ</text></g>
+                                <g id="gdynia" transform="translate(680,272)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Гдиня</text></g>
+                                <g id="warsaw" transform="translate(736,352)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Варшава</text></g>
+                                <g id="chelm" transform="translate(768,400)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Хелм</text></g>
+                                <g id="yahodyn" transform="translate(800,408)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Ягодин</text></g>
+                                <g id="rava" transform="translate(792,432)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Рава-Руська</text></g>
+                                <g id="budapest" transform="translate(608,512)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Будапешт</text></g>
+                                <g id="debrecen" transform="translate(672,544)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Дебрецен</text></g>
+                                <g id="bucharest" transform="translate(864,560)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Бухарест</text></g>
+                                <g id="cluj" transform="translate(832,512)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Клуж</text></g>
+                                <g id="lviv" transform="translate(864,480)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Львів</text></g>
+                                <g id="kyiv" transform="translate(960,432)"><circle class="city core" r="6"/><circle class="city" r="2.8"/><text class="city-label" x="8" y="-6">Київ</text></g>
+                                <g id="kharkiv" transform="translate(1000,468)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Харків</text></g>
+                                <g id="khmelnytskyi" transform="translate(1000,528)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Хмельницький</text></g>
+                                <g id="dnipro" transform="translate(1040,504)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Дніпро</text></g>
+                                <g id="chernivtsi" transform="translate(920,576)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Чернівці</text></g>
+                                <g id="odesa" transform="translate(984,616)"><circle class="city core" r="6"/><circle class="city" r="2.8"/><text class="city-label" x="8" y="-6">Одеса</text></g>
+                            </g>
 
-                    <!-- Card 3 -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="truck-service-card">
-                            <div class="truck-service-card__img-container">
-                                <img src="assets/images/gallery/img_2.png" alt="Спецтехніка" class="truck-service-card__img">
-                                <div class="truck-service-card__availability">Доступно</div>
-                            </div>
-                            <div class="truck-service-card__content">
-                                <h3 class="truck-service-card__title">Спецтехніка</h3>
-                                <ul class="truck-service-card__specs">
-                                    <li>
-                                        <span class="icon"><i class="icon-shipment"></i></span>
-                                        <span class="label">Вид:</span>
-                                        <span class="value">автовоз, евакуатор, трал, платформа, контейнеровоз, маніпулятор</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-box"></i></span>
-                                        <span class="label">Д/Ш/В:</span>
-                                        <span class="value">за запитом</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-worldwide-shipping-1"></i></span>
-                                        <span class="label">Об'єм:</span>
-                                        <span class="value">за запитом</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><i class="icon-box"></i></span>
-                                        <span class="label">Дод.опції:</span>
-                                        <span class="value">за запитом</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="truck-service-card__btn-container">
-                                <a href="contact.html" class="thm-btn truck-service-card__btn">
-                                    Замовити авто
-                                    <i class="icon-right-arrow21"></i>
-                                    <span class="hover-btn hover-bx"></span>
-                                    <span class="hover-btn hover-bx2"></span>
-                                    <span class="hover-btn hover-bx3"></span>
-                                    <span class="hover-btn hover-bx4"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                            <g id="routes-templates" opacity="0">
+                                <!-- New Rotterdam route -->
+                                <path id="p_rotterdam_chelm" d="M272,272 Q528,336 768,400"/>
+                                <path id="p_chelm_yah" d="M768,400 Q784,400 800,408"/>
+                                <path id="p_yah_khmelnytskyi" d="M800,408 Q896,464 1000,528"/>
+                                
+                                <!-- New Hamburg routes -->
+                                <path id="p_hamburg_yah" d="M400,240 Q560,280 800,408"/>
+                                <path id="p_hamburg_rava" d="M400,240 Q560,320 792,432"/>
+                                
+                                <!-- New Berlin routes -->
+                                <path id="p_berlin_yah" d="M448,288 Q640,320 800,408"/>
+                                <path id="p_berlin_rava" d="M448,288 Q640,360 792,432"/>
+                                
+                                <!-- New Nuremberg routes -->
+                                <path id="p_nuremberg_yah" d="M480,320 Q680,360 800,408"/>
+                                <path id="p_nuremberg_rava" d="M480,320 Q680,400 792,432"/>
+                                
+                                <!-- New Paris routes (through Germany) -->
+                                <path id="p_paris_yah" d="M224,384 Q400,360 560,320 Q720,360 800,408"/>
+                                <path id="p_paris_rava" d="M224,384 Q400,400 560,360 Q720,400 792,432"/>
+                                
+                                <!-- New Rome routes (through Germany) -->
+                                <path id="p_rome_yah" d="M384,560 Q480,480 560,400 Q720,360 800,408"/>
+                                <path id="p_rome_rava" d="M384,560 Q480,520 560,440 Q720,400 792,432"/>
+                                
+                                <!-- New Budapest routes -->
+                                <path id="p_budapest_yah" d="M608,512 Q720,440 800,408"/>
+                                <path id="p_budapest_rava" d="M608,512 Q720,480 792,432"/>
+                                
+                                <!-- New Debrecen routes -->
+                                <path id="p_debrecen_yah" d="M672,544 Q760,480 800,408"/>
+                                <path id="p_debrecen_rava" d="M672,544 Q760,520 792,432"/>
+                                
+                                <!-- New Bucharest routes -->
+                                <path id="p_bucharest_yah" d="M864,560 Q840,480 800,408"/>
+                                <path id="p_bucharest_rava" d="M864,560 Q840,520 792,432"/>
+                                
+                                <!-- New Cluj routes -->
+                                <path id="p_cluj_yah" d="M832,512 Q820,440 800,408"/>
+                                <path id="p_cluj_rava" d="M832,512 Q820,480 792,432"/>
+                                
+                                <!-- Existing routes -->
+                                <path id="p_gdansk_yah" d="M688,288 Q760,240 800,408"/>
+                                <path id="p_gdansk_rava" d="M688,288 Q760,280 792,432"/>
+                                <path id="p_gdynia_yah" d="M680,272 Q760,240 800,408"/>
+                                <path id="p_gdynia_rava" d="M680,272 Q760,280 792,432"/>
+                                <path id="p_gdynia_waw" d="M680,272 Q720,300 736,352"/>
+                                <path id="p_waw_yah" d="M736,352 Q780,380 800,408"/>
+                                <path id="p_waw_lviv" d="M736,352 Q820,400 864,480"/>
+                                <path id="p_yah_kyiv" d="M800,408 Q900,400 960,432"/>
+                                <path id="p_rava_kyiv" d="M792,432 Q900,400 960,432"/>
+                                <path id="p_yah_chelm" d="M800,408 Q780,400 768,400"/>
+                                <path id="p_kyiv_odesa" d="M960,432 Q980,520 984,616"/>
+                                <path id="p_odesa_lviv" d="M984,616 Q920,520 864,480"/>
+                                <path id="p_odesa_yah" d="M984,616 Q880,480 800,408"/>
+                                <path id="p_kyiv_dnipro" d="M960,432 Q1020,440 1040,504"/>
+                                <path id="p_dnipro_odesa" d="M1040,504 Q1020,560 984,616"/>
+                                <path id="p_lviv_chern" d="M864,480 Q920,520 920,576"/>
+                                <path id="p_kyiv_kharkiv" d="M960,432 Q980,450 1000,468"/>
+                                <path id="p_kharkiv_dnipro" d="M1000,468 Q1020,486 1040,504"/>
+                                <path id="p_kharkiv_odesa" d="M1000,468 Q992,542 984,616"/>
+                            </g>
+
+                            <g id="pulses">
+                                <circle class="pulse" id="pulse-rotterdam" cx="272" cy="272" r="13"/>
+                                <circle class="pulse" id="pulse-hamburg" cx="400" cy="240" r="13"/>
+                                <circle class="pulse" id="pulse-berlin" cx="448" cy="288" r="13"/>
+                                <circle class="pulse" id="pulse-nuremberg" cx="480" cy="320" r="13"/>
+                                <circle class="pulse" id="pulse-paris" cx="224" cy="384" r="13"/>
+                                <circle class="pulse" id="pulse-rome" cx="384" cy="560" r="13"/>
+                                <circle class="pulse" id="pulse-gdansk" cx="688" cy="288" r="13"/>
+                                <circle class="pulse" id="pulse-gdynia" cx="680" cy="272" r="13"/>
+                                <circle class="pulse" id="pulse-warsaw" cx="736" cy="352" r="13"/>
+                                <circle class="pulse" id="pulse-chelm" cx="768" cy="400" r="12"/>
+                                <circle class="pulse" id="pulse-yah" cx="800" cy="408" r="13"/>
+                                <circle class="pulse" id="pulse-rava" cx="792" cy="432" r="13"/>
+                                <circle class="pulse" id="pulse-budapest" cx="608" cy="512" r="13"/>
+                                <circle class="pulse" id="pulse-debrecen" cx="672" cy="544" r="12"/>
+                                <circle class="pulse" id="pulse-bucharest" cx="864" cy="560" r="13"/>
+                                <circle class="pulse" id="pulse-cluj" cx="832" cy="512" r="12"/>
+                                <circle class="pulse" id="pulse-lviv" cx="864" cy="480" r="13"/>
+                                <circle class="pulse" id="pulse-kyiv" cx="960" cy="432" r="15"/>
+                                <circle class="pulse" id="pulse-kharkiv" cx="1000" cy="468" r="13"/>
+                                <circle class="pulse" id="pulse-khmelnytskyi" cx="1000" cy="528" r="13"/>
+                                <circle class="pulse" id="pulse-dnipro" cx="1040" cy="504" r="13"/>
+                                <circle class="pulse" id="pulse-chernivtsi" cx="920" cy="576" r="13"/>
+                                <circle class="pulse" id="pulse-odesa" cx="984" cy="616" r="15"/>
+                            </g>
+
+                            <g id="flies">
+                                <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
+                                <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
+                                <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
+                            </g>
+                            </g>
+                    </svg>
                 </div>
             </div>
         </section>
-        <!-- End Truck Services Section -->
-        <!--Start About One-->
+        <!--End Banner One-->
+
         <section class="about-one" id="about-section">
             <div class="container">
                 <div class="row">
@@ -644,8 +645,71 @@
         </section>
         <!--End About One-->
 
+        <!--Start Delivery Calculator Section-->
+        <section class="delivery-calculator-section">
+            <div class="container">
+                <div class="delivery-calculator">
+                    <h2 class="calculator-title">Прорахунок вартості доставки</h2>
+                    <form class="calculator-form" id="deliveryCalculator">
+                        <div class="form-group">
+                            <label for="from">Звідки:</label>
+                            <input type="text" id="from" name="from" list="cities" placeholder="Введіть місто або оберіть зі списку">
+                            <datalist id="cities">
+                                <option value="Київ">
+                                <option value="Одеса">
+                                <option value="Львів">
+                                <option value="Харків">
+                                <option value="Дніпро">
+                                <option value="Лондон">
+                                <option value="Варшава">
+                                <option value="Берлін">
+                                <option value="Париж">
+                                <option value="Рим">
+                            </datalist>
+                        </div>
+                        <div class="form-group">
+                            <label for="to">Куди:</label>
+                            <input type="text" id="to" name="to" list="cities" placeholder="Введіть місто або оберіть зі списку">
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Вага вантажу (кг):</label>
+                            <input type="number" id="weight" name="weight" min="1" max="50000" placeholder="Наприклад: 1000">
+                        </div>
+                        <div class="form-group">
+                            <label for="volume">Об'єм (м³):</label>
+                            <input type="number" id="volume" name="volume" min="0.1" max="100" step="0.1" placeholder="Наприклад: 10.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Тип транспорту:</label>
+                            <input type="text" id="vehicle" name="vehicle" placeholder="Наприклад: Тентований, Рефрижератор, Контейнер">
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Терміновість:</label>
+                            <input type="text" id="urgency" name="urgency" placeholder="Наприклад: Звичайна, Термінова, Експрес">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="notes">Додаткові примітки:</label>
+                            <textarea id="notes" name="notes" rows="3" placeholder="Опишіть особливості вантажу, додаткові вимоги або побажання..."></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="button" class="thm-btn calculator-submit-btn" onclick="submitToContactForm()">
+                                Отримати детальну пропозицію
+                                <i class="icon-right-arrow21"></i>
+                                <span class="hover-btn hover-bx"></span>
+                                <span class="hover-btn hover-bx2"></span>
+                                <span class="hover-btn hover-bx3"></span>
+                                <span class="hover-btn hover-bx4"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!--End Delivery Calculator Section-->
+
         <!--Start Skill One-->
-        <section class="skill-one">
+
+        <!--Start Skill One-->
             <div class="container">
                 <div class="row">
                     <!--Start Skill One Img-->
@@ -1349,13 +1413,439 @@
     <script src="assets/js/gsap.js"></script>
     <script src="assets/js/ScrollTrigger.js"></script>
     <script src="assets/js/SplitText.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/curved-text/jquery.circleType.js"></script>
     <script src="assets/js/curved-text/jquery.fittext.js"></script>
-    <script src="assets/js/curved-text/jquery.lettering.min.js"></script>
 
     <!-- template js -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/preloader-fix.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <script>
+        // Dark theme scroll animations
+        $(document).ready(function() {
+            // Add animation classes to elements
+            $('.about-one, .services-one, .why-choose-one, .testimonial-one, .cta-one').addClass('fade-in');
+            
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Enhanced hover effects for cards
+            $('.container-card, .loading-scheme-card').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-8px) scale(1.02)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0) scale(1)');
+                }
+            );
+            
+            // Smooth scroll for anchor links
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 80
+                    }, 1000, 'easeInOutExpo');
+                }
+            });
+            
+            // Delivery Calculator
+            function calculateDelivery() {
+                const from = document.getElementById('from').value;
+                const to = document.getElementById('to').value;
+                const weight = parseFloat(document.getElementById('weight').value) || 0;
+                const volume = parseFloat(document.getElementById('volume').value) || 0;
+                const vehicle = document.getElementById('vehicle').value;
+                const urgency = document.getElementById('urgency').value;
+                
+                if (!from || !to || !weight || !volume || !vehicle) {
+                    document.getElementById('calculatorResult').style.display = 'none';
+                    return;
+                }
+                
+                // Base price calculation
+                let basePrice = 0;
+                
+                // Distance multiplier (simplified)
+                const distances = {
+                    'kyiv-odesa': 500, 'odesa-kyiv': 500,
+                    'kyiv-lviv': 600, 'lviv-kyiv': 600,
+                    'kyiv-kharkiv': 500, 'kharkiv-kyiv': 500,
+                    'kyiv-dnipro': 400, 'dnipro-kyiv': 400,
+                    'odesa-lviv': 800, 'lviv-odesa': 800,
+                    'odesa-kharkiv': 600, 'kharkiv-odesa': 600,
+                    'odesa-dnipro': 300, 'dnipro-odesa': 300,
+                    'lviv-kharkiv': 700, 'kharkiv-lviv': 700,
+                    'lviv-dnipro': 600, 'dnipro-lviv': 600,
+                    'kharkiv-dnipro': 200, 'dnipro-kharkiv': 200
+                };
+                
+                const distance = distances[`${from}-${to}`] || 400;
+                basePrice = distance * 2; // Base rate per km
+                
+                // Weight factor
+                if (weight > 1000) basePrice += weight * 0.5;
+                else basePrice += weight * 0.8;
+                
+                // Volume factor
+                basePrice += volume * 50;
+                
+                // Vehicle type multiplier
+                const vehicleMultipliers = {
+                    'tent': 1.0,
+                    'refrigerator': 1.5,
+                    'container': 1.3,
+                    'special': 2.0
+                };
+                basePrice *= vehicleMultipliers[vehicle] || 1.0;
+                
+                // Urgency multiplier
+                const urgencyMultipliers = {
+                    'normal': 1.0,
+                    'urgent': 1.3,
+                    'express': 1.8
+                };
+                basePrice *= urgencyMultipliers[urgency] || 1.0;
+                
+                // Display result
+                const result = Math.round(basePrice);
+                document.getElementById('calculatedPrice').textContent = result.toLocaleString();
+                document.getElementById('calculatorResult').style.display = 'block';
+                
+                // Animate result appearance
+                $('#calculatorResult').hide().fadeIn(500);
+            }
+            
+            // Add event listeners to calculator inputs
+            $('#deliveryCalculator input, #deliveryCalculator select').on('input change', calculateDelivery);
+            
+            // Function to submit calculator data to contact form
+            window.submitToContactForm = function() {
+                const formData = {
+                    from: document.getElementById('from').value,
+                    to: document.getElementById('to').value,
+                    weight: document.getElementById('weight').value,
+                    volume: document.getElementById('volume').value,
+                    vehicle: document.getElementById('vehicle').value,
+                    urgency: document.getElementById('urgency').value,
+                    notes: document.getElementById('notes').value
+                };
+                
+                // Create query string for contact form
+                const queryParams = new URLSearchParams();
+                queryParams.append('from', formData.from);
+                queryParams.append('to', formData.to);
+                queryParams.append('weight', formData.weight);
+                queryParams.append('volume', formData.volume);
+                queryParams.append('vehicle', formData.vehicle);
+                queryParams.append('urgency', formData.urgency);
+                queryParams.append('notes', formData.notes);
+                queryParams.append('source', 'calculator');
+                
+                // Redirect to contact form with pre-filled data
+                window.location.href = `contact.html?${queryParams.toString()}`;
+            };
+        });
+
+        // Enhanced Map Animation System
+        window.addEventListener('DOMContentLoaded', () => {
+            const svg = document.querySelector('.map-overlay svg');
+            if (!svg) {
+                console.log('SVG not found');
+                return;
+            }
+            console.log('SVG found, initializing enhanced map animation');
+            
+            const q = id => document.getElementById(id);
+
+            // Define routes with weights/probabilities as specified
+            const routeDefinitions = [
+                {
+                    id: 'route1',
+                    segments: ['p_gdynia_waw', 'p_waw_yah', 'p_yah_kyiv', 'p_kyiv_odesa'],
+                    weight: 30,
+                    description: 'Гдиня/Гданськ → Варшава → Ягодин → Київ → Одеса'
+                },
+                {
+                    id: 'route2', 
+                    segments: ['p_waw_yah', 'p_yah_kyiv', 'p_kyiv_dnipro'],
+                    weight: 15,
+                    description: 'Варшава → Ягодин → Дніпро'
+                },
+                {
+                    id: 'route3',
+                    segments: ['p_odesa_lviv'],
+                    weight: 10,
+                    description: 'Одеса → Львів'
+                },
+                {
+                    id: 'route4',
+                    segments: ['p_odesa_yah', 'p_yah_chelm'],
+                    weight: 10,
+                    description: 'Одеса → Ягодин → Хелм'
+                },
+                {
+                    id: 'route5',
+                    segments: ['p_lviv_chern'],
+                    weight: 10,
+                    description: 'Львів → Чернівці'
+                },
+                {
+                    id: 'route6',
+                    segments: ['p_kyiv_dnipro', 'p_dnipro_odesa'],
+                    weight: 10,
+                    description: 'Київ → Дніпро → Одеса'
+                },
+                {
+                    id: 'route7',
+                    segments: ['p_gdynia_waw', 'p_waw_lviv'],
+                    weight: 10,
+                    description: 'Гдиня → Варшава → Львів'
+                },
+                {
+                    id: 'route8',
+                    segments: ['p_rotterdam_chelm', 'p_chelm_yah', 'p_yah_khmelnytskyi'],
+                    weight: 15,
+                    description: 'Ротердам → Хелм → Ягодин → Хмельницький'
+                },
+                {
+                    id: 'route9',
+                    segments: ['p_hamburg_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Гамбург → Ягодин → Київ'
+                },
+                {
+                    id: 'route10',
+                    segments: ['p_berlin_rava', 'p_rava_kyiv'],
+                    weight: 10,
+                    description: 'Берлін → Рава-Руська → Київ'
+                },
+                {
+                    id: 'route11',
+                    segments: ['p_paris_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Париж → Ягодин → Київ'
+                },
+                {
+                    id: 'route12',
+                    segments: ['p_rome_rava', 'p_rava_kyiv'],
+                    weight: 10,
+                    description: 'Рим → Рава-Руська → Київ'
+                },
+                {
+                    id: 'route13',
+                    segments: ['p_budapest_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Будапешт → Ягодин → Київ'
+                },
+                {
+                    id: 'route14',
+                    segments: ['p_debrecen_rava', 'p_rava_kyiv'],
+                    weight: 10,
+                    description: 'Дебрецен → Рава-Руська → Київ'
+                },
+                {
+                    id: 'route15',
+                    segments: ['p_bucharest_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Бухарест → Ягодин → Київ'
+                },
+                {
+                    id: 'route16',
+                    segments: ['p_cluj_rava', 'p_rava_kyiv'],
+                    weight: 10,
+                    description: 'Клуж → Рава-Руська → Київ'
+                },
+                {
+                    id: 'route17',
+                    segments: ['p_nuremberg_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Нюрнберг → Ягодин → Київ'
+                }
+            ];
+
+            // Additional route segments for complex routes
+            const additionalRoutes = {
+                'p_gdynia_waw': {s: 'gdynia', e: 'warsaw'},
+                'p_waw_lviv': {s: 'warsaw', e: 'lviv'},
+                'p_odesa_yah': {s: 'odesa', e: 'yahodyn'},
+                'p_dnipro_odesa': {s: 'dnipro', e: 'odesa'},
+                'p_rotterdam_chelm': {s: 'rotterdam', e: 'chelm'},
+                'p_chelm_yah': {s: 'chelm', e: 'yahodyn'},
+                'p_yah_khmelnytskyi': {s: 'yahodyn', e: 'khmelnytskyi'},
+                'p_hamburg_yah': {s: 'hamburg', e: 'yahodyn'},
+                'p_hamburg_rava': {s: 'hamburg', e: 'rava'},
+                'p_berlin_yah': {s: 'berlin', e: 'yahodyn'},
+                'p_berlin_rava': {s: 'berlin', e: 'rava'},
+                'p_paris_yah': {s: 'paris', e: 'yahodyn'},
+                'p_paris_rava': {s: 'paris', e: 'rava'},
+                'p_rome_yah': {s: 'rome', e: 'yahodyn'},
+                'p_rome_rava': {s: 'rome', e: 'rava'},
+                'p_budapest_yah': {s: 'budapest', e: 'yahodyn'},
+                'p_budapest_rava': {s: 'budapest', e: 'rava'},
+                'p_debrecen_yah': {s: 'debrecen', e: 'yahodyn'},
+                'p_debrecen_rava': {s: 'debrecen', e: 'rava'},
+                'p_bucharest_yah': {s: 'bucharest', e: 'yahodyn'},
+                'p_bucharest_rava': {s: 'bucharest', e: 'rava'},
+                'p_cluj_yah': {s: 'cluj', e: 'yahodyn'},
+                'p_cluj_rava': {s: 'cluj', e: 'rava'},
+                'p_nuremberg_yah': {s: 'nuremberg', e: 'yahodyn'},
+                'p_nuremberg_rava': {s: 'nuremberg', e: 'rava'}
+            };
+
+            const routes = {
+                p_gdansk_yah: {s: 'gdansk', e: 'yahodyn'}, 
+                p_gdansk_rava: {s: 'gdansk', e: 'rava'},
+                p_gdynia_yah: {s: 'gdynia', e: 'yahodyn'}, 
+                p_gdynia_rava: {s: 'gdynia', e: 'rava'},
+                p_waw_yah: {s: 'warsaw', e: 'yahodyn'},
+                p_yah_kyiv: {s: 'yahodyn', e: 'kyiv'}, 
+                p_rava_kyiv: {s: 'rava', e: 'kyiv'}, 
+                p_yah_chelm: {s: 'yahodyn', e: 'chelm'},
+                p_kyiv_odesa: {s: 'kyiv', e: 'odesa'}, 
+                p_odesa_lviv: {s: 'odesa', e: 'lviv'}, 
+                p_kyiv_dnipro: {s: 'kyiv', e: 'dnipro'}, 
+                p_lviv_chern: {s: 'lviv', e: 'chernivtsi'},
+                ...additionalRoutes
+            };
+
+            const pulses = Object.fromEntries([...document.querySelectorAll('#pulses > .pulse')].map(el => [el.id.replace('pulse-', ''), el]));
+            const cities = Object.fromEntries([...document.querySelectorAll('#cities > g')].map(g => [g.id, g]));
+            const flies = [...document.querySelectorAll('#flies > circle')];
+            
+            console.log('Pulses found:', Object.keys(pulses).length);
+            console.log('Cities found:', Object.keys(cities).length);
+            console.log('Flies found:', flies.length);
+            
+            if (typeof anime === 'undefined') {
+                console.log('Anime.js not loaded');
+                return;
+            }
+            console.log('Anime.js loaded successfully');
+
+            function pulse(el, d = 750) { 
+                return anime({targets: el, opacity: [0, .9, 0], r: [12, 18, 12], duration: d, easing: 'easeOutQuad'}); 
+            }
+            
+            function dimCity(id) { 
+                return anime({targets: cities[id], opacity: [1, .35, 1], duration: 500, easing: 'easeInOutSine'}); 
+            }
+
+            function clonePath(id) {
+                const t = q(id).cloneNode(); 
+                t.removeAttribute('id'); 
+                t.classList.add('route');
+                svg.appendChild(t);
+                const L = t.getTotalLength(); 
+                t.style.strokeDasharray = L; 
+                t.style.strokeDashoffset = L; 
+                return {el: t, len: L};
+            }
+            
+            function moveAlong(p, dot, dur) {
+                const M = anime.path(p);
+                return anime({
+                    targets: dot, 
+                    translateX: M('x'), 
+                    translateY: M('y'), 
+                    duration: dur, 
+                easing: 'easeInOutSine',
+                    opacity: [{value: 1, duration: 160}, {value: .95, duration: dur - 240}, {value: 0, duration: 80}]
+                });
+            }
+            
+            function revealStroke(el, len, dur) { 
+                return anime({targets: el, strokeDashoffset: [len, 0], duration: dur, easing: 'easeInOutSine'}); 
+            }
+
+            async function leg(id, fly, dur) {
+                const meta = routes[id];
+                if (!meta) return;
+                
+                const {el, len} = clonePath(id);
+                dimCity(meta.s); 
+                pulse(pulses[meta.s], 600);
+                const a = revealStroke(el, len, dur); 
+                const b = moveAlong(el, fly, dur);
+                await Promise.all([a.finished, b.finished]);
+                pulse(pulses[meta.e], 640);
+                await anime({targets: el, opacity: [.68, 0], duration: 420, easing: 'linear'}).finished; 
+                el.remove();
+            }
+
+            async function executeRoute(routeDef) {
+                const fly = flies.find(f => !f.__busy); 
+                if (!fly) return; 
+                fly.__busy = true; 
+                active++;
+                
+                console.log(`Executing route: ${routeDef.description}`);
+                
+                for (const segmentId of routeDef.segments) { 
+                    const dur = 3000 + Math.random() * 3000; // 3-6 seconds as specified
+                    await leg(segmentId, fly, dur); 
+                    await new Promise(r => setTimeout(r, 120 + Math.random() * 220)); 
+                }
+                fly.__busy = false; 
+                active--; 
+            }
+
+            function selectRandomRoute() {
+                const totalWeight = routeDefinitions.reduce((sum, route) => sum + route.weight, 0);
+                let random = Math.random() * totalWeight;
+                
+                for (const route of routeDefinitions) {
+                    random -= route.weight;
+                    if (random <= 0) {
+                        return route;
+                    }
+                }
+                return routeDefinitions[0]; // fallback
+            }
+
+            // Enhanced city pulsing for major cities
+            anime({
+                targets: ['#kyiv .city.core', '#odesa .city.core'], 
+                r: [7, 8, 7], 
+                duration: 2500, 
+                direction: 'alternate',
+                easing: 'easeInOutSine',
+                loop: true
+            });
+
+            let active = 0;
+            function tick() {
+                if (active >= 3) return; // Max 3 concurrent routes as specified
+                if (Math.random() < 0.6) { 
+                    const selectedRoute = selectRandomRoute();
+                    executeRoute(selectedRoute);
+                }
+            }
+            
+            // Start animation with random delays (1-4 seconds as specified)
+            setInterval(tick, 1000 + Math.random() * 3000); 
+            setTimeout(tick, 1000 + Math.random() * 3000); 
+            setTimeout(tick, 2000 + Math.random() * 2000);
+        });
+    </script>
+
 </body>
 
 </html>

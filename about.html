@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Інформація || МІЙ КУРС </title>
+    <title>Про нас | МІЙ КУРС</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="128x128" href="assets/images/favicons/favicon-128x128.png" />
     <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicons/favicon-64x64.png" />
@@ -60,6 +60,17 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/custom-styles.css" />
+    <link rel="stylesheet" href="assets/css/dark-theme.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKK462W9LW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RKK462W9LW');
+    </script>
 </head>
 
 <body>
@@ -107,8 +118,7 @@
                                                     </div>
 
                                                     <div class="text-box">
-                                                        <p><span>Talk to Us</span> <a href="tel:1234567890">[+123 456
-                                                                789]</a></p>
+                                                        <p><span>Ми чекаємо на ваш дзвінок</span> <a href="tel:+380996608810">[+380 996 60 8810]</a></p>
                                                     </div>
                                                 </li>
 
@@ -118,8 +128,8 @@
                                                     </div>
 
                                                     <div class="text-box">
-                                                        <p><span>Mail Us</span> <a
-                                                                href="mailto:yourmail@email.com">[support@logistra.com]</a>
+                                                        <p><span>Пошта</span> <a
+                                                                href="mailto:logist@myroute.com.ua">[logist@myroute.com.ua]</a>
                                                         </p>
                                                     </div>
                                                 </li>
@@ -157,37 +167,19 @@
                                                     <a href="#" class="mobile-nav__toggler"><i
                                                             class="fa fa-bars"></i></a>
                                                     <ul class="main-menu__list">
-                                                        <li class="dropdown">
-                                                            <a href="index.html">Головна </a>
-                                                            <ul>
-                                                                <li><a href="index.html">Home One</a></li>
-                                                                <li><a href="index2.html">Home Two</a></li>
-                                                                <li><a href="index3.html">Home Three</a></li>
-                                                                <li><a href="index-dark.html">Home Dark</a></li>
-                                                                <li class="dropdown">
-                                                                    <a href="#">Header Styles</a>
-                                                                    <ul>
-                                                                        <li><a href="index.html">Header One</a></li>
-                                                                        <li><a href="index2.html">Header Two</a></li>
-                                                                        <li><a href="index3.html">Header Three</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li class="dropdown">
-                                                                    <a href="#">One Page Styles</a>
-                                                                    <ul>
-                                                                        <li><a href="index-one-page.html">One Page
-                                                                                Styles One</a>
-                                                                        </li>
-                                                                        <li><a href="index2-one-page.html">One Page
-                                                                                Styles Two</a></li>
-                                                                        <li><a href="index3-one-page.html">One Page
-                                                                                Styles Three</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
+                                                        <li>
+                                                            <a href="index.html">Головна</a>
                                                         </li>
                                                         <li>
-                                                            <a href="about.html">Про нас</a>
+                                                            <a href="index.html#about-section">Про нас</a>
+                                                        </li>
+                                                        <li class="dropdown">
+                                                            <a href="#">Інформація</a>
+                                                            <ul>
+                                                                <li><a href="container-sizes.html">Розміри контейнерів</a></li>
+                                                                <li><a href="truck-specs.html">Розміри тентів</a></li>
+                                                                <li><a href="heavy-cargo-transport.html">Важкі вантажі</a></li>
+                                                            </ul>
                                                         </li>
                                                         <li>
                                                             <a href="contact.html">Контакти</a>
@@ -1286,11 +1278,19 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@logistiq.com">needhelp@logistiq.com</a>
+                    <a href="mailto:logist@myroute.com.ua">logist@myroute.com.ua</a>
+                </li>
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:manager@myroute.com.ua">manager@myroute.com.ua</a>
                 </li>
                 <li>
                     <i class="icon-phone"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:+380994737583">+380 994 73 7583</a>
+                </li>
+                <li>
+                    <i class="icon-phone"></i>
+                    <a href="tel:+380996608810">+380 996 60 8810</a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">
@@ -1362,6 +1362,7 @@
 
     <!-- template js -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/preloader-fix.js"></script>
 </body>
 
 </html>

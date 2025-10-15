@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8" />
@@ -59,16 +59,20 @@
     <!-- template styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKK462W9LW"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <link rel="stylesheet" href="assets/css/custom-styles.css" />
+    <link rel="stylesheet" href="assets/css/dark-theme.css" />
 
-    gtag('config', 'G-RKK462W9LW');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKK462W9LW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RKK462W9LW');
+    </script>
+</head>
+
 <body>
 
     <!-- Start Preloader -->
@@ -164,8 +168,19 @@
                                                     <a href="#" class="mobile-nav__toggler"><i
                                                             class="fa fa-bars"></i></a>
                                                     <ul class="main-menu__list">
+                                                        <li>
+                                                            <a href="index.html">Головна</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index.html#about-section">Про нас</a>
+                                                        </li>
                                                         <li class="dropdown">
-                                                            <a href="index.html">Головна </a>
+                                                            <a href="#">Інформація</a>
+                                                            <ul>
+                                                                <li><a href="container-sizes.html">Розміри контейнерів</a></li>
+                                                                <li><a href="truck-specs.html">Розміри тентів</a></li>
+                                                                <li><a href="heavy-cargo-transport.html">Важкі вантажі</a></li>
+                                                            </ul>
                                                         </li>
                                                         <li>
                                                             <a href="contact.html">Контакти</a>
@@ -457,6 +472,7 @@
 
                     </div>
                 </div>
+            </div>
         </footer>
         <!--End Footer One-->
 
@@ -553,6 +569,42 @@
 
     <!-- template js -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/preloader-fix.js"></script>
+    
+    <script>
+        // Pre-fill contact form with calculator data
+        $(document).ready(function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            if (urlParams.get('source') === 'calculator') {
+                // Pre-fill form fields
+                const message = `Запит з калькулятора доставки:
+
+Маршрут: ${urlParams.get('from')} → ${urlParams.get('to')}
+Вага вантажу: ${urlParams.get('weight')} кг
+Об'єм: ${urlParams.get('volume')} м³
+Тип транспорту: ${urlParams.get('vehicle')}
+Терміновість: ${urlParams.get('urgency')}
+${urlParams.get('notes') ? `Додаткові примітки: ${urlParams.get('notes')}` : ''}
+
+Будь ласка, надайте детальну пропозицію з урахуванням вказаних параметрів.`;
+
+                // Find and fill the message field
+                const messageField = $('textarea[name="message"], textarea[name="msg"], #message, .message-field').first();
+                if (messageField.length) {
+                    messageField.val(message);
+                }
+                
+                // Show notification
+                $('body').prepend('<div class="calculator-notification" style="position: fixed; top: 20px; right: 20px; background: var(--gradient-red); color: white; padding: 15px 20px; border-radius: 12px; z-index: 10000; box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);">Дані з калькулятора заповнено! Додайте свої контактні дані та відправте форму.</div>');
+                
+                // Auto-hide notification after 5 seconds
+                setTimeout(function() {
+                    $('.calculator-notification').fadeOut();
+                }, 5000);
+            }
+        });
+    </script>
 </body>
 
 </html>

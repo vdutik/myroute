@@ -44,6 +44,7 @@ Contact Page
 .contact-page__top-content-text1 {
     position: relative;
     display: block;
+    color: #000;
 }
 
 .contact-page__top-content-text1 p {

@@ -1,0 +1,411 @@
+/* ============================================
+   High Specificity Calculator Styles
+   To override any conflicting styles
+============================================ */
+
+.page-wrapper .delivery-calculator-section {
+    padding: 120px 0 !important;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%) !important;
+    position: relative !important;
+}
+
+.page-wrapper .delivery-calculator-section::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: radial-gradient(circle at 30% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%) !important;
+    pointer-events: none !important;
+}
+
+.page-wrapper .delivery-calculator {
+    background: linear-gradient(145deg, var(--secondary-dark) 0%, rgba(26, 26, 26, 0.95) 100%) !important;
+    border-radius: 32px !important;
+    padding: 80px !important;
+    border: 3px solid rgba(64, 64, 64, 0.3) !important;
+    box-shadow: 
+        0 35px 100px rgba(0, 0, 0, 0.5),
+        0 0 0 2px rgba(220, 38, 38, 0.15),
+        inset 0 2px 0 rgba(255, 255, 255, 0.08) !important;
+    margin: 0 auto !important;
+    max-width: 1200px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(25px) !important;
+}
+
+.page-wrapper .delivery-calculator::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: var(--gradient-red) !important;
+    border-radius: 32px 32px 0 0 !important;
+}
+
+.page-wrapper .calculator-title {
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    margin-bottom: 60px !important;
+    text-align: center !important;
+    text-shadow: 
+        4px 4px 15px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(220, 38, 38, 0.4) !important;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6) !important;
+    position: relative !important;
+    letter-spacing: 0.8px !important;
+}
+
+.page-wrapper .calculator-title::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -15px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80px !important;
+    height: 4px !important;
+    background: var(--gradient-red) !important;
+    border-radius: 2px !important;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.5) !important;
+}
+
+.page-wrapper .calculator-form {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px !important;
+    margin-bottom: 60px !important;
+}
+
+.page-wrapper .form-group {
+    position: relative !important;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%) !important;
+    border-radius: 24px !important;
+    padding: 40px !important;
+    border: 2px solid rgba(64, 64, 64, 0.4) !important;
+    backdrop-filter: blur(20px) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.page-wrapper .form-group:hover {
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.9) 0%, rgba(20, 20, 20, 0.95) 100%) !important;
+    border-color: rgba(220, 38, 38, 0.4) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(220, 38, 38, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.page-wrapper .form-group label {
+    display: block !important;
+    color: var(--text-secondary) !important;
+    font-weight: 800 !important;
+    margin-bottom: 20px !important;
+    font-size: 1.3rem !important;
+    text-shadow: 
+        2px 2px 10px rgba(0, 0, 0, 0.8),
+        0 0 25px rgba(220, 38, 38, 0.3) !important;
+    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.5) !important;
+    position: relative !important;
+    letter-spacing: 0.4px !important;
+}
+
+.page-wrapper .form-group label::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -8px !important;
+    left: 0 !important;
+    width: 50px !important;
+    height: 3px !important;
+    background: var(--gradient-red) !important;
+    border-radius: 2px !important;
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.4) !important;
+}
+
+.page-wrapper .form-group input,
+.page-wrapper .form-group select,
+.page-wrapper .form-group textarea {
+    width: 100% !important;
+    padding: 22px 28px !important;
+    font-size: 1.25rem !important;
+    border-radius: 18px !important;
+    background: linear-gradient(145deg, var(--primary-dark) 0%, var(--secondary-dark) 100%) !important;
+    border: 2px solid var(--border-dark) !important;
+    color: var(--text-primary) !important;
+    text-shadow: 
+        1px 1px 5px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(255, 255, 255, 0.1) !important;
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 600 !important;
+    box-shadow: 
+        inset 0 4px 15px rgba(0, 0, 0, 0.4),
+        0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-family: inherit !important;
+}
+
+.page-wrapper .form-group input:focus,
+.page-wrapper .form-group select:focus,
+.page-wrapper .form-group textarea:focus {
+    outline: none !important;
+    border-color: var(--accent-red) !important;
+    box-shadow: 
+        inset 0 4px 15px rgba(0, 0, 0, 0.4),
+        0 0 0 4px rgba(220, 38, 38, 0.2),
+        0 0 30px rgba(220, 38, 38, 0.4),
+        0 5px 20px rgba(220, 38, 38, 0.2) !important;
+    background: linear-gradient(145deg, var(--secondary-dark) 0%, var(--tertiary-dark) 100%) !important;
+    transform: translateY(-2px) !important;
+}
+
+.page-wrapper .form-group input::placeholder,
+.page-wrapper .form-group textarea::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.7 !important;
+    font-style: italic !important;
+}
+
+.page-wrapper .form-group.full-width {
+    grid-column: 1 / -1 !important;
+    background: rgba(26, 26, 26, 0.7) !important;
+    border: 1px solid rgba(220, 38, 38, 0.2) !important;
+}
+
+.page-wrapper .calculator-submit-btn {
+    width: 100% !important;
+    margin-top: 50px !important;
+    padding: 28px 60px !important;
+    font-size: 1.4rem !important;
+    font-weight: 900 !important;
+    border-radius: 22px !important;
+    background: var(--gradient-red) !important;
+    border: none !important;
+    color: var(--text-primary) !important;
+    text-shadow: 
+        2px 2px 10px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(255, 255, 255, 0.4) !important;
+    -webkit-text-stroke: 0.7px rgba(0, 0, 0, 0.6) !important;
+    box-shadow: 
+        0 20px 60px rgba(220, 38, 38, 0.5),
+        inset 0 3px 0 rgba(255, 255, 255, 0.3),
+        0 0 0 3px rgba(220, 38, 38, 0.4),
+        0 0 50px rgba(220, 38, 38, 0.3) !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    letter-spacing: 0.6px !important;
+}
+
+.page-wrapper .calculator-submit-btn::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+    transition: left 0.5s ease !important;
+}
+
+.page-wrapper .calculator-submit-btn:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 
+        0 25px 60px rgba(220, 38, 38, 0.6),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4),
+        0 0 0 2px rgba(220, 38, 38, 0.5),
+        0 0 50px rgba(220, 38, 38, 0.4) !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%) !important;
+}
+
+.page-wrapper .calculator-submit-btn:hover::before {
+    left: 100% !important;
+}
+
+.page-wrapper .calculator-submit-btn:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 
+        0 8px 25px rgba(220, 38, 38, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Datalist and select styling with high specificity */
+.page-wrapper input[list] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23dc2626' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") !important;
+    background-position: right 16px center !important;
+    background-repeat: no-repeat !important;
+    background-size: 20px !important;
+    padding-right: 50px !important;
+}
+
+.page-wrapper select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23dc2626' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") !important;
+    background-position: right 16px center !important;
+    background-repeat: no-repeat !important;
+    background-size: 20px !important;
+    padding-right: 50px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    z-index: 1 !important;
+    position: relative !important;
+}
+
+.page-wrapper select option {
+    background: var(--secondary-dark) !important;
+    color: var(--text-primary) !important;
+    padding: 12px 16px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    margin: 2px 0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
+    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.2s ease !important;
+}
+
+.page-wrapper select option:hover {
+    background: var(--accent-red) !important;
+    color: #ffffff !important;
+    transform: translateX(4px) !important;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4) !important;
+}
+
+.page-wrapper select option:checked {
+    background: var(--gradient-red) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.6) !important;
+}
+
+.page-wrapper textarea {
+    resize: vertical !important;
+    min-height: 100px !important;
+    font-family: inherit !important;
+    line-height: 1.6 !important;
+}
+
+/* Mobile responsive select styles */
+@media (max-width: 767px) {
+    .page-wrapper select {
+        z-index: 10 !important;
+        position: relative !important;
+        background-color: var(--primary-dark) !important;
+        border: 2px solid var(--border-dark) !important;
+        border-radius: 12px !important;
+        padding: 16px 50px 16px 20px !important;
+        font-size: 16px !important;
+        color: var(--text-primary) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .page-wrapper select:focus {
+        z-index: 20 !important;
+        border-color: var(--accent-red) !important;
+        box-shadow: 0 0 20px rgba(220, 38, 38, 0.4) !important;
+    }
+    
+    .page-wrapper select option {
+        background: var(--secondary-dark) !important;
+        color: var(--text-primary) !important;
+        padding: 14px 18px !important;
+        border-radius: 10px !important;
+        margin: 3px 0 !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        border: 1px solid rgba(64, 64, 64, 0.3) !important;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4) !important;
+    }
+    
+    .page-wrapper select option:hover {
+        background: var(--accent-red) !important;
+        color: #ffffff !important;
+        transform: translateX(6px) !important;
+        box-shadow: 0 5px 15px rgba(220, 38, 38, 0.5) !important;
+    }
+    
+    .page-wrapper select option:checked {
+        background: var(--gradient-red) !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        box-shadow: 0 0 20px rgba(220, 38, 38, 0.7) !important;
+        border: 1px solid rgba(220, 38, 38, 0.5) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-wrapper select {
+        padding: 14px 45px 14px 18px !important;
+        font-size: 16px !important;
+        border-radius: 10px !important;
+    }
+    
+    .page-wrapper select option {
+        padding: 12px 16px !important;
+        border-radius: 8px !important;
+        margin: 2px 0 !important;
+        font-size: 15px !important;
+    }
+}
+
+/* Desktop select styles with proper z-index */
+@media (min-width: 768px) {
+    .page-wrapper select {
+        z-index: 5 !important;
+        position: relative !important;
+        background-color: var(--primary-dark) !important;
+        border: 2px solid var(--border-dark) !important;
+        border-radius: 18px !important;
+        padding: 22px 50px 22px 28px !important;
+        font-size: 1.25rem !important;
+        color: var(--text-primary) !important;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .page-wrapper select:focus {
+        z-index: 15 !important;
+        border-color: var(--accent-red) !important;
+        box-shadow: 0 0 30px rgba(220, 38, 38, 0.4) !important;
+    }
+    
+    .page-wrapper select option {
+        background: var(--secondary-dark) !important;
+        color: var(--text-primary) !important;
+        padding: 15px 20px !important;
+        border-radius: 12px !important;
+        margin: 4px 0 !important;
+        font-size: 1.2rem !important;
+        font-weight: 600 !important;
+        border: 1px solid rgba(64, 64, 64, 0.4) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    }
+    
+    .page-wrapper select option:hover {
+        background: var(--accent-red) !important;
+        color: #ffffff !important;
+        transform: translateX(8px) !important;
+        box-shadow: 0 6px 18px rgba(220, 38, 38, 0.5) !important;
+    }
+    
+    .page-wrapper select option:checked {
+        background: var(--gradient-red) !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        box-shadow: 0 0 25px rgba(220, 38, 38, 0.7) !important;
+        border: 1px solid rgba(220, 38, 38, 0.6) !important;
+    }
+}
