@@ -1,0 +1,136 @@
+/* ============================================
+   Select Styles Fix - High Priority
+============================================ */
+
+/* Base select styles - High specificity */
+.page-wrapper .form-group select,
+.page-wrapper select,
+select {
+    z-index: 5 !important;
+    position: relative !important;
+    background-color: #1a1a1a !important;
+    background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+    border: 2px solid #404040 !important;
+    border-radius: 18px !important;
+    padding: 22px 50px 22px 28px !important;
+    font-size: 1.25rem !important;
+    color: #ffffff !important;
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.3),
+        inset 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23dc2626' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e") !important;
+    background-position: right 16px center !important;
+    background-repeat: no-repeat !important;
+    background-size: 20px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7) !important;
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.4) !important;
+    font-weight: 600 !important;
+}
+
+.page-wrapper .form-group select:focus,
+.page-wrapper select:focus,
+select:focus {
+    z-index: 15 !important;
+    border-color: #dc2626 !important;
+    background: linear-gradient(145deg, #0d0d0d 0%, #1a1a1a 100%) !important;
+    box-shadow: 
+        0 0 0 4px rgba(220, 38, 38, 0.2),
+        0 0 30px rgba(220, 38, 38, 0.4),
+        0 5px 20px rgba(220, 38, 38, 0.2),
+        inset 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.page-wrapper .form-group select option,
+.page-wrapper select option,
+select option {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+    padding: 15px 20px !important;
+    border-radius: 12px !important;
+    margin: 4px 0 !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    border: 1px solid rgba(64, 64, 64, 0.4) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.2s ease !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) !important;
+    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.4) !important;
+}
+
+.page-wrapper .form-group select option:hover,
+.page-wrapper select option:hover,
+select option:hover {
+    background: #dc2626 !important;
+    color: #ffffff !important;
+    transform: translateX(8px) !important;
+    box-shadow: 0 6px 18px rgba(220, 38, 38, 0.5) !important;
+    border: 1px solid rgba(220, 38, 38, 0.8) !important;
+}
+
+.page-wrapper .form-group select option:checked,
+.page-wrapper select option:checked,
+select option:checked {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.7) !important;
+    border: 1px solid rgba(220, 38, 38, 0.6) !important;
+}
+
+/* Mobile responsive select styles */
+@media (max-width: 767px) {
+    .page-wrapper .form-group select,
+    .page-wrapper select,
+    select {
+        z-index: 10 !important;
+        padding: 16px 50px 16px 20px !important;
+        font-size: 16px !important;
+        border-radius: 12px !important;
+        background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+        color: #ffffff !important;
+    }
+    
+    .page-wrapper .form-group select:focus,
+    .page-wrapper select:focus,
+    select:focus {
+        z-index: 20 !important;
+    }
+    
+    .page-wrapper .form-group select option,
+    .page-wrapper select option,
+    select option {
+        padding: 14px 18px !important;
+        border-radius: 10px !important;
+        margin: 3px 0 !important;
+        font-size: 16px !important;
+        background: #1a1a1a !important;
+        color: #ffffff !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-wrapper .form-group select,
+    .page-wrapper select,
+    select {
+        padding: 14px 45px 14px 18px !important;
+        font-size: 16px !important;
+        border-radius: 10px !important;
+        background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%) !important;
+        color: #ffffff !important;
+    }
+    
+    .page-wrapper .form-group select option,
+    .page-wrapper select option,
+    select option {
+        padding: 12px 16px !important;
+        border-radius: 8px !important;
+        margin: 2px 0 !important;
+        font-size: 15px !important;
+        background: #1a1a1a !important;
+        color: #ffffff !important;
+    }
+}

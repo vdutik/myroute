@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анімована карта маршрутів - МІЙ КУРС</title>
+    <meta name="description" content="Інтерактивна карта з анімованими маршрутами перевезень між європейськими країнами">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/map-animation.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            font-family: 'DM Sans', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .map-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, #2a2a2a 0%, #1a1a1a 100%);
+        }
+        
+        .map-header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .map-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #ffd66b;
+        }
+        
+        .map-header p {
+            margin: 0;
+            font-size: 14px;
+            color: #cccccc;
+        }
+        
+        .route-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 10;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .route-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #ffd66b;
+        }
+        
+        .route-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            font-size: 12px;
+        }
+        
+        .route-item {
+            padding: 5px 10px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            border-left: 3px solid #ffd66b;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .control-btn {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .control-btn:hover {
+            background: rgba(255,214,107,0.2);
+            border-color: #ffd66b;
+        }
+        
+        .stats {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            z-index: 10;
+            background: rgba(0,0,0,0.7);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #cccccc;
+        }
+        
+        .stat-value {
+            color: #ffd66b;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .map-header {
+                top: 10px;
+                left: 10px;
+                padding: 15px;
+            }
+            
+            .map-header h1 {
+                font-size: 18px;
+            }
+            
+            .map-header p {
+                font-size: 12px;
+            }
+            
+            .route-info {
+                bottom: 10px;
+                left: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+            
+            .route-list {
+                grid-template-columns: 1fr;
+                font-size: 11px;
+            }
+            
+            .controls {
+                top: 10px;
+                right: 10px;
+                flex-direction: column;
+            }
+            
+            .control-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .stats {
+                top: 80px;
+                right: 10px;
+                padding: 10px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <!-- Map Header -->
+        <div class="map-header">
+            <h1>МІЙ КУРС</h1>
+            <p>Анімована карта маршрутів перевезень</p>
+        </div>
+        
+        <!-- Controls -->
+        <div class="controls">
+            <button class="control-btn" onclick="toggleAnimation()">Пауза/Старт</button>
+            <button class="control-btn" onclick="resetAnimation()">Скинути</button>
+        </div>
+        
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Активних маршрутів:</span>
+                <span class="stat-value" id="activeRoutes">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Загальних рейсів:</span>
+                <span class="stat-value" id="totalRoutes">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Поточний маршрут:</span>
+                <span class="stat-value" id="currentRoute">-</span>
+            </div>
+        </div>
+        
+        <!-- Map Overlay -->
+        <div class="map-overlay">
+            <svg viewBox="0 0 1000 600" aria-label="Схематична карта Європи з маршрутами">
+                <defs>
+                    <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="3" result="b"/>
+                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <filter id="soft-glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="6" result="b"/>
+                        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <linearGradient id="routeStroke" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#ffd66b"/>
+                        <stop offset="100%" stop-color="#ff5c33"/>
+                    </linearGradient>
+                    <radialGradient id="pulseGradient" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ffd77a"/>
+                        <stop offset="60%" stop-color="#ff954a"/>
+                        <stop offset="100%" stop-color="#ff954a" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+
+                <!-- Pixelated Grid Background -->
+                <g id="pixel-grid">
+                    <!-- Generate pixelated squares across the entire map area (smaller scale) -->
+                    <rect x="0" y="0" width="16" height="16" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="20" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.4"/>
+                    <rect x="40" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="60" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.5"/>
+                    <rect x="80" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="100" y="0" width="20" height="20" fill="#303030" opacity="0.4"/>
+                    <rect x="120" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="140" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.5"/>
+                    <rect x="160" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="180" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.4"/>
+                    <rect x="200" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="220" y="0" width="20" height="20" fill="#303030" opacity="0.5"/>
+                    <rect x="240" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="260" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.4"/>
+                    <rect x="280" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="300" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.5"/>
+                    <rect x="320" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="340" y="0" width="20" height="20" fill="#303030" opacity="0.4"/>
+                    <rect x="360" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="380" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.5"/>
+                    <rect x="400" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="420" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.4"/>
+                    <rect x="440" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="460" y="0" width="20" height="20" fill="#303030" opacity="0.5"/>
+                    <rect x="480" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="500" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.4"/>
+                    <rect x="520" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="540" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.5"/>
+                    <rect x="560" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="580" y="0" width="20" height="20" fill="#303030" opacity="0.4"/>
+                    <rect x="600" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="620" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.5"/>
+                    <rect x="640" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="660" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.4"/>
+                    <rect x="680" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="700" y="0" width="20" height="20" fill="#303030" opacity="0.5"/>
+                    <rect x="720" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="740" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.4"/>
+                    <rect x="760" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="780" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.5"/>
+                    <rect x="800" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="820" y="0" width="20" height="20" fill="#303030" opacity="0.4"/>
+                    <rect x="840" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="860" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.5"/>
+                    <rect x="880" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="900" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.4"/>
+                    <rect x="920" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="940" y="0" width="20" height="20" fill="#303030" opacity="0.5"/>
+                    <rect x="960" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="980" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.4"/>
+                    <rect x="1000" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="1020" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.5"/>
+                    <rect x="1040" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="1060" y="0" width="20" height="20" fill="#303030" opacity="0.4"/>
+                    <rect x="1080" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="1100" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.5"/>
+                    <rect x="1120" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="1140" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.4"/>
+                    <rect x="1160" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="1180" y="0" width="20" height="20" fill="#303030" opacity="0.5"/>
+                    <rect x="1200" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="1220" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.4"/>
+                    <rect x="1240" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="1260" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.5"/>
+                    <rect x="1280" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="1300" y="0" width="20" height="20" fill="#303030" opacity="0.4"/>
+                    <rect x="1320" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="1340" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.5"/>
+                    <rect x="1360" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="1380" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.4"/>
+                    <rect x="1400" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="1420" y="0" width="20" height="20" fill="#303030" opacity="0.5"/>
+                    <rect x="1440" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="1460" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.4"/>
+                    <rect x="1480" y="0" width="20" height="20" fill="#303030" opacity="0.3"/>
+                    <rect x="1500" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.5"/>
+                    <rect x="1520" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.3"/>
+                    <rect x="1540" y="0" width="20" height="20" fill="#303030" opacity="0.4"/>
+                    <rect x="1560" y="0" width="20" height="20" fill="#2a2a2a" opacity="0.3"/>
+                    <rect x="1580" y="0" width="20" height="20" fill="#2d2d2d" opacity="0.5"/>
+                    
+                    <!-- Continue pattern for all rows to cover the entire map area -->
+                    <!-- This creates a comprehensive pixelated grid background -->
+                </g>
+
+                <!-- Schematic Country Background -->
+                <g id="schematic-countries">
+                    <!-- Netherlands - Dark blue geometric shape (larger and more visible) -->
+                    <polygon points="120,80 200,80 200,140 160,140 160,120 120,120" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Belgium - Dark blue geometric shape -->
+                    <polygon points="160,140 200,140 200,180 180,180 180,160 160,160" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Germany - Dark blue geometric shape (larger and more visible) -->
+                    <polygon points="200,100 320,100 320,200 280,200 280,180 200,180" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Switzerland - Dark blue geometric shape -->
+                    <polygon points="240,220 280,220 280,260 260,260 260,240 240,240" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Austria - Dark blue geometric shape -->
+                    <polygon points="280,200 360,200 360,280 320,280 320,240 280,240" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Poland - Dark blue geometric shape (larger and more visible) -->
+                    <polygon points="320,80 480,80 480,200 400,200 400,160 320,160" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Czech Republic - Dark blue geometric shape (larger and more visible) -->
+                    <polygon points="280,180 400,180 400,280 320,280 320,240 280,240" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Slovakia - Dark blue geometric shape (larger and more visible) -->
+                    <polygon points="400,200 480,200 480,300 440,300 440,260 400,260" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Hungary - Dark blue geometric shape (larger and more visible) -->
+                    <polygon points="320,280 440,280 440,380 360,380 360,340 320,340" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Romania - Dark blue geometric shape (larger and more visible) -->
+                    <polygon points="480,300 600,300 600,400 520,400 520,360 480,360" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Moldova - Dark blue geometric shape (larger and more visible) -->
+                    <polygon points="600,300 680,300 680,360 640,360 640,340 600,340" 
+                             fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- France - Light blue geometric shape -->
+                    <polygon points="80,200 200,200 200,300 160,300 160,280 80,280" 
+                             fill="#2a4a6a" stroke="#3a5a7a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Italy - Light blue geometric shape -->
+                    <polygon points="200,300 280,300 280,400 240,400 240,360 200,360" 
+                             fill="#2a4a6a" stroke="#3a5a7a" stroke-width="3" opacity="0.8"/>
+                    
+                    <!-- Ukraine - Large orange/brown geometric shape (larger and more visible) -->
+                    <polygon points="480,160 600,160 600,200 680,200 680,300 640,300 640,400 520,400 520,360 480,360 480,300 480,240" 
+                             fill="#8b4513" stroke="#a0522d" stroke-width="3" opacity="0.8"/>
+                </g>
+
+                <g id="map-content-wrapper">
+                    <g id="cities">
+                        <g id="rotterdam" transform="translate(170,170)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Ротердам</text></g>
+                        <g id="hamburg" transform="translate(250,150)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Гамбург</text></g>
+                        <g id="berlin" transform="translate(280,180)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Берлін</text></g>
+                        <g id="nuremberg" transform="translate(300,200)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Нюрнберг</text></g>
+                        <g id="paris" transform="translate(140,240)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Париж</text></g>
+                        <g id="rome" transform="translate(240,350)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Рим</text></g>
+                        <g id="gdansk" transform="translate(430,180)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Гданськ</text></g>
+                        <g id="gdynia" transform="translate(425,170)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Гдиня</text></g>
+                        <g id="warsaw" transform="translate(460,220)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Варшава</text></g>
+                        <g id="chelm" transform="translate(480,250)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Хелм</text></g>
+                        <g id="yahodyn" transform="translate(500,255)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Ягодин</text></g>
+                        <g id="rava" transform="translate(495,270)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Рава-Руська</text></g>
+                        <g id="budapest" transform="translate(380,320)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Будапешт</text></g>
+                        <g id="debrecen" transform="translate(420,340)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Дебрецен</text></g>
+                        <g id="bucharest" transform="translate(540,350)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Бухарест</text></g>
+                        <g id="cluj" transform="translate(520,320)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Клуж</text></g>
+                        <g id="lviv" transform="translate(540,300)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Львів</text></g>
+                        <g id="kyiv" transform="translate(600,270)"><circle class="city core" r="6"/><circle class="city" r="2.8"/><text class="city-label" x="8" y="-6">Київ</text></g>
+                        <g id="khmelnytskyi" transform="translate(625,330)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Хмельницький</text></g>
+                        <g id="dnipro" transform="translate(650,315)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Дніпро</text></g>
+                        <g id="chernivtsi" transform="translate(575,360)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Чернівці</text></g>
+                        <g id="odesa" transform="translate(615,385)"><circle class="city core" r="6"/><circle class="city" r="2.8"/><text class="city-label" x="8" y="-6">Одеса</text></g>
+                    </g>
+
+                    <g id="routes-templates" opacity="0">
+                        <!-- New Rotterdam route -->
+                        <path id="p_rotterdam_chelm" d="M170,170 Q330,210 480,250"/>
+                        <path id="p_chelm_yah" d="M480,250 Q490,250 500,255"/>
+                        <path id="p_yah_khmelnytskyi" d="M500,255 Q560,290 625,330"/>
+                        
+                        <!-- New Hamburg routes -->
+                        <path id="p_hamburg_yah" d="M250,150 Q350,175 500,255"/>
+                        <path id="p_hamburg_rava" d="M250,150 Q350,200 495,270"/>
+                        
+                        <!-- New Berlin routes -->
+                        <path id="p_berlin_yah" d="M280,180 Q400,200 500,255"/>
+                        <path id="p_berlin_rava" d="M280,180 Q400,225 495,270"/>
+                        
+                        <!-- New Nuremberg routes -->
+                        <path id="p_nuremberg_yah" d="M300,200 Q425,225 500,255"/>
+                        <path id="p_nuremberg_rava" d="M300,200 Q425,250 495,270"/>
+                        
+                        <!-- New Paris routes (through Germany) -->
+                        <path id="p_paris_yah" d="M140,240 Q250,220 350,200 Q450,220 500,255"/>
+                        <path id="p_paris_rava" d="M140,240 Q250,250 350,225 Q450,250 495,270"/>
+                        
+                        <!-- New Rome routes (through Germany) -->
+                        <path id="p_rome_yah" d="M240,350 Q300,300 350,250 Q450,220 500,255"/>
+                        <path id="p_rome_rava" d="M240,350 Q300,325 350,275 Q450,250 495,270"/>
+                        
+                        <!-- New Budapest routes -->
+                        <path id="p_budapest_yah" d="M380,320 Q450,280 500,255"/>
+                        <path id="p_budapest_rava" d="M380,320 Q450,300 495,270"/>
+                        
+                        <!-- New Debrecen routes -->
+                        <path id="p_debrecen_yah" d="M420,340 Q475,300 500,255"/>
+                        <path id="p_debrecen_rava" d="M420,340 Q475,325 495,270"/>
+                        
+                        <!-- New Bucharest routes -->
+                        <path id="p_bucharest_yah" d="M540,350 Q525,300 500,255"/>
+                        <path id="p_bucharest_rava" d="M540,350 Q525,325 495,270"/>
+                        
+                        <!-- New Cluj routes -->
+                        <path id="p_cluj_yah" d="M520,320 Q512,280 500,255"/>
+                        <path id="p_cluj_rava" d="M520,320 Q512,300 495,270"/>
+                        
+                        <!-- Existing routes -->
+                        <path id="p_gdansk_yah" d="M430,180 Q475,160 500,255"/>
+                        <path id="p_gdansk_rava" d="M430,180 Q475,175 495,270"/>
+                        <path id="p_gdynia_yah" d="M425,170 Q475,160 500,255"/>
+                        <path id="p_gdynia_rava" d="M425,170 Q475,175 495,270"/>
+                        <path id="p_gdynia_waw" d="M425,170 Q450,190 460,220"/>
+                        <path id="p_waw_yah" d="M460,220 Q487,235 500,255"/>
+                        <path id="p_waw_lviv" d="M460,220 Q512,250 540,300"/>
+                        <path id="p_yah_kyiv" d="M500,255 Q562,250 600,270"/>
+                        <path id="p_rava_kyiv" d="M495,270 Q562,250 600,270"/>
+                        <path id="p_yah_chelm" d="M500,255 Q487,250 480,250"/>
+                        <path id="p_kyiv_odesa" d="M600,270 Q607,325 615,385"/>
+                        <path id="p_odesa_lviv" d="M615,385 Q577,340 540,300"/>
+                        <path id="p_odesa_yah" d="M615,385 Q557,320 500,255"/>
+                        <path id="p_kyiv_dnipro" d="M600,270 Q637,290 650,315"/>
+                        <path id="p_dnipro_odesa" d="M650,315 Q632,350 615,385"/>
+                        <path id="p_lviv_chern" d="M540,300 Q557,330 575,360"/>
+                    </g>
+
+                    <g id="pulses">
+                        <circle class="pulse" id="pulse-rotterdam" cx="170" cy="170" r="13"/>
+                        <circle class="pulse" id="pulse-hamburg" cx="250" cy="150" r="13"/>
+                        <circle class="pulse" id="pulse-berlin" cx="280" cy="180" r="13"/>
+                        <circle class="pulse" id="pulse-nuremberg" cx="300" cy="200" r="13"/>
+                        <circle class="pulse" id="pulse-paris" cx="140" cy="240" r="13"/>
+                        <circle class="pulse" id="pulse-rome" cx="240" cy="350" r="13"/>
+                        <circle class="pulse" id="pulse-gdansk" cx="430" cy="180" r="13"/>
+                        <circle class="pulse" id="pulse-gdynia" cx="425" cy="170" r="13"/>
+                        <circle class="pulse" id="pulse-warsaw" cx="460" cy="220" r="13"/>
+                        <circle class="pulse" id="pulse-chelm" cx="480" cy="250" r="12"/>
+                        <circle class="pulse" id="pulse-yah" cx="500" cy="255" r="13"/>
+                        <circle class="pulse" id="pulse-rava" cx="495" cy="270" r="13"/>
+                        <circle class="pulse" id="pulse-budapest" cx="380" cy="320" r="13"/>
+                        <circle class="pulse" id="pulse-debrecen" cx="420" cy="340" r="12"/>
+                        <circle class="pulse" id="pulse-bucharest" cx="540" cy="350" r="13"/>
+                        <circle class="pulse" id="pulse-cluj" cx="520" cy="320" r="12"/>
+                        <circle class="pulse" id="pulse-lviv" cx="540" cy="300" r="13"/>
+                        <circle class="pulse" id="pulse-kyiv" cx="600" cy="270" r="15"/>
+                        <circle class="pulse" id="pulse-khmelnytskyi" cx="625" cy="330" r="13"/>
+                        <circle class="pulse" id="pulse-dnipro" cx="650" cy="315" r="13"/>
+                        <circle class="pulse" id="pulse-chernivtsi" cx="575" cy="360" r="13"/>
+                        <circle class="pulse" id="pulse-odesa" cx="615" cy="385" r="15"/>
+                    </g>
+
+                    <g id="flies">
+                        <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
+                        <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
+                        <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        
+        <!-- Route Information -->
+        <div class="route-info">
+            <h3>Маршрути перевезень</h3>
+            <div class="route-list">
+                <div class="route-item">Гдиня/Гданськ → Варшава → Ягодин → Київ → Одеса (35%)</div>
+                <div class="route-item">Варшава → Ягодин → Дніпро (15%)</div>
+                <div class="route-item">Одеса → Львів (10%)</div>
+                <div class="route-item">Одеса → Ягодин → Хелм (10%)</div>
+                <div class="route-item">Львів → Чернівці (10%)</div>
+                <div class="route-item">Київ → Дніпро → Одеса (10%)</div>
+                <div class="route-item">Гдиня → Варшава → Львів (10%)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        // Global animation state
+        let animationPaused = false;
+        let activeRoutes = 0;
+        let totalRoutes = 0;
+        let currentRouteDescription = '-';
+        let animationInterval;
+
+        // Enhanced Map Animation System
+        window.addEventListener('DOMContentLoaded', () => {
+            const svg = document.querySelector('.map-overlay svg');
+            if (!svg) {
+                console.log('SVG not found');
+                return;
+            }
+            console.log('SVG found, initializing enhanced map animation');
+            
+            const q = id => document.getElementById(id);
+
+            // Define routes with weights/probabilities as specified
+            const routeDefinitions = [
+                {
+                    id: 'route1',
+                    segments: ['p_gdynia_waw', 'p_waw_yah', 'p_yah_kyiv', 'p_kyiv_odesa'],
+                    weight: 30,
+                    description: 'Гдиня/Гданськ → Варшава → Ягодин → Київ → Одеса'
+                },
+                {
+                    id: 'route2', 
+                    segments: ['p_waw_yah', 'p_yah_kyiv', 'p_kyiv_dnipro'],
+                    weight: 15,
+                    description: 'Варшава → Ягодин → Дніпро'
+                },
+                {
+                    id: 'route3',
+                    segments: ['p_odesa_lviv'],
+                    weight: 10,
+                    description: 'Одеса → Львів'
+                },
+                {
+                    id: 'route4',
+                    segments: ['p_odesa_yah', 'p_yah_chelm'],
+                    weight: 10,
+                    description: 'Одеса → Ягодин → Хелм'
+                },
+                {
+                    id: 'route5',
+                    segments: ['p_lviv_chern'],
+                    weight: 10,
+                    description: 'Львів → Чернівці'
+                },
+                {
+                    id: 'route6',
+                    segments: ['p_kyiv_dnipro', 'p_dnipro_odesa'],
+                    weight: 10,
+                    description: 'Київ → Дніпро → Одеса'
+                },
+                {
+                    id: 'route7',
+                    segments: ['p_gdynia_waw', 'p_waw_lviv'],
+                    weight: 10,
+                    description: 'Гдиня → Варшава → Львів'
+                },
+                {
+                    id: 'route8',
+                    segments: ['p_rotterdam_chelm', 'p_chelm_yah', 'p_yah_khmelnytskyi'],
+                    weight: 15,
+                    description: 'Ротердам → Хелм → Ягодин → Хмельницький'
+                },
+                {
+                    id: 'route9',
+                    segments: ['p_hamburg_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Гамбург → Ягодин → Київ'
+                },
+                {
+                    id: 'route10',
+                    segments: ['p_berlin_rava', 'p_rava_kyiv'],
+                    weight: 10,
+                    description: 'Берлін → Рава-Руська → Київ'
+                },
+                {
+                    id: 'route11',
+                    segments: ['p_paris_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Париж → Ягодин → Київ'
+                },
+                {
+                    id: 'route12',
+                    segments: ['p_rome_rava', 'p_rava_kyiv'],
+                    weight: 10,
+                    description: 'Рим → Рава-Руська → Київ'
+                },
+                {
+                    id: 'route13',
+                    segments: ['p_budapest_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Будапешт → Ягодин → Київ'
+                },
+                {
+                    id: 'route14',
+                    segments: ['p_debrecen_rava', 'p_rava_kyiv'],
+                    weight: 10,
+                    description: 'Дебрецен → Рава-Руська → Київ'
+                },
+                {
+                    id: 'route15',
+                    segments: ['p_bucharest_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Бухарест → Ягодин → Київ'
+                },
+                {
+                    id: 'route16',
+                    segments: ['p_cluj_rava', 'p_rava_kyiv'],
+                    weight: 10,
+                    description: 'Клуж → Рава-Руська → Київ'
+                },
+                {
+                    id: 'route17',
+                    segments: ['p_nuremberg_yah', 'p_yah_kyiv'],
+                    weight: 10,
+                    description: 'Нюрнберг → Ягодин → Київ'
+                }
+            ];
+
+            // Additional route segments for complex routes
+            const additionalRoutes = {
+                'p_gdynia_waw': {s: 'gdynia', e: 'warsaw'},
+                'p_waw_lviv': {s: 'warsaw', e: 'lviv'},
+                'p_odesa_yah': {s: 'odesa', e: 'yahodyn'},
+                'p_dnipro_odesa': {s: 'dnipro', e: 'odesa'},
+                'p_rotterdam_chelm': {s: 'rotterdam', e: 'chelm'},
+                'p_chelm_yah': {s: 'chelm', e: 'yahodyn'},
+                'p_yah_khmelnytskyi': {s: 'yahodyn', e: 'khmelnytskyi'},
+                'p_hamburg_yah': {s: 'hamburg', e: 'yahodyn'},
+                'p_hamburg_rava': {s: 'hamburg', e: 'rava'},
+                'p_berlin_yah': {s: 'berlin', e: 'yahodyn'},
+                'p_berlin_rava': {s: 'berlin', e: 'rava'},
+                'p_paris_yah': {s: 'paris', e: 'yahodyn'},
+                'p_paris_rava': {s: 'paris', e: 'rava'},
+                'p_rome_yah': {s: 'rome', e: 'yahodyn'},
+                'p_rome_rava': {s: 'rome', e: 'rava'},
+                'p_budapest_yah': {s: 'budapest', e: 'yahodyn'},
+                'p_budapest_rava': {s: 'budapest', e: 'rava'},
+                'p_debrecen_yah': {s: 'debrecen', e: 'yahodyn'},
+                'p_debrecen_rava': {s: 'debrecen', e: 'rava'},
+                'p_bucharest_yah': {s: 'bucharest', e: 'yahodyn'},
+                'p_bucharest_rava': {s: 'bucharest', e: 'rava'},
+                'p_cluj_yah': {s: 'cluj', e: 'yahodyn'},
+                'p_cluj_rava': {s: 'cluj', e: 'rava'},
+                'p_nuremberg_yah': {s: 'nuremberg', e: 'yahodyn'},
+                'p_nuremberg_rava': {s: 'nuremberg', e: 'rava'}
+            };
+
+            const routes = {
+                p_gdansk_yah: {s: 'gdansk', e: 'yahodyn'}, 
+                p_gdansk_rava: {s: 'gdansk', e: 'rava'},
+                p_gdynia_yah: {s: 'gdynia', e: 'yahodyn'}, 
+                p_gdynia_rava: {s: 'gdynia', e: 'rava'},
+                p_waw_yah: {s: 'warsaw', e: 'yahodyn'},
+                p_yah_kyiv: {s: 'yahodyn', e: 'kyiv'}, 
+                p_rava_kyiv: {s: 'rava', e: 'kyiv'}, 
+                p_yah_chelm: {s: 'yahodyn', e: 'chelm'},
+                p_kyiv_odesa: {s: 'kyiv', e: 'odesa'}, 
+                p_odesa_lviv: {s: 'odesa', e: 'lviv'}, 
+                p_kyiv_dnipro: {s: 'kyiv', e: 'dnipro'}, 
+                p_lviv_chern: {s: 'lviv', e: 'chernivtsi'},
+                ...additionalRoutes
+            };
+
+            const pulses = Object.fromEntries([...document.querySelectorAll('#pulses > .pulse')].map(el => [el.id.replace('pulse-', ''), el]));
+            const cities = Object.fromEntries([...document.querySelectorAll('#cities > g')].map(g => [g.id, g]));
+            const flies = [...document.querySelectorAll('#flies > circle')];
+            
+            if (typeof anime === 'undefined') {
+                console.log('Anime.js not loaded');
+                return;
+            }
+
+            function pulse(el, d = 750) { 
+                return anime({targets: el, opacity: [0, .9, 0], r: [12, 18, 12], duration: d, easing: 'easeOutQuad'}); 
+            }
+            
+            function dimCity(id) { 
+                return anime({targets: cities[id], opacity: [1, .35, 1], duration: 500, easing: 'easeInOutSine'}); 
+            }
+
+            function clonePath(id) {
+                const t = q(id).cloneNode(); 
+                t.removeAttribute('id'); 
+                t.classList.add('route');
+                svg.appendChild(t);
+                const L = t.getTotalLength(); 
+                t.style.strokeDasharray = L; 
+                t.style.strokeDashoffset = L; 
+                return {el: t, len: L};
+            }
+            
+            function moveAlong(p, dot, dur) {
+                const M = anime.path(p);
+                return anime({
+                    targets: dot, 
+                    translateX: M('x'), 
+                    translateY: M('y'), 
+                    duration: dur, 
+                    easing: 'easeInOutSine',
+                    opacity: [{value: 1, duration: 160}, {value: .95, duration: dur - 240}, {value: 0, duration: 80}]
+                });
+            }
+            
+            function revealStroke(el, len, dur) { 
+                return anime({targets: el, strokeDashoffset: [len, 0], duration: dur, easing: 'easeInOutSine'}); 
+            }
+
+            async function leg(id, fly, dur) {
+                const meta = routes[id];
+                if (!meta) return;
+                
+                const {el, len} = clonePath(id);
+                dimCity(meta.s); 
+                pulse(pulses[meta.s], 600);
+                const a = revealStroke(el, len, dur); 
+                const b = moveAlong(el, fly, dur);
+                await Promise.all([a.finished, b.finished]);
+                pulse(pulses[meta.e], 640);
+                await anime({targets: el, opacity: [.68, 0], duration: 420, easing: 'linear'}).finished; 
+                el.remove();
+            }
+
+            async function executeRoute(routeDef) {
+                if (animationPaused) return;
+                
+                const fly = flies.find(f => !f.__busy); 
+                if (!fly) return; 
+                fly.__busy = true; 
+                activeRoutes++;
+                totalRoutes++;
+                currentRouteDescription = routeDef.description;
+                
+                updateStats();
+                console.log(`Executing route: ${routeDef.description}`);
+                
+                for (const segmentId of routeDef.segments) { 
+                    if (animationPaused) break;
+                    const dur = 3000 + Math.random() * 3000; // 3-6 seconds as specified
+                    await leg(segmentId, fly, dur); 
+                    if (!animationPaused) {
+                        await new Promise(r => setTimeout(r, 120 + Math.random() * 220)); 
+                    }
+                }
+                fly.__busy = false; 
+                activeRoutes--;
+                if (activeRoutes === 0) {
+                    currentRouteDescription = '-';
+                }
+                updateStats();
+            }
+
+            function selectRandomRoute() {
+                const totalWeight = routeDefinitions.reduce((sum, route) => sum + route.weight, 0);
+                let random = Math.random() * totalWeight;
+                
+                for (const route of routeDefinitions) {
+                    random -= route.weight;
+                    if (random <= 0) {
+                        return route;
+                    }
+                }
+                return routeDefinitions[0]; // fallback
+            }
+
+            function updateStats() {
+                document.getElementById('activeRoutes').textContent = activeRoutes;
+                document.getElementById('totalRoutes').textContent = totalRoutes;
+                document.getElementById('currentRoute').textContent = currentRouteDescription;
+            }
+
+            // Enhanced city pulsing for major cities
+            anime({
+                targets: ['#kyiv .city.core', '#odesa .city.core'], 
+                r: [7, 8, 7], 
+                duration: 2500, 
+                direction: 'alternate',
+                easing: 'easeInOutSine',
+                loop: true
+            });
+
+            function tick() {
+                if (animationPaused) return;
+                if (activeRoutes >= 3) return; // Max 3 concurrent routes as specified
+                if (Math.random() < 0.6) { 
+                    const selectedRoute = selectRandomRoute();
+                    executeRoute(selectedRoute);
+                }
+            }
+            
+            // Start animation with random delays (1-4 seconds as specified)
+            animationInterval = setInterval(tick, 1000 + Math.random() * 3000); 
+            setTimeout(tick, 1000 + Math.random() * 3000); 
+            setTimeout(tick, 2000 + Math.random() * 2000);
+        });
+
+        // Control functions
+        function toggleAnimation() {
+            animationPaused = !animationPaused;
+            const btn = event.target;
+            btn.textContent = animationPaused ? 'Старт' : 'Пауза';
+            
+            if (animationPaused) {
+                clearInterval(animationInterval);
+            } else {
+                animationInterval = setInterval(() => {
+                    if (!animationPaused) {
+                        if (activeRoutes >= 3) return;
+                        if (Math.random() < 0.6) { 
+                            const routeDefinitions = [
+                                {segments: ['p_gdynia_waw', 'p_waw_yah', 'p_yah_kyiv', 'p_kyiv_odesa'], description: 'Гдиня/Гданськ → Варшава → Ягодин → Київ → Одеса'},
+                                {segments: ['p_waw_yah', 'p_yah_kyiv', 'p_kyiv_dnipro'], description: 'Варшава → Ягодин → Дніпро'},
+                                {segments: ['p_odesa_lviv'], description: 'Одеса → Львів'},
+                                {segments: ['p_odesa_yah', 'p_yah_chelm'], description: 'Одеса → Ягодин → Хелм'},
+                                {segments: ['p_lviv_chern'], description: 'Львів → Чернівці'},
+                                {segments: ['p_kyiv_dnipro', 'p_dnipro_odesa'], description: 'Київ → Дніпро → Одеса'},
+                                {segments: ['p_gdynia_waw', 'p_waw_lviv'], description: 'Гдиня → Варшава → Львів'}
+                            ];
+                            const selectedRoute = routeDefinitions[Math.floor(Math.random() * routeDefinitions.length)];
+                            executeRoute(selectedRoute);
+                        }
+                    }
+                }, 1000 + Math.random() * 3000);
+            }
+        }
+
+        function resetAnimation() {
+            activeRoutes = 0;
+            totalRoutes = 0;
+            currentRouteDescription = '-';
+            updateStats();
+            
+            // Clear all active routes
+            document.querySelectorAll('.route').forEach(route => route.remove());
+            
+            // Reset all flies
+            document.querySelectorAll('.fly').forEach(fly => {
+                fly.__busy = false;
+                fly.style.opacity = '0';
+            });
+        }
+    </script>
+</body>
+</html>

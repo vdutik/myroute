@@ -7,8 +7,7 @@ Banner One
     position: relative;
     display: block;
     background: rgb(67, 67, 67);
-    /*background: linear-gradient(90deg, rgba(18, 33, 38, 1) 0%, rgba(18, 33, 38, 1) 35%, rgba(10, 44, 54, 1) 60%, rgba(10, 44, 54, 1) 100%);*/
-    padding: 512px 0px 94px;
+    padding: 0;
     z-index: 2;
 }
 
@@ -28,7 +27,7 @@ Banner One
 
 .banner-one__pattern2 {
     position: absolute;
-    top: 40px;
+    top: 0;
     left: 0;
     right: 0;
     text-align: center;
@@ -62,92 +61,113 @@ Banner One
 .banner-one__location {
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
     max-width: 1030px;
-    min-height: 470px;
+    height: 470px;
     margin: 0 auto;
     z-index: 7;
 }
 
 .banner-one__location-single {}
 
-
+/* Responsive positioning using percentages */
 .banner-one__location-single.style1 {
     position: absolute;
-    top: 167px;
-    left: 483px;
+    top: 35.5%;
+    left: 46.9%;
 }
 
 .banner-one__location-single.style2 {
     position: absolute;
-    top: 140px;
-    left: 560px;
+    top: 29.8%;
+    left: 54.4%;
 }
 
 .banner-one__location-single.style3 {
     position: absolute;
-    top: 158px;
-    left: 543px;
+    top: 33.6%;
+    left: 52.7%;
 }
 
 .banner-one__location-single.style4 {
     position: absolute;
-    left: 540px;
-    bottom: 285px;
+    top: 33.8%;
+    left: 52.4%;
 }
 
 .banner-one__location-single.style5 {
     position: absolute;
-    left: 550px;
-    bottom: 270px;
+    top: 36%;
+    left: 53.4%;
 }
 
 .banner-one__location-single.style6 {
     position: absolute;
-    top: 185px;
-    right: 443px;
+    top: 39.4%;
+    left: 43%;
 }
 
 .banner-one__location-single.style7 {
     position: absolute;
-    right: 430px;
-    bottom: 275px;
+    top: 41.5%;
+    left: 41.7%;
+}
+
+@media (max-width: 1200px) {
+    .banner-one__location {
+        max-width: 900px;
+        height: 410px;
+    }
+}
+
+@media (max-width: 991px) {
+    .banner-one__location {
+        max-width: 700px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-one__location {
+        display: none;
+    }
 }
 
 @media (max-width: 1024px) {
     .banner-one__location-single.style1 {
-        top: 171px;
-        left: 476px;
+        top: 35.5%;
+        left: 46.9%;
     }
 
     .banner-one__location-single.style2 {
-        top: 147px;
-        left: 550px;
+        top: 29.8%;
+        left: 54.4%;
     }
 
     .banner-one__location-single.style3 {
-        top: 164px;
-        left: 524px;
+        top: 33.6%;
+        left: 52.7%;
     }
 
     .banner-one__location-single.style4 {
-        top: 168px;
-        left: 528px;
+        top: 33.8%;
+        left: 52.4%;
     }
 
     .banner-one__location-single.style5 {
-        left: 529px;
-        bottom: 268px;
+        top: 36%;
+        left: 53.4%;
     }
 
     .banner-one__location-single.style6 {
-        top: 189px;
-        right: 425px;
+        top: 39.4%;
+        left: 43%;
     }
 
     .banner-one__location-single.style7 {
-        right: 416px;
+        top: 41.5%;
         bottom: 275px;
     }
 }

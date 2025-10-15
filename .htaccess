@@ -1,0 +1,15 @@
+# Увімкнути модуль перезапису URL
+RewriteEngine On
+
+# Правило 1: Перенаправлення index.html та index на корінь сайту (/)
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^index$ / [R=301,L]
+
+# Правило 2: Перенаправлення всіх URL з .html на URL без розширення
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.html\ HTTP
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+
+# Правило 3: Внутрішньо відкривати .html файли, коли запитується URL без розширення
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
