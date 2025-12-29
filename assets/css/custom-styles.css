@@ -1121,3 +1121,31 @@ Based on seaandair.com.ua design inspiration
     }
 }
 
+/* ============================================
+   Testimonials - Black Text Color
+============================================ */
+
+.testimonial-one__single-inner .text-box p {
+    color: #000000 !important;
+    font-weight: 400 !important;
+}
+
+.testimonial-one__single-inner .text-box {
+    color: #000000 !important;
+}
+
+/* ============================================
+   FAQ/Advantages - Black Text Color
+============================================ */
+
+.faq-one__content .accrodion-content .inner p,
+.accrodion-content .inner p,
+.faq-one .accrodion-content .inner p,
+.faq-one .accrodion-content .inner,
+.faq-one__content .accrodion-content .inner {
+    color: #000000 !important;
+    font-weight: 400 !important;
+    -webkit-text-fill-color: #000000 !important;
+    -webkit-text-stroke: none !important;
+    text-shadow: none !important;
+}
