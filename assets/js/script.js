@@ -781,6 +781,12 @@
         $(".dynamic-year").html(date.getFullYear());
     }
 
+    // Auto-update copyright year
+    if ($(".copyright-year").length) {
+        let date = new Date();
+        $(".copyright-year").html(date.getFullYear());
+    }
+
     if ($(".wow").length) {
         var wow = new WOW({
             boxClass: "wow", // animated element css class (default is wow)

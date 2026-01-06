@@ -285,7 +285,7 @@
 
                     <div class="banner-one__actions hero-animate hero-animate--delay-3">
                         <a class="hero-btn hero-btn--outline" href="contact.html">Обговорити маршрут</a>
-                    </div>
+                        </div>
                 </div>
             </div>
         </section>
@@ -1075,7 +1075,7 @@
 
                     <div class="footer-one__bottom-inner">
                         <div class="footer-one__bottom-text">
-                            <p>© Copyright 2025 <a href="index.html">My Course.</a> All Rights Reserved</p>
+                            <p>© Copyright <span class="copyright-year">2025</span> <a href="index.html">My Course.</a> All Rights Reserved</p>
                         </div>
 
                 </div>
@@ -1325,6 +1325,25 @@
                 window.location.href = `contact.html?${queryParams.toString()}`;
             };
         });
+    </script>
+
+    <!-- Auto-update copyright year -->
+    <script>
+        (function() {
+            document.addEventListener('DOMContentLoaded', function() {
+                const currentYear = new Date().getFullYear();
+                const yearElements = document.querySelectorAll('.copyright-year');
+                yearElements.forEach(function(element) {
+                    element.textContent = currentYear;
+                });
+            });
+            // Also run immediately in case DOM is already loaded
+            const currentYear = new Date().getFullYear();
+            const yearElements = document.querySelectorAll('.copyright-year');
+            yearElements.forEach(function(element) {
+                element.textContent = currentYear;
+            });
+        })();
     </script>
 
 </body>
