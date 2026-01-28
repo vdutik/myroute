@@ -314,7 +314,7 @@
         <!--End Complexity Section-->
 
         <!--Start Weight Calculation Section-->
-        <section class="about-one">
+        <section class="about-one about-one--full-section">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -350,7 +350,7 @@
                                                     <h3>Вага нетто (власна вага)</h3>
                                                 </div>
                                             </div>
-                                            <p>Це вага порожнього автомобіля без вантажу, палива та водія. Вказана в технічному паспорті транспортного засобу. Зазвичай становить 6-8 тонн для вантажівки.</p>
+                                            <p>Це вага порожнього автомобіля без вантажу та палива. Вказана в технічному паспорті транспортного засобу. Зазвичай становить 6-8 тонн для вантажівки.</p>
                                         </div>
                                     </div>
 
@@ -364,7 +364,7 @@
                                                     <h3>Вага брутто (повна вага)</h3>
                                                 </div>
                                             </div>
-                                            <p>Це максимально дозволена вага автомобіля з вантажем, паливом, водієм та пасажирами. Також вказана в техпаспорті. Не повинна перевищувати 40 тонн.</p>
+                                            <p>Це максимально дозволена вага автомобіля з вантажем та паливом. Також вказана в техпаспорті. Не повинна перевищувати 40 тонн.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -551,7 +551,7 @@
         <!--End Axle Overload Section-->
 
         <!--Start Total Overload Section-->
-        <section class="about-one">
+        <section class="about-one about-one--full-section">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -821,6 +821,17 @@
     <script src="assets/js/script.js">    </script>
     
     <style>
+        /* Секції "Розрахунок загальної ваги" та "Загальний перегруз" — на повний екран */
+        .about-one--full-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+        .about-one--full-section .about-one__content {
+            max-width: 100%;
+        }
+        
         /* Світліший текст для блоків з інформацією про палети */
         .scheme-info p,
         .scheme-info li {
