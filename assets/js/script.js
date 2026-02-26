@@ -578,10 +578,10 @@
                         required: true,
                         email: true,
                     },
-                    message: {
+                    Phone: {
                         required: true,
                     },
-                    subject: {
+                    message: {
                         required: true,
                     },
                 },
