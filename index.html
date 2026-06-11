@@ -4,18 +4,65 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>МІЙ КУРС</title>
+    <title>МІЙ КУРС — міжнародні вантажні перевезення та логістика | Україна – Європа</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="128x128" href="assets/images/favicons/favicon-128x128.png" />
     <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicons/favicon-64x64.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="ТОВ 'МІЙ КУРС' — це сучасна логістична компанія, яка забезпечує повний спектр послуг для бізнесу будь-якого масштабу.
-    Завдяки власному автопарку вантажівок та складам на території Польщі, ми гарантуємо безперебійну доставку,
-    митне оформлення та зберігання товарів.
-    " />
+    <meta name="description" content="ТОВ «МІЙ КУРС» — логістична компанія з власним автопарком і складами в Польщі: міжнародні вантажні перевезення, митне оформлення, складські послуги та аутсорсинг ЗЕД. Підтримка 24/7." />
+    <link rel="canonical" href="https://myroute.com.ua/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="МІЙ КУРС" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:url" content="https://myroute.com.ua/" />
+    <meta property="og:title" content="МІЙ КУРС — міжнародні вантажні перевезення та логістика | Україна – Європа" />
+    <meta property="og:description" content="ТОВ «МІЙ КУРС» — логістична компанія з власним автопарком і складами в Польщі: міжнародні вантажні перевезення, митне оформлення, складські послуги та аутсорсинг ЗЕД. Підтримка 24/7." />
+    <meta property="og:image" content="https://myroute.com.ua/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="МІЙ КУРС — міжнародні вантажні перевезення та логістика | Україна – Європа" />
+    <meta name="twitter:description" content="ТОВ «МІЙ КУРС» — логістична компанія з власним автопарком і складами в Польщі: міжнародні вантажні перевезення, митне оформлення, складські послуги та аутсорсинг ЗЕД. Підтримка 24/7." />
+    <meta name="twitter:image" content="https://myroute.com.ua/assets/images/og-image.jpg" />
+    <link rel="preload" as="image" href="assets/images/banner/banner-port-terminal.webp" fetchpriority="high" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "МІЙ КУРС",
+        "legalName": "ТОВ «МІЙ КУРС»",
+        "url": "https://myroute.com.ua/",
+        "logo": "https://myroute.com.ua/assets/images/favicons/favicon-128x128.png",
+        "image": "https://myroute.com.ua/assets/images/og-image.jpg",
+        "description": "Логістична компанія з власним автопарком і складами в Польщі: міжнародні вантажні перевезення, митне оформлення, складські послуги та аутсорсинг ЗЕД.",
+        "email": "manager@myroute.com.ua",
+        "telephone": "+380994737583",
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+380994737583",
+                "contactType": "customer service",
+                "availableLanguage": ["Ukrainian"],
+                "hoursAvailable": "Mo-Su 00:00-24:00"
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+380996608810",
+                "contactType": "customer service",
+                "availableLanguage": ["Ukrainian"]
+            }
+        ],
+        "areaServed": ["UA", "PL", "EU"],
+        "knowsAbout": ["Міжнародні вантажні перевезення", "Митне оформлення", "Складські послуги", "Аутсорсинг ЗЕД"]
+    }
+    </script>
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -264,8 +311,10 @@
         <!--Start Banner One-->
         <section class="banner-one banner-one--hero">
             <div class="banner-one__media" aria-hidden="true">
-                <img class="banner-one__image" src="assets/images/banner/banner-port-terminal.png" 
-                     alt="Порт з контейнерами" 
+                <img class="banner-one__image" src="assets/images/banner/banner-port-terminal.webp"
+                     alt="Порт з контейнерами"
+                     width="1920" height="1286"
+                     fetchpriority="high"
                      loading="eager">
             </div>
 
@@ -370,17 +419,17 @@
                     <!--Start About One Img-->
                     <div class="col-xl-5">
                         <div class="about-one__img">
-                            <div class="shape1 float-bob-y"><img src="assets/images/shapes/about-v1-shape1.png" alt="">
+                            <div class="shape1 float-bob-y"><img src="assets/images/shapes/about-v1-shape1.png" alt="" loading="lazy" decoding="async">
                             </div>
-                            <div class="shape2 float-bob-y"><img src="assets/images/shapes/about-v1-shape2.png" alt="">
+                            <div class="shape2 float-bob-y"><img src="assets/images/shapes/about-v1-shape2.png" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="about-one__img1 reveal">
-                                <img src="assets/images/about/about-v1-img1.jpg" alt="">
+                                <img src="assets/images/about/about-v1-img1.jpg" alt="" loading="lazy" decoding="async">
                             </div>
 
                             <div class="about-one__img2">
                                 <div class="about-one__img2-inner reveal">
-                                    <img src="assets/images/about/about-v1-img2.jpg" alt="">
+                                    <img src="assets/images/about/about-v1-img2.jpg" alt="" loading="lazy" decoding="async">
                                 </div>
 
                                 <div class="about-one__circle-text">
@@ -396,7 +445,7 @@
                                     </div>
                                 </div>
                                 <div class="shape3 float-bob-y">
-                                    <img src="assets/images/shapes/about-v1-shape3.png" alt="">
+                                    <img src="assets/images/shapes/about-v1-shape3.png" alt="" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
@@ -477,17 +526,17 @@
                     <!--Start Skill One Img-->
                     <div class="col-xl-5">
                         <div class="skill-one__img">
-                            <div class="shape1 float-bob-y"><img src="assets/images/shapes/skill-v1-shape1.png" alt="">
+                            <div class="shape1 float-bob-y"><img src="assets/images/shapes/skill-v1-shape1.png" alt="" loading="lazy" decoding="async">
                             </div>
-                            <div class="shape2 float-bob-y"><img src="assets/images/shapes/skill-v1-shape2.png" alt="">
+                            <div class="shape2 float-bob-y"><img src="assets/images/shapes/skill-v1-shape2.png" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="skill-one__img1 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <img src="assets/images/resources/skill-v1-img1.jpg" alt="">
+                                <img src="assets/images/resources/skill-v1-img1.jpg" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="skill-one__img2 wow fadeInRight" data-wow-delay="0ms"
                                 data-wow-duration="1500ms">
                                 <div class="inner">
-                                    <img src="assets/images/resources/skill-v1-img2.jpg" alt="">
+                                    <img src="assets/images/resources/skill-v1-img2.jpg" alt="" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
@@ -612,7 +661,7 @@
                                 <div class="testimonial-one__single">
                                     <div class="testimonial-one__single-inner">
                                         <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                alt=""></div>
+                                                alt="" loading="lazy" decoding="async"></div>
                                         <div class="author-box">
                                             <div class="author-info">
                                                 <h2>Мартиняк Роман</h2>
@@ -639,7 +688,7 @@
                                 <div class="testimonial-one__single">
                                     <div class="testimonial-one__single-inner">
                                         <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                alt=""></div>
+                                                alt="" loading="lazy" decoding="async"></div>
                                         <div class="author-box">
                                             <div class="author-info">
                                                 <h2>Абрамчук Андрій</h2>
@@ -666,7 +715,7 @@
                                 <div class="testimonial-one__single">
                                     <div class="testimonial-one__single-inner">
                                         <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                alt=""></div>
+                                                alt="" loading="lazy" decoding="async"></div>
                                         <div class="author-box">
                                             <div class="author-info">
                                                 <h2>Крутько С. С.</h2>
@@ -693,7 +742,7 @@
                                 <div class="testimonial-one__single">
                                     <div class="testimonial-one__single-inner">
                                         <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                                 alt=""></div>
+                                                                 alt="" loading="lazy" decoding="async"></div>
                                         <div class="author-box">
                                             <div class="author-info">
                                                 <h2>Лісний Дмитро</h2>
@@ -720,7 +769,7 @@
                                 <div class="testimonial-one__single">
                                     <div class="testimonial-one__single-inner">
                                         <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                                 alt=""></div>
+                                                                 alt="" loading="lazy" decoding="async"></div>
                                         <div class="author-box">
                                             <div class="author-info">
                                                 <h2>Терещенко Андрій</h2>
@@ -747,7 +796,7 @@
                                 <div class="testimonial-one__single">
                                     <div class="testimonial-one__single-inner">
                                         <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                                 alt=""></div>
+                                                                 alt="" loading="lazy" decoding="async"></div>
                                         <div class="author-box">
                                             <div class="author-info">
                                                 <h2>Колос А. Н.</h2>
@@ -779,7 +828,7 @@
                     <div class="col-xl-6">
                         <div class="testimonial-one__img">
                             <div class="testimonial-one__img1 reveal">
-                                <img src="assets/images/testimonial/testimonial-v1-img2.jpg" alt="">
+                                <img src="assets/images/testimonial/testimonial-v1-img2.jpg" alt="" loading="lazy" decoding="async">
                             </div>
 
                         </div>
@@ -792,7 +841,7 @@
 
         <!--Start Faq One-->
         <section class="faq-one">
-            <div class="shape1 float-bob-x"><img src="assets/images/shapes/faq-v1-shape1.png" alt=""></div>
+            <div class="shape1 float-bob-x"><img src="assets/images/shapes/faq-v1-shape1.png" alt="" loading="lazy" decoding="async"></div>
             <div class="container">
                 <div class="row">
                     <!--Start Faq One Content-->
@@ -870,7 +919,7 @@
                     <div class="col-xl-6">
                         <div class="faq-one__img">
                             <div class="faq-one__img-box">
-                                <img src="assets/images/resources/faq-v1-img1.jpg" alt="">
+                                <img src="assets/images/resources/faq-v1-img1.jpg" alt="" loading="lazy" decoding="async">
                                 <!-- Можна додати тут зображення, що ілюструє ваші переваги -->
                             </div>
                         </div>
@@ -885,19 +934,19 @@
                     <ul class="sliding-text__list list-unstyled marquee_mode">
                         <li>
                             <h2 data-hover="НАДІЙНІСТЬ" class="sliding-text__title">НАДІЙНІСТЬ
-                                <img src="assets/images/icon/sliding-text-icon-1.png" alt=""></h2>
+                                <img src="assets/images/icon/sliding-text-icon-1.png" alt="" loading="lazy" decoding="async"></h2>
                         </li>
                         <li>
                             <h2 data-hover="ШВИДКІСТЬ" class="sliding-text__title">ШВИДКІСТЬ
-                                <img src="assets/images/icon/sliding-text-icon-1.png" alt=""></h2>
+                                <img src="assets/images/icon/sliding-text-icon-1.png" alt="" loading="lazy" decoding="async"></h2>
                         </li>
                         <li>
                             <h2 data-hover="ГНУЧКІСТЬ" class="sliding-text__title">ГНУЧКІСТЬ
-                                <img src="assets/images/icon/sliding-text-icon-1.png" alt=""></h2>
+                                <img src="assets/images/icon/sliding-text-icon-1.png" alt="" loading="lazy" decoding="async"></h2>
                         </li>
                         <li>
                             <h2 data-hover="ПРОФЕСІОНАЛІЗМ" class="sliding-text__title">ПРОФЕСІОНАЛІЗМ
-                                <img src="assets/images/icon/sliding-text-icon-1.png" alt=""></h2>
+                                <img src="assets/images/icon/sliding-text-icon-1.png" alt="" loading="lazy" decoding="async"></h2>
                         </li>
                     </ul>
                 </div>
@@ -984,7 +1033,7 @@
 
         <!--Start Footer One-->
         <footer class="footer-one">
-            <div class="footer-one__pattern"><img src="assets/images/pattern/footer-v1-pattern.png" alt="#"></div>
+            <div class="footer-one__pattern"><img src="assets/images/pattern/footer-v1-pattern.png" alt="#" loading="lazy" decoding="async"></div>
             <div class="footer-one__top">
                 <div class="container">
                     <div class="footer-one__top-inner">
