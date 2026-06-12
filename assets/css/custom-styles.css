@@ -1149,3 +1149,150 @@ Based on seaandair.com.ua design inspiration
     -webkit-text-stroke: none !important;
     text-shadow: none !important;
 }
+
+/* ============================================
+   Compact site footer
+============================================ */
+
+.site-footer-compact {
+    background: #1e2a3a;
+    color: #b0bec5;
+    padding: 14px 0 12px;
+    margin-top: 0;
+}
+
+.site-footer-compact__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 24px;
+    flex-wrap: wrap;
+}
+
+.site-footer-compact__logo {
+    flex-shrink: 0;
+}
+
+.site-footer-compact__logo img {
+    display: block;
+    height: 28px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.88;
+}
+
+.site-footer-compact__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    justify-content: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.site-footer-compact__nav a {
+    color: #b0bec5;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.site-footer-compact__nav a:hover {
+    color: var(--logistiq-base, #a8c45a);
+}
+
+.site-footer-compact__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+.site-footer-compact__contact a {
+    color: #cfd8dc;
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.site-footer-compact__contact a i {
+    color: var(--logistiq-base, #859e3f);
+    font-size: 11px;
+}
+
+.site-footer-compact__contact a:hover {
+    color: #fff;
+}
+
+.site-footer-compact__copy {
+    margin: 10px 0 0;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    text-align: center;
+    font-size: 11px;
+    color: #607d8b;
+}
+
+/* legacy class names — keep if old markup cached */
+.site-footer-compact__main { display: contents; }
+.site-footer-compact__bottom { display: contents; }
+.site-footer-compact__bottom p {
+    margin: 10px 0 0;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    text-align: center;
+    font-size: 11px;
+    color: #607d8b;
+}
+
+@media (max-width: 991px) {
+    .site-footer-compact__row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .site-footer-compact__contact {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575px) {
+    .site-footer-compact {
+        padding: 12px 0 10px;
+    }
+    .site-footer-compact__nav a,
+    .site-footer-compact__contact a {
+        font-size: 11px;
+    }
+}
+
+.site-cta-strip {
+    padding: 20px 0;
+    background: #f4f6f8;
+    border-top: 1px solid #e8ecef;
+    text-align: center;
+}
+
+.site-cta-strip p {
+    margin: 0;
+    font-size: 14px;
+    color: #546e7a;
+}
+
+.site-cta-strip a {
+    color: var(--logistiq-base, #859e3f);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.site-cta-strip a:hover {
+    text-decoration: underline;
+}
