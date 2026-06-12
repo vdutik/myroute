@@ -516,10 +516,74 @@
                     <p>Кожен тунель отримує категорію A–E за рівнем ризику. На в'їзді встановлюють дорожні знаки, що забороняють проїзд певним вантажам ADR.</p>
                 </div>
 
-                <div class="adr-tunnels-intro">
-                    <div class="adr-tunnels-intro__photo">
-                        <img src="assets/images/adr/tunnels/tunnel-entrance.jpg" alt="В'їзд у дорожній тунель" width="1181" height="663" loading="lazy" decoding="async">
+                <div class="adr-tunnel-matrix" role="figure" aria-label="Таблиця кодів обмеження проїзду через тунелі ADR">
+                    <div class="adr-tunnel-matrix__header">
+                        <h3 class="adr-tunnel-matrix__title">Значення кодів обмеження проїзду через тунелі</h3>
+                        <span class="adr-tunnel-matrix__edition">ADR 2025 · графа 15</span>
                     </div>
+                    <p class="adr-tunnel-matrix__lead">Порівняйте <strong>код обмеження вантажу</strong> (ліворуч) із <strong>категорією тунелю</strong> на маршруті (зверху). Зелена галочка — проїзд дозволено, червоний знак — заборонено.</p>
+                    <div class="adr-tunnel-matrix__scroll">
+                        <table class="adr-tunnel-matrix__table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="adr-tunnel-matrix__corner">
+                                        <span class="adr-tunnel-matrix__corner-label">Код<br>вантажу</span>
+                                        <span class="adr-tunnel-matrix__corner-arrow" aria-hidden="true">↘</span>
+                                        <span class="adr-tunnel-matrix__corner-label">Категорія<br>тунелю</span>
+                                    </th>
+                                    <th scope="col"><span class="adr-tunnel-matrix__th-cat">B</span><span class="adr-tunnel-matrix__th-note">тунель</span></th>
+                                    <th scope="col"><span class="adr-tunnel-matrix__th-cat">C</span><span class="adr-tunnel-matrix__th-note">тунель</span></th>
+                                    <th scope="col"><span class="adr-tunnel-matrix__th-cat">D</span><span class="adr-tunnel-matrix__th-note">тунель</span></th>
+                                    <th scope="col"><span class="adr-tunnel-matrix__th-cat">E</span><span class="adr-tunnel-matrix__th-note">тунель</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><span class="adr-tunnel-matrix__code">(—)</span><span class="adr-tunnel-matrix__row-note">без обмежень</span></th>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><span class="adr-tunnel-matrix__code">(B)</span><span class="adr-tunnel-matrix__row-note"><i class="fas fa-truck-moving" aria-hidden="true"></i> суворий код</span></th>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><span class="adr-tunnel-matrix__code">(C)</span><span class="adr-tunnel-matrix__row-note"><i class="fas fa-truck" aria-hidden="true"></i></span></th>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><span class="adr-tunnel-matrix__code">(D)</span><span class="adr-tunnel-matrix__row-note"><i class="fas fa-truck-loading" aria-hidden="true"></i></span></th>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><span class="adr-tunnel-matrix__code">(E)</span><span class="adr-tunnel-matrix__row-note"><i class="fas fa-truck-pickup" aria-hidden="true"></i></span></th>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-allow" aria-label="дозволено"><i class="fas fa-check" aria-hidden="true"></i></td>
+                                    <td class="is-deny" aria-label="заборонено"><i class="fas fa-times-circle" aria-hidden="true"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="adr-tunnel-matrix__footnote">Категорія <strong>A</strong> — обмежень немає (знак не встановлюється). Складні коди <code>(B/D)</code>, <code>(C/E)</code> тощо для цистерн — див. таблицю A ADR 2025.</p>
+                    <div class="adr-tunnel-matrix__legend" aria-hidden="true">
+                        <span class="adr-tunnel-matrix__legend-item adr-tunnel-matrix__legend-item--allow"><i class="fas fa-check"></i> дозволено</span>
+                        <span class="adr-tunnel-matrix__legend-item adr-tunnel-matrix__legend-item--deny"><i class="fas fa-times-circle"></i> заборонено</span>
+                    </div>
+                </div>
+
+                <div class="adr-tunnels-intro">
                     <div class="adr-tunnels-intro__text">
                         <div class="adr-info-box" style="margin-bottom:16px;">
                             <h4><i class="fas fa-info-circle"></i> Як це працює</h4>
@@ -532,7 +596,7 @@
                     </div>
                 </div>
 
-                <h3 class="adr-tunnels-grid-title">Категорії тунелів і дорожні знаки</h3>
+                <h3 class="adr-tunnels-grid-title">Дорожні знаки на в'їзді в тунель</h3>
                 <div class="adr-tunnel-grid">
                     <article class="adr-tunnel-card adr-tunnel-card--a">
                         <div class="adr-tunnel-sign adr-tunnel-sign--none" aria-hidden="true">
