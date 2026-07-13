@@ -1,1851 +1,503 @@
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>МІЙ КУРС</title>
-    <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="128x128" href="assets/images/favicons/favicon-128x128.png" />
-    <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicons/favicon-64x64.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="ТОВ 'МІЙ КУРС' — це сучасна логістична компанія, яка забезпечує повний спектр послуг для бізнесу будь-якого масштабу.
-    Завдяки власному автопарку вантажівок та складам на території Польщі, ми гарантуємо безперебійну доставку,
-    митне оформлення та зберігання товарів.
-    " />
-
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
-
-
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/custom-animate.css" />
-    <link rel="stylesheet" href="assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="assets/css/font-awesome-all.css" />
-    <link rel="stylesheet" href="assets/css/jarallax.css" />
-    <link rel="stylesheet" href="assets/css/jquery.magnific-popup.css" />
-    <link rel="stylesheet" href="assets/css/odometer.min.css" />
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="assets/css/nice-select.css" />
-    <link rel="stylesheet" href="assets/css/jquery-ui.css" />
-
-
-    <link rel="stylesheet" href="assets/css/module-css/slider.css" />
-    <link rel="stylesheet" href="assets/css/module-css/banner.css" />
-    <link rel="stylesheet" href="assets/css/module-css/footer.css" />
-    <link rel="stylesheet" href="assets/css/module-css/feature.css" />
-    <link rel="stylesheet" href="assets/css/module-css/about.css" />
-    <link rel="stylesheet" href="assets/css/module-css/sliding-text.css" />
-    <link rel="stylesheet" href="assets/css/module-css/services.css" />
-    <link rel="stylesheet" href="assets/css/module-css/projects.css" />
-    <link rel="stylesheet" href="assets/css/module-css/design-interior.css" />
-    <link rel="stylesheet" href="assets/css/module-css/testimonial.css" />
-    <link rel="stylesheet" href="assets/css/module-css/video.css" />
-    <link rel="stylesheet" href="assets/css/module-css/awards.css" />
-    <link rel="stylesheet" href="assets/css/module-css/blog.css" />
-    <link rel="stylesheet" href="assets/css/module-css/brand.css" />
-    <link rel="stylesheet" href="assets/css/module-css/counter.css" />
-    <link rel="stylesheet" href="assets/css/module-css/team.css" />
-    <link rel="stylesheet" href="assets/css/module-css/why-choose.css" />
-    <link rel="stylesheet" href="assets/css/module-css/skill.css" />
-    <link rel="stylesheet" href="assets/css/module-css/faq.css" />
-    <link rel="stylesheet" href="assets/css/module-css/cta.css" />
-
-    <!-- template styles -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    <link rel="stylesheet" href="assets/css/custom-styles.css" />
-    <link rel="stylesheet" href="assets/css/map-animation.css" />
-    
-    <!-- Dark theme styles - must be last to override other styles -->
-    <link rel="stylesheet" href="assets/css/dark-theme.css" />
-    
-        <!-- Calculator override styles - highest priority -->
-        <link rel="stylesheet" href="assets/css/calculator-override.css" />
-        
-        <!-- Map container styles -->
-        <style>
-            .banner-one {
-                position: relative;
-                overflow: hidden;
-                height: 100vh; /* Повна висота екрану */
-                display: flex;
-                align-items: center;
-            }
-            
-            .banner-one__content {
-                position: relative;
-                z-index: 10;
-            }
-            
-            .map-background {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-            }
-            
-            .map-overlay {
-                width: 100%;
-                height: 100%;
-                position: relative;
-            }
-            
-            .map-overlay svg {
-                width: 100%;
-                height: 100%;
-                border-radius: 10px;
-            }
-            
-            @media (max-width: 768px) {
-                .banner-one {
-                    height: 100vh; /* На мобільних також повна висота */
-                }
-                
-                .banner-one__pattern2 {
-                    position: relative;
-                    z-index: 5; /* Вищий z-index ніж у карти */
-                }
-                
-                .map-background {
-                    position: absolute;
-                    top: 0;
-                    left: 150px;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 1; /* Нижчий z-index ніж у pattern2 */
-                }
-            }
-        </style>
-        
-        <!-- Select fix styles - highest priority -->
-        <link rel="stylesheet" href="assets/css/select-fix.css" />
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RKK462W9LW"></script>
-<script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>МІЙ КУРС — Міжнародна логістика</title>
+  <link rel="apple-touch-icon" sizes="128x128" href="assets/images/favicons/favicon-128x128.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicons/favicon-64x64.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+  <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+  <meta name="description" content="МІЙ КУРС — міжнародна логістика: доставка Європа—Україна, митниця, склади в Польщі." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css?v=20260713c" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKK462W9LW"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-RKK462W9LW');
-</script>
+  </script>
 </head>
-
 <body>
+  <div class="site-noise" aria-hidden="true"></div>
+  <div class="scroll-progress" data-progress aria-hidden="true"></div>
+  <div class="cursor" data-cursor aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"></span>
+  </div>
 
-    <!-- Start Preloader -->
-    <div class="loader-wrap">
-        <div class="preloader">
-            <div class="preloader-close">x</div>
-            <div id="handle-preloader" class="handle-preloader">
-                <div class="animation-preloader">
-                    <div class="spinner"></div>
-                    <div class="txt-loading">
-                        <span data-text-preloader="М" class="letters-loading">M </span>
-                        <span data-text-preloader="І" class="letters-loading">Y </span>
-                        <span data-text-preloader="Й" class="letters-loading">C </span>
-                        <span data-text-preloader="К" class="letters-loading">O </span>
-                        <span data-text-preloader="У" class="letters-loading">U </span>
-                        <span data-text-preloader="Р" class="letters-loading">R </span>
-                        <span data-text-preloader="С" class="letters-loading">S </span>
-                        <span data-text-preloader="" class="letters-loading">E </span>
-                    </div>
-                </div>
-            </div>
+  <header class="site-header" data-header>
+    <div class="site-header__inner">
+      <a class="site-logo" href="index.html">
+        <img src="assets/images/resources/logo-1.svg" alt="МІЙ КУРС" />
+      </a>
+      <nav class="site-nav" data-nav>
+        <a href="#about">Про нас</a>
+        <a href="#dock">Склад</a>
+        <a href="#flow">Процес</a>
+        <a href="#route">Маршрут</a>
+        <a href="#services">Послуги</a>
+        <a href="#calc">Прорахунок</a>
+        <div class="site-nav__drop">
+          <button type="button" class="site-nav__drop-btn">Інфо</button>
+          <div class="site-nav__drop-menu">
+            <a href="container-sizes.html">Контейнери</a>
+            <a href="truck-specs.html">Тенти</a>
+            <a href="heavy-cargo-transport.html">Важкі вантажі</a>
+          </div>
         </div>
+        <a href="contact.html">Контакти</a>
+      </nav>
+      <a class="site-btn site-btn--sm" href="tel:+380996608810">+380 996 60 8810</a>
+      <button class="site-burger" type="button" aria-label="Меню" data-burger>
+        <span></span><span></span>
+      </button>
     </div>
-    <!-- End Preloader -->
-
-    <div class="page-wrapper">
-
-        <!--Start Main Header One-->
-        <header class="main-header main-header-one">
-            <nav class="main-menu">
-                <div class="main-menu__wrapper">
-                    <div class="container">
-                        <div class="main-header-one__inner">
-                            <div class="main-header-one__top">
-                                <div class="main-header-one__top-inner">
-                                    <div class="main-header-one__top-left">
-                                        <div class="header-contact-style1">
-                                            <ul>
-                                                <li>
-                                                    <div class="icon">
-                                                        <span class="icon-phone"></span>
-                                                    </div>
-
-                                                    <div class="text-box">
-                                                        <p><span>Ми чекаємо на ваш дзвінок</span> <a href="tel:+380996608810">[+380 996 60 8810]</a></p>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class="icon">
-                                                        <span class="icon-email"></span>
-                                                    </div>
-
-                                                    <div class="text-box">
-                                                        <p><span>Mail Us</span> <a
-                                                                href="mailto:logist@myroute.com.ua">[logist@myroute.com.ua]</a>
-                                                        </p>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-<!--                                    <div class="main-header-one__top-right">-->
-<!--                                        <div class="header-social-links">-->
-<!--                                            <a href="#"><span class="icon-facebook-f"></span></a>-->
-<!--                                            <a href="#"><span class="icon-twitter1"></span></a>-->
-<!--                                            <a href="#"><span class="icon-instagram"></span></a>-->
-<!--                                            <a href="#"><span class="icon-linkedin"></span></a>-->
-<!--                                        </div>-->
-
-<!--                                        <div class="header-search-box">-->
-<!--                                            <a href="#" class="main-menu__search search-toggler">Search-->
-<!--                                                <i class="icon-search"></i></a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-                                </div>
-                            </div>
-
-                            <div class="main-header-one__bottom">
-                                <div class="main-menu__wrapper-inner">
-                                    <div class="main-header-one__bottom-inner">
-                                        <div class="main-header-one__bottom-left">
-                                            <div class="logo-box">
-                                                <a href="index.html"><img src="assets/images/resources/logo-1.svg"
-                                                        alt=""></a>
-                                            </div>
-
-                                            <div class="main-header-one__bottom-menu">
-                                                <div class="main-menu__main-menu-box">
-                                                    <a href="#" class="mobile-nav__toggler"><i
-                                                            class="fa fa-bars"></i></a>
-                                                    <ul class="main-menu__list">
-                                                        <li>
-                                                            <a href="index.html">Головна</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#about-section">Про нас</a>
-                                                        </li>
-                                                        <li class="dropdown">
-                                                            <a href="#">Інформація</a>
-                                                            <ul>
-                                                                <li><a href="container-sizes.html">Розміри контейнерів</a></li>
-                                                                <li><a href="truck-specs.html">Розміри тентів</a></li>
-                                                                <li><a href="heavy-cargo-transport.html">Важкі вантажі</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href="contact.html">Контакти</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-<!--                                        <div class="main-header-one__bottom-right">-->
-<!--                                            <div class="main-header-one__bottom-right-btn">-->
-<!--                                                <a href="contact.html">Track Order-->
-<!--                                                    <i class="icon-right-arrow21"></i>-->
-<!--                                                </a>-->
-<!--                                            </div>-->
-
-<!--                                            <div class="login-box">-->
-<!--                                                <a href="#"><i class="fa fa-sign-in"></i> <span>Member <br>-->
-<!--                                                        Login</span> </a>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <!--End Main Header One-->
-
-        <div class="stricky-header stricky-header--style1 stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
-
-        <!--Start Banner One-->
-        <section class="banner-one">
-            <div class="banner-one__pattern"
-                style="background-image: url(assets/images/pattern/banner-v1-pattern.png);"></div>
-            <!-- Map as background for banner -->
-            
-            <div class="banner-one__pattern2">
-                <!-- Banner content without map -->
-
-            <div class="container">
-
-                <div class="banner-one__content">
-                    <div class="banner-one__content-left wow fadeInLeft" data-wow-delay="0ms"
-                        data-wow-duration="1500ms">
-                        <h2>
-                            <span>МІЙ КУРС</span></h2>
-                        <p>Ваш надійний партнер у світі <br> логістики </p>
-                    </div>
-
-                    <div class="banner-one__content-right wow fadeInRight" data-wow-delay="0ms"
-                        data-wow-duration="1500ms">
-                        <div class="banner-one__content-right-text">
-                            <p>Логістика, яка рухає
-                                ваш бізнес вперед</p>
-                        </div>
-
-<!--                        <div class="banner-one__content-right-btn">-->
-<!--                            <a class="thm-btn" href="about.html">About Us-->
-<!--                                <i class="icon-right-arrow21"></i>-->
-<!--                                <span class="hover-btn hover-bx"></span>-->
-<!--                                <span class="hover-btn hover-bx2"></span>-->
-<!--                                <span class="hover-btn hover-bx3"></span>-->
-<!--                                <span class="hover-btn hover-bx4"></span>-->
-<!--                            </a>-->
-<!--                        </div>-->
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="map-background">
-                <div class="map-overlay">
-                    <svg viewBox="0 0 1600 1000" aria-label="Схематична карта Європи з маршрутами">
-                            <defs>
-                                <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
-                                    <feGaussianBlur stdDeviation="3" result="b"/>
-                                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                                </filter>
-                                <filter id="soft-glow-strong" x="-50%" y="-50%" width="200%" height="200%">
-                                    <feGaussianBlur stdDeviation="6" result="b"/>
-                                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                                </filter>
-                                <linearGradient id="routeStroke" x1="0" y1="0" x2="1" y2="0">
-                                    <stop offset="0%" stop-color="#ffd66b"/>
-                                    <stop offset="100%" stop-color="#ff5c33"/>
-                                </linearGradient>
-                                <radialGradient id="pulseGradient" cx="50%" cy="50%" r="50%">
-                                    <stop offset="0%" stop-color="#ffd77a"/>
-                                    <stop offset="60%" stop-color="#ff954a"/>
-                                    <stop offset="100%" stop-color="#ff954a" stop-opacity="0"/>
-                                </radialGradient>
-                            </defs>
-
-
-                            <g id="schematic-countries">
-                                <!-- Netherlands - Dark blue geometric shape (expanded) -->
-                                <polygon points="288,192 480,192 480,336 384,336 384,288 288,288" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Belgium - Dark blue geometric shape -->
-                                <polygon points="384,336 480,336 480,432 432,432 432,384 384,384" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Germany - Dark blue geometric shape (expanded) -->
-                                <polygon points="480,240 768,240 768,480 672,480 672,432 480,432" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Switzerland - Dark blue geometric shape -->
-                                <polygon points="576,528 672,528 672,624 624,624 624,576 576,576" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Austria - Dark blue geometric shape -->
-                                <polygon points="672,480 864,480 864,672 768,672 768,576 672,576" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Poland - Dark blue geometric shape -->
-                                <polygon points="768,192 1152,192 1152,480 960,480 960,384 768,384" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Czech Republic - Dark blue geometric shape -->
-                                <polygon points="672,432 960,432 960,672 768,672 768,576 672,576" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Slovakia - Dark blue geometric shape -->
-                                <polygon points="960,480 1152,480 1152,720 1056,720 1056,624 960,624" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Hungary - Dark blue geometric shape -->
-                                <polygon points="768,672 1056,672 1056,912 864,912 864,816 768,816" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Romania - Dark blue geometric shape -->
-                                <polygon points="1152,720 1440,720 1440,960 1248,960 1248,864 1152,864" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Moldova - Dark blue geometric shape -->
-                                <polygon points="1440,720 1632,720 1632,864 1536,864 1536,816 1440,816" 
-                                         fill="#1a2a4a" stroke="#2a3a5a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- France - Light blue geometric shape -->
-                                <polygon points="192,480 480,480 480,720 384,720 384,672 192,672" 
-                                         fill="#2a4a6a" stroke="#3a5a7a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Italy - Light blue geometric shape -->
-                                <polygon points="480,720 672,720 672,960 576,960 576,864 480,864" 
-                                         fill="#2a4a6a" stroke="#3a5a7a" stroke-width="3" opacity="0.8"/>
-                                
-                                <!-- Ukraine - Large orange/brown geometric shape -->
-                                <polygon points="1152,384 1440,384 1440,480 1632,480 1632,720 1536,720 1536,960 1248,960 1248,864 1152,864 1152,720 1152,576" 
-                                         fill="#8b4513" stroke="#a0522d" stroke-width="3" opacity="0.8"/>
-                            </g>
-
-                            <g id="map-content-wrapper">
-                            <g id="cities">
-                                <g id="rotterdam" transform="translate(272,272)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Ротердам</text></g>
-                                <g id="hamburg" transform="translate(400,240)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Гамбург</text></g>
-                                <g id="berlin" transform="translate(448,288)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Берлін</text></g>
-                                <g id="nuremberg" transform="translate(480,320)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Нюрнберг</text></g>
-                                <g id="paris" transform="translate(224,384)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Париж</text></g>
-                                <g id="rome" transform="translate(384,560)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Рим</text></g>
-                                <g id="gdansk" transform="translate(688,288)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Гданськ</text></g>
-                                <g id="gdynia" transform="translate(680,272)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Гдиня</text></g>
-                                <g id="warsaw" transform="translate(736,352)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Варшава</text></g>
-                                <g id="chelm" transform="translate(768,400)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Хелм</text></g>
-                                <g id="yahodyn" transform="translate(800,408)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Ягодин</text></g>
-                                <g id="rava" transform="translate(792,432)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Рава-Руська</text></g>
-                                <g id="budapest" transform="translate(608,512)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Будапешт</text></g>
-                                <g id="debrecen" transform="translate(672,544)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Дебрецен</text></g>
-                                <g id="bucharest" transform="translate(864,560)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Бухарест</text></g>
-                                <g id="cluj" transform="translate(832,512)"><circle class="city core" r="4.5"/><circle class="city" r="2.2"/><text class="city-label" x="8" y="-6">Клуж</text></g>
-                                <g id="lviv" transform="translate(864,480)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Львів</text></g>
-                                <g id="kyiv" transform="translate(960,432)"><circle class="city core" r="6"/><circle class="city" r="2.8"/><text class="city-label" x="8" y="-6">Київ</text></g>
-                                <g id="kharkiv" transform="translate(1000,468)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Харків</text></g>
-                                <g id="khmelnytskyi" transform="translate(1000,528)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Хмельницький</text></g>
-                                <g id="dnipro" transform="translate(1040,504)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Дніпро</text></g>
-                                <g id="chernivtsi" transform="translate(920,576)"><circle class="city core" r="5"/><circle class="city" r="2.5"/><text class="city-label" x="8" y="-6">Чернівці</text></g>
-                                <g id="odesa" transform="translate(984,616)"><circle class="city core" r="6"/><circle class="city" r="2.8"/><text class="city-label" x="8" y="-6">Одеса</text></g>
-                            </g>
-
-                            <g id="routes-templates" opacity="0">
-                                <!-- New Rotterdam route -->
-                                <path id="p_rotterdam_chelm" d="M272,272 Q528,336 768,400"/>
-                                <path id="p_chelm_yah" d="M768,400 Q784,400 800,408"/>
-                                <path id="p_yah_khmelnytskyi" d="M800,408 Q896,464 1000,528"/>
-                                
-                                <!-- New Hamburg routes -->
-                                <path id="p_hamburg_yah" d="M400,240 Q560,280 800,408"/>
-                                <path id="p_hamburg_rava" d="M400,240 Q560,320 792,432"/>
-                                
-                                <!-- New Berlin routes -->
-                                <path id="p_berlin_yah" d="M448,288 Q640,320 800,408"/>
-                                <path id="p_berlin_rava" d="M448,288 Q640,360 792,432"/>
-                                
-                                <!-- New Nuremberg routes -->
-                                <path id="p_nuremberg_yah" d="M480,320 Q680,360 800,408"/>
-                                <path id="p_nuremberg_rava" d="M480,320 Q680,400 792,432"/>
-                                
-                                <!-- New Paris routes (through Germany) -->
-                                <path id="p_paris_yah" d="M224,384 Q400,360 560,320 Q720,360 800,408"/>
-                                <path id="p_paris_rava" d="M224,384 Q400,400 560,360 Q720,400 792,432"/>
-                                
-                                <!-- New Rome routes (through Germany) -->
-                                <path id="p_rome_yah" d="M384,560 Q480,480 560,400 Q720,360 800,408"/>
-                                <path id="p_rome_rava" d="M384,560 Q480,520 560,440 Q720,400 792,432"/>
-                                
-                                <!-- New Budapest routes -->
-                                <path id="p_budapest_yah" d="M608,512 Q720,440 800,408"/>
-                                <path id="p_budapest_rava" d="M608,512 Q720,480 792,432"/>
-                                
-                                <!-- New Debrecen routes -->
-                                <path id="p_debrecen_yah" d="M672,544 Q760,480 800,408"/>
-                                <path id="p_debrecen_rava" d="M672,544 Q760,520 792,432"/>
-                                
-                                <!-- New Bucharest routes -->
-                                <path id="p_bucharest_yah" d="M864,560 Q840,480 800,408"/>
-                                <path id="p_bucharest_rava" d="M864,560 Q840,520 792,432"/>
-                                
-                                <!-- New Cluj routes -->
-                                <path id="p_cluj_yah" d="M832,512 Q820,440 800,408"/>
-                                <path id="p_cluj_rava" d="M832,512 Q820,480 792,432"/>
-                                
-                                <!-- Existing routes -->
-                                <path id="p_gdansk_yah" d="M688,288 Q760,240 800,408"/>
-                                <path id="p_gdansk_rava" d="M688,288 Q760,280 792,432"/>
-                                <path id="p_gdynia_yah" d="M680,272 Q760,240 800,408"/>
-                                <path id="p_gdynia_rava" d="M680,272 Q760,280 792,432"/>
-                                <path id="p_gdynia_waw" d="M680,272 Q720,300 736,352"/>
-                                <path id="p_waw_yah" d="M736,352 Q780,380 800,408"/>
-                                <path id="p_waw_lviv" d="M736,352 Q820,400 864,480"/>
-                                <path id="p_yah_kyiv" d="M800,408 Q900,400 960,432"/>
-                                <path id="p_rava_kyiv" d="M792,432 Q900,400 960,432"/>
-                                <path id="p_yah_chelm" d="M800,408 Q780,400 768,400"/>
-                                <path id="p_kyiv_odesa" d="M960,432 Q980,520 984,616"/>
-                                <path id="p_odesa_lviv" d="M984,616 Q920,520 864,480"/>
-                                <path id="p_odesa_yah" d="M984,616 Q880,480 800,408"/>
-                                <path id="p_kyiv_dnipro" d="M960,432 Q1020,440 1040,504"/>
-                                <path id="p_dnipro_odesa" d="M1040,504 Q1020,560 984,616"/>
-                                <path id="p_lviv_chern" d="M864,480 Q920,520 920,576"/>
-                                <path id="p_kyiv_kharkiv" d="M960,432 Q980,450 1000,468"/>
-                                <path id="p_kharkiv_dnipro" d="M1000,468 Q1020,486 1040,504"/>
-                                <path id="p_kharkiv_odesa" d="M1000,468 Q992,542 984,616"/>
-                            </g>
-
-                            <g id="pulses">
-                                <circle class="pulse" id="pulse-rotterdam" cx="272" cy="272" r="13"/>
-                                <circle class="pulse" id="pulse-hamburg" cx="400" cy="240" r="13"/>
-                                <circle class="pulse" id="pulse-berlin" cx="448" cy="288" r="13"/>
-                                <circle class="pulse" id="pulse-nuremberg" cx="480" cy="320" r="13"/>
-                                <circle class="pulse" id="pulse-paris" cx="224" cy="384" r="13"/>
-                                <circle class="pulse" id="pulse-rome" cx="384" cy="560" r="13"/>
-                                <circle class="pulse" id="pulse-gdansk" cx="688" cy="288" r="13"/>
-                                <circle class="pulse" id="pulse-gdynia" cx="680" cy="272" r="13"/>
-                                <circle class="pulse" id="pulse-warsaw" cx="736" cy="352" r="13"/>
-                                <circle class="pulse" id="pulse-chelm" cx="768" cy="400" r="12"/>
-                                <circle class="pulse" id="pulse-yah" cx="800" cy="408" r="13"/>
-                                <circle class="pulse" id="pulse-rava" cx="792" cy="432" r="13"/>
-                                <circle class="pulse" id="pulse-budapest" cx="608" cy="512" r="13"/>
-                                <circle class="pulse" id="pulse-debrecen" cx="672" cy="544" r="12"/>
-                                <circle class="pulse" id="pulse-bucharest" cx="864" cy="560" r="13"/>
-                                <circle class="pulse" id="pulse-cluj" cx="832" cy="512" r="12"/>
-                                <circle class="pulse" id="pulse-lviv" cx="864" cy="480" r="13"/>
-                                <circle class="pulse" id="pulse-kyiv" cx="960" cy="432" r="15"/>
-                                <circle class="pulse" id="pulse-kharkiv" cx="1000" cy="468" r="13"/>
-                                <circle class="pulse" id="pulse-khmelnytskyi" cx="1000" cy="528" r="13"/>
-                                <circle class="pulse" id="pulse-dnipro" cx="1040" cy="504" r="13"/>
-                                <circle class="pulse" id="pulse-chernivtsi" cx="920" cy="576" r="13"/>
-                                <circle class="pulse" id="pulse-odesa" cx="984" cy="616" r="15"/>
-                            </g>
-
-                            <g id="flies">
-                                <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
-                                <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
-                                <circle class="fly" r="3" fill="#ffd77a" opacity="0"/>
-                            </g>
-                            </g>
-                    </svg>
-                </div>
-            </div>
-        </section>
-        <!--End Banner One-->
-
-        <section class="about-one" id="about-section">
-            <div class="container">
-                <div class="row">
-                    <!--Start About One Content-->
-                    <div class="col-xl-7">
-                        <div class="about-one__content">
-                            <div class="sec-title tg-heading-subheading animation-style2">
-                                <div class="sec-title__tagline">
-                                    <div class="line"></div>
-                                    <div class="text tg-element-title">
-                                        <h4>Про компанію</h4>
-                                    </div>
-                                    <div class="icon">
-                                        <span class="icon-plane2 float-bob-x3"></span>
-                                    </div>
-                                </div>
-                                <h2 class="sec-title__title tg-element-title">"МІЙ КУРС" — <br>
-                                </h2>
-                            </div>
-
-                            <div class="about-one__content-text1">
-                                <p>це сучасна логістична компанія, яка забезпечує повний спектр послуг для бізнесу будь-якого масштабу. Завдяки власному автопарку вантажівок та складам на території Польщі, ми гарантуємо безперебійну доставку, митне оформлення та зберігання товарів.</p>
-                            </div>
-
-                            <div class="about-one__content-text2">
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="about-one__content-text2-single">
-                                            <div class="about-one__content-text2-single-top">
-                                                <div class="icon">
-                                                    <span class="icon-worldwide-shipping-1"></span>
-                                                </div>
-
-                                                <div class="title-box">
-                                                    <h3>Обслуговування в будь якій точці світу</h3>
-                                                </div>
-                                            </div>
-
-                                            <p>Ми забезпечуємо надійне обслуговування, де б ви не знаходились, по всьому світу</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="about-one__content-text2-single">
-                                            <div class="about-one__content-text2-single-top">
-                                                <div class="icon">
-                                                    <span class="icon-24-hours-service"></span>
-                                                </div>
-
-                                                <div class="title-box">
-                                                    <h3>24/7 Онлайн підтримка</h3>
-                                                </div>
-                                            </div>
-
-                                            <p>Наша команда завжди на зв'язку, щоб допомогти вам у будь-який час доби</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="about-one__content-bottom">
-                                <div class="btn-box">
-                                    <a class="thm-btn" href="contact.html">Написати нам
-                                        <i class="icon-right-arrow21"></i>
-                                        <span class="hover-btn hover-bx"></span>
-                                        <span class="hover-btn hover-bx2"></span>
-                                        <span class="hover-btn hover-bx3"></span>
-                                        <span class="hover-btn hover-bx4"></span>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!--End About One Content-->
-
-                    <!--Start About One Img-->
-                    <div class="col-xl-5">
-                        <div class="about-one__img">
-                            <div class="shape1 float-bob-y"><img src="assets/images/shapes/about-v1-shape1.png" alt="">
-                            </div>
-                            <div class="shape2 float-bob-y"><img src="assets/images/shapes/about-v1-shape2.png" alt="">
-                            </div>
-                            <div class="about-one__img1 reveal">
-                                <img src="assets/images/about/about-v1-img1.jpg" alt="">
-                            </div>
-
-                            <div class="about-one__img2">
-                                <div class="about-one__img2-inner reveal">
-                                    <img src="assets/images/about/about-v1-img2.jpg" alt="">
-                                </div>
-
-                                <div class="about-one__circle-text">
-                                    <div class="about-one__round-text-box">
-                                        <div class="inner">
-                                            <div class="about-one__curved-circle rotate-me">
-                                                ЛАСКАВО ПРОСИМО В НАШУ КОМПАНІЮ
-                                            </div>
-                                        </div>
-                                        <div class="overlay-icon-box">
-                                            <a href="#"><i class="icon-location1"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="shape3 float-bob-y">
-                                    <img src="assets/images/shapes/about-v1-shape3.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End About One Img-->
-                </div>
-            </div>
-        </section>
-        <!--End About One-->
-
-        <!--Start Delivery Calculator Section-->
-        <section class="delivery-calculator-section">
-            <div class="container">
-                <div class="delivery-calculator">
-                    <h2 class="calculator-title">Прорахунок вартості доставки</h2>
-                    <form class="calculator-form" id="deliveryCalculator">
-                        <div class="form-group">
-                            <label for="from">Звідки:</label>
-                            <input type="text" id="from" name="from" list="cities" placeholder="Введіть місто або оберіть зі списку">
-                            <datalist id="cities">
-                                <option value="Київ">
-                                <option value="Одеса">
-                                <option value="Львів">
-                                <option value="Харків">
-                                <option value="Дніпро">
-                                <option value="Лондон">
-                                <option value="Варшава">
-                                <option value="Берлін">
-                                <option value="Париж">
-                                <option value="Рим">
-                            </datalist>
-                        </div>
-                        <div class="form-group">
-                            <label for="to">Куди:</label>
-                            <input type="text" id="to" name="to" list="cities" placeholder="Введіть місто або оберіть зі списку">
-                        </div>
-                        <div class="form-group">
-                            <label for="weight">Вага вантажу (кг):</label>
-                            <input type="number" id="weight" name="weight" min="1" max="50000" placeholder="Наприклад: 1000">
-                        </div>
-                        <div class="form-group">
-                            <label for="volume">Об'єм (м³):</label>
-                            <input type="number" id="volume" name="volume" min="0.1" max="100" step="0.1" placeholder="Наприклад: 10.5">
-                        </div>
-                        <div class="form-group">
-                            <label for="vehicle">Тип транспорту:</label>
-                            <input type="text" id="vehicle" name="vehicle" placeholder="Наприклад: Тентований, Рефрижератор, Контейнер">
-                        </div>
-                        <div class="form-group">
-                            <label for="urgency">Терміновість:</label>
-                            <input type="text" id="urgency" name="urgency" placeholder="Наприклад: Звичайна, Термінова, Експрес">
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="notes">Додаткові примітки:</label>
-                            <textarea id="notes" name="notes" rows="3" placeholder="Опишіть особливості вантажу, додаткові вимоги або побажання..."></textarea>
-                        </div>
-                        <div class="form-group full-width">
-                            <button type="button" class="thm-btn calculator-submit-btn" onclick="submitToContactForm()">
-                                Отримати детальну пропозицію
-                                <i class="icon-right-arrow21"></i>
-                                <span class="hover-btn hover-bx"></span>
-                                <span class="hover-btn hover-bx2"></span>
-                                <span class="hover-btn hover-bx3"></span>
-                                <span class="hover-btn hover-bx4"></span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <!--End Delivery Calculator Section-->
-
-        <!--Start Skill One-->
-
-        <!--Start Skill One-->
-            <div class="container">
-                <div class="row">
-                    <!--Start Skill One Img-->
-                    <div class="col-xl-5">
-                        <div class="skill-one__img">
-                            <div class="shape1 float-bob-y"><img src="assets/images/shapes/skill-v1-shape1.png" alt="">
-                            </div>
-                            <div class="shape2 float-bob-y"><img src="assets/images/shapes/skill-v1-shape2.png" alt="">
-                            </div>
-                            <div class="skill-one__img1 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <img src="assets/images/resources/skill-v1-img1.jpg" alt="">
-                            </div>
-                            <div class="skill-one__img2 wow fadeInRight" data-wow-delay="0ms"
-                                data-wow-duration="1500ms">
-                                <div class="inner">
-                                    <img src="assets/images/resources/skill-v1-img2.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Skill One Img-->
-
-                    <!--Start Skill One Content-->
-                    <div class="col-xl-7">
-                        <div class="skill-one__content">
-                            <div class="sec-title tg-heading-subheading animation-style2">
-                                <div class="sec-title__tagline">
-                                    <div class="line"></div>
-                                    <div class="text tg-element-title">
-                                        <h4>Наші послуги</h4>
-                                    </div>
-                                    <div class="icon">
-                                        <span class="icon-plane2 float-bob-x3"></span>
-                                    </div>
-                                </div>
-                                <h2 class="sec-title__title tg-element-title">Ми пропонуємо<br>
-                                    </h2>
-                            </div>
-
-                            <div class="skill-one__content-text">
-                                <p>Компанія-постачальник логістичних послуг відіграє ключову роль у глобальному ланцюгу постачання, ефективно управляючи переміщенням товарів від початкової точки до кінцевого призначення. Наша компанія пропонує широкий спектр послуг.</p>
-                            </div>
-
-                            <ul class="skill-one__progress">
-                                <li>
-                                    <div class="skill-one__progress-single">
-                                        <div class="title-box">
-                                            <p>Транспортна логістика</p>
-                                        </div>
-
-                                        <div class="bar">
-                                            <div class="bar-inner count-bar" data-percent="95%">
-                                                <div class="count-text">95%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="skill-one__progress-single">
-                                        <div class="title-box">
-                                            <p>Складські послуги</p>
-                                        </div>
-
-                                        <div class="bar">
-                                            <div class="bar-inner count-bar" data-percent="90%">
-                                                <div class="count-text">90%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="skill-one__progress-single">
-                                        <div class="title-box">
-                                            <p>Митні послуги</p>
-                                        </div>
-
-                                        <div class="bar">
-                                            <div class="bar-inner count-bar" data-percent="95%">
-                                                <div class="count-text">95%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="skill-one__progress-single">
-                                        <div class="title-box">
-                                            <p>Аутсорсинг ВЕД</p>
-                                        </div>
-
-                                        <div class="bar">
-                                            <div class="bar-inner count-bar" data-percent="90%">
-                                                <div class="count-text">90%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <!--End Skill One Content-->
-                </div>
-            </div>
-        </section>
-        <!--End Skill One-->
-
-        <!--Start Testimonial One-->
-        <section class="testimonial-one">
-            <div class="testimonial-one__pattern"
-                style="background-image: url(assets/images/pattern/testimonial-v1-pattern.png);"></div>
-            <div class="container">
-                <div class="row">
-                    <!--Start Testimonial One Content-->
-                    <div class="col-xl-6">
-                        <div class="testimonial-one__content">
-                            <div class="big-title wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
-                                <h2>ВІДГУКИ</h2>
-                            </div>
-                            <div class="sec-title tg-heading-subheading animation-style2">
-                                <div class="sec-title__tagline">
-                                    <div class="line"></div>
-                                    <div class="text tg-element-title">
-                                        <h4>Відгуки клієнтів</h4>
-                                    </div>
-                                    <div class="icon">
-                                        <span class="icon-plane2 float-bob-x3"></span>
-                                    </div>
-                                </div>
-                                <h2 class="sec-title__title tg-element-title">Що кажуть клієнти <br>
-                                    <span>Про Нас</span> </h2>
-                            </div>
-
-                            <div class="testimonial-one__carousel owl-carousel owl-theme">
-                                <!--Start Testimonial One Single-->
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__single-inner">
-                                        <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                alt=""></div>
-                                        <div class="author-box">
-                                            <div class="author-info">
-                                                <h2>Мартиняк Роман</h2>
-                                                <div class="bottom-text">
-                                                    <div class="rating-box">
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-box">
-                                            <p>Все чудово! Постійний супровід, швидке завантаження та оформлення документів, все згідно домовленостей. Дякую за співпрацю.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonial One Single-->
-
-                                <!--Start Testimonial One Single-->
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__single-inner">
-                                        <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                alt=""></div>
-                                        <div class="author-box">
-                                            <div class="author-info">
-                                                <h2>Абрамчук Андрій</h2>
-                                                <div class="bottom-text">
-                                                    <div class="rating-box">
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-box">
-                                            <p>Дякую за роботу! Приємно працювати з відповідальними людьми. Рекомендую!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonial One Single-->
-
-                                <!--Start Testimonial One Single-->
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__single-inner">
-                                        <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                alt=""></div>
-                                        <div class="author-box">
-                                            <div class="author-info">
-                                                <h2>Крутько С. С.</h2>
-                                                <div class="bottom-text">
-                                                    <div class="rating-box">
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-box">
-                                            <p>Задоволені підходом до роботи! Все вчасно, якісно, особливо підкреслюю постійний супровід в ході транспортування вантажу! Рекомендуємо!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonial One Single-->
-
-                                <!--Start Testimonial One Single-->
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__single-inner">
-                                        <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                                 alt=""></div>
-                                        <div class="author-box">
-                                            <div class="author-info">
-                                                <h2>Лісний Дмитро</h2>
-                                                <div class="bottom-text">
-                                                    <div class="rating-box">
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-box">
-                                            <p>Чудовий, надійний, відповідальний партнер, приємно працювати. Рекомендую до співпраці!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonial One Single-->
-
-                                <!--Start Testimonial One Single-->
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__single-inner">
-                                        <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                                 alt=""></div>
-                                        <div class="author-box">
-                                            <div class="author-info">
-                                                <h2>Терещенко Андрій</h2>
-                                                <div class="bottom-text">
-                                                    <div class="rating-box">
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-box">
-                                            <p>Дякую за співпрацю! Приємно працювати з такими людьми ! Рекомендую, як відповідального експедитора ! Бажаю успіхів!!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonial One Single-->
-
-                                <!--Start Testimonial One Single-->
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__single-inner">
-                                        <div class="shape1"><img src="assets/images/shapes/testimonial-v1-shape1.png"
-                                                                 alt=""></div>
-                                        <div class="author-box">
-                                            <div class="author-info">
-                                                <h2>Колос А. Н.</h2>
-                                                <div class="bottom-text">
-                                                    <div class="rating-box">
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                        <i class="icon-star"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-box">
-                                            <p>Дякую за співпрацю, завантаження без затримок! Рекомендую до співпраці!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonial One Single-->
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Testimonial One Content-->
-
-
-                    <!--Start Testimonial One Img-->
-                    <div class="col-xl-6">
-                        <div class="testimonial-one__img">
-                            <div class="testimonial-one__img1 reveal">
-                                <img src="assets/images/testimonial/testimonial-v1-img2.jpg" alt="">
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--End Testimonial One Img-->
-                </div>
-            </div>
-        </section>
-        <!--End Testimonial One-->
-
-        <!--Start Faq One-->
-        <section class="faq-one">
-            <div class="shape1 float-bob-x"><img src="assets/images/shapes/faq-v1-shape1.png" alt=""></div>
-            <div class="container">
-                <div class="row">
-                    <!--Start Faq One Content-->
-                    <div class="col-xl-6">
-                        <div class="faq-one__content">
-                            <div class="faq-one__content-faq">
-                                <div class="sec-title tg-heading-subheading animation-style2">
-                                    <div class="sec-title__tagline">
-                                        <div class="line"></div>
-                                        <div class="text tg-element-title">
-                                            <h4>Наші Переваги</h4>
-                                        </div>
-                                        <div class="icon">
-                                            <span class="icon-star float-bob-x3"></span>
-                                        </div>
-                                    </div>
-                                    <h2 class="sec-title__title tg-element-title">Відкрийте для себе наші основні переваги</h2>
-                                </div>
-
-                                <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
-                                    <div class="accrodion">
-                                        <div class="accrodion-title">
-                                            <h4>Надійність</h4>
-                                        </div>
-
-                                        <div class="accrodion-content">
-                                            <div class="inner">
-                                                <p>Дотримуємося термінів та стандартів якості на кожному етапі.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accrodion active">
-                                        <div class="accrodion-title">
-                                            <h4>Швидкість</h4>
-                                        </div>
-
-                                        <div class="accrodion-content">
-                                            <div class="inner">
-                                                <p>Оптимальні логістичні рішення, які мінімізують ваші витрати та час.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accrodion">
-                                        <div class="accrodion-title">
-                                            <h4>Гнучкість</h4>
-                                        </div>
-
-                                        <div class="accrodion-content">
-                                            <div class="inner">
-                                                <p>Ми адаптуємо наші рішення під ваші потреби, щоб забезпечити найкращий результат у будь-яких умовах.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="accrodion">
-                                        <div class="accrodion-title">
-                                            <h4>Професіоналізм</h4>
-                                        </div>
-
-                                        <div class="accrodion-content">
-                                            <div class="inner">
-                                                <p>Команда досвідчених фахівців завжди готова надати індивідуальний підхід до кожного клієнта.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Faq One Content-->
-
-                    <!--Start Faq One Img-->
-                    <div class="col-xl-6">
-                        <div class="faq-one__img">
-                            <div class="faq-one__img-box">
-                                <img src="assets/images/resources/faq-v1-img1.jpg" alt="">
-                                <!-- Можна додати тут зображення, що ілюструє ваші переваги -->
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Faq One Img-->
-                </div>
-            </div>
-
-            <!--Start Sliding Text One-->
-            <div class="sliding-text-one">
-                <div class="sliding-text-one__wrap">
-                    <ul class="sliding-text__list list-unstyled marquee_mode">
-                        <li>
-                            <h2 data-hover="НАДІЙНІСТЬ" class="sliding-text__title">НАДІЙНІСТЬ
-                                <img src="assets/images/icon/sliding-text-icon-1.png" alt=""></h2>
-                        </li>
-                        <li>
-                            <h2 data-hover="ШВИДКІСТЬ" class="sliding-text__title">ШВИДКІСТЬ
-                                <img src="assets/images/icon/sliding-text-icon-1.png" alt=""></h2>
-                        </li>
-                        <li>
-                            <h2 data-hover="ГНУЧКІСТЬ" class="sliding-text__title">ГНУЧКІСТЬ
-                                <img src="assets/images/icon/sliding-text-icon-1.png" alt=""></h2>
-                        </li>
-                        <li>
-                            <h2 data-hover="ПРОФЕСІОНАЛІЗМ" class="sliding-text__title">ПРОФЕСІОНАЛІЗМ
-                                <img src="assets/images/icon/sliding-text-icon-1.png" alt=""></h2>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--End Sliding Text One-->
-        </section>
-
-        <!--Start Counter One-->
-        <section class="counter-one">
-            <div class="container">
-                <div class="row">
-                    <!--Start Counter One Single-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="counter-one__single">
-                            <div class="counter-one__single-inner">
-                                <div class="icon">
-                                    <span class="icon-box"></span>
-                                </div>
-
-                                <div class="content-box">
-                                    <div class="count-text-box count-box">
-                                        <h3 class="count-text" data-stop="9999" data-speed="1500">00</h3>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <div class="text-box">
-                                        <p>Рейсів</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="shape1"></div>
-                        </div>
-                    </div>
-                    <!--End Counter One Single-->
-
-                    <!--Start Counter One Single-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="counter-one__single">
-                            <div class="counter-one__single-inner">
-                                <div class="icon">
-                                    <span class="icon-location"></span>
-                                </div>
-
-                                <div class="content-box">
-                                    <div class="count-text-box count-box">
-                                        <h3 class="count-text" data-stop="4" data-speed="1500">00</h3>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <div class="text-box">
-                                        <p>Країни & Регіони</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="shape1"></div>
-                        </div>
-                    </div>
-                    <!--End Counter One Single-->
-
-                    <!--Start Counter One Single-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="counter-one__single">
-                            <div class="counter-one__single-inner">
-                                <div class="icon">
-                                    <span class="icon-customer-loyalty"></span>
-                                </div>
-
-                                <div class="content-box">
-                                    <div class="count-text-box count-box">
-                                        <h3 class="count-text" data-stop="20" data-speed="1500">00</h3>
-                                        <span class="plus">+</span>
-                                    </div>
-                                    <div class="text-box">
-                                        <p>Років досвіду</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="shape1"></div>
-                        </div>
-                    </div>
-                    <!--End Counter One Single-->
-                </div>
-            </div>
-        </section>
-        <!--End Counter One-->
-
-        <!--Start Footer One-->
-        <footer class="footer-one">
-            <div class="footer-one__pattern"><img src="assets/images/pattern/footer-v1-pattern.png" alt="#"></div>
-            <div class="footer-one__top">
-                <div class="container">
-                    <div class="footer-one__top-inner">
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                                <div class="footer-widget__single footer-one__about">
-                                    <div class="footer-one__about-logo">
-                                        <a href="index.html"><img src="assets/images/resources/footer-logo.svg"
-                                                alt=""></a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                                <div class="footer-widget__single footer-one__quick-links">
-                                    <div class="title">
-                                        <h2>Навігація<span class="icon-plane3"></span></h2>
-                                    </div>
-
-                                    <ul class="footer-one__quick-links-list">
-                                        <li><a href="index.html"><span class="icon-right-arrow1"></span> Головна</a></li>
-                                        <li><a href="#about-section"><span class="icon-right-arrow1"></span> Про нас</a>
-                                        </li>
-                                        <li><a href="contact.html"><span class="icon-right-arrow1"></span> Зворотній звʼязок</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                                <div class="footer-widget__single footer-one__contact">
-                                    <div class="title">
-                                        <h2>Пошта <span class="icon-plane3"></span></h2>
-                                    </div>
-
-                                    <div class="footer-one__contact-box">
-                                        <ul>
-<!--                                            <li>-->
-<!--                                                <div class="icon">-->
-<!--                                                    <span class="icon-address"></span>-->
-<!--                                                </div>-->
-<!--                                                <div class="text-box">-->
-<!--                                                    <p>3060 Commercial Street Road <br> Fratton, Australia</p>-->
-<!--                                                </div>-->
-<!--                                            </li>-->
-
-                                            <li>
-                                                <div class="icon">
-                                                    <span class="icon-email"></span>
-                                                </div>
-                                                <div class="text-box">
-                                                    <p><a href="mailto:logist@myroute.com.ua">logist@myroute.com.ua</a></p>
-                                                    <p><a href="mailto:manager@myroute.com.ua">manager@myroute.com.ua</a></p>
-                                                    <p><a href="mailto:accountant@myroute.com.ua">accountant@myroute.com.ua</a></p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                                <div class="footer-widget__single footer-one__subscribe">
-                                    <div class="title">
-                                        <h2> Телефони <span class="icon-plane3"></span></h2>
-                                    </div>
-                                    <ul>
-
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-phone"></span>
-                                            </div>
-                                            <div class="text-box">
-                                                <p><a href="tel:+380996608810">+380 996 60 8810 </a></p>
-                                                <p><a href="tel:+380994737583">+380 994 73 7583 </a></p>
-                                            </div>
-                                        </li>
-                                        </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-one__bottom">
-                <div class="container">
-
-                    <div class="footer-one__bottom-inner">
-                        <div class="footer-one__bottom-text">
-                            <p>© Copyright 2025 <a href="index.html">My Course.</a> All Rights Reserved</p>
-                        </div>
-
-                </div>
-            </div>
-        </footer>
-        <!--End Footer One-->
-
-    </div><!-- /.page-wrapper -->
-
-
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-1.svg" width="150"
-                        alt="" /></a>
-            </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <p><a href="mailto:logist@myroute.com.ua">logist@myroute.com.ua</a></p>
-                </li>
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:manager@myroute.com.ua">manager@myroute.com.ua</a>
-
-                </li>
-                <li>
-                    <i class="icon-phone"></i>
-                    <a href="tel:+380994737583">+380 994 73 7583</a>
-                </li>
-                <li>
-                    <i class="icon-phone"></i>
-                    <a href="tel:+380996608810">+380 996 60 8810 </a>
-                </li>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" data-hero>
+      <div class="hero__media" data-hero-media>
+        <video autoplay muted loop playsinline poster="assets/images/about/about-v1-img1.jpg">
+          <source src="https://videos.pexels.com/video-files/3066469/3066469-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+        </video>
+        <img src="assets/images/about/about-v1-img1.jpg" alt="" />
+      </div>
+      <div class="hero__shade"></div>
+      <div class="hero__layout">
+        <p class="hero__eyebrow" data-hero-item>Міжнародні перевезення</p>
+        <h1 class="hero__brand" aria-label="МІЙ КУРС">
+          <span class="hero__line" data-split="МІЙ"></span>
+          <span class="hero__line" data-split="КУРС"></span>
+        </h1>
+        <p class="hero__lead" data-hero-item>Доставляємо вантажі між Європою та Україною. Митниця, склади й супровід — в одному ланцюгу.</p>
+        <div class="hero__cta" data-hero-item>
+          <a class="site-btn" data-magnetic href="#calc">Прорахувати доставку</a>
+          <a class="site-btn site-btn--ghost" data-magnetic href="contact.html">Залишити заявку</a>
+        </div>
+      </div>
+      <div class="hero__meta" data-hero-item>
+        <div><strong data-count="20" data-suffix="+">0</strong><span>років</span></div>
+        <div><strong data-count="9999" data-suffix="+">0</strong><span>рейсів</span></div>
+        <div><strong>EU↔UA</strong><span>маршрути</span></div>
+      </div>
+      <a class="hero__scroll" href="#about" data-hero-item aria-label="Далі">
+        <span></span>
+      </a>
+
+      <div class="ticker ticker--hero" aria-hidden="true">
+        <div class="ticker__track">
+          <span>FTL</span><span>LTL</span><span>МИТНИЦЯ</span><span>СКЛАДИ</span><span>ТРАНЗИТ</span><span>24/7</span>
+          <span>FTL</span><span>LTL</span><span>МИТНИЦЯ</span><span>СКЛАДИ</span><span>ТРАНЗИТ</span><span>24/7</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="block block--cream block--about" id="about">
+      <div class="wrap">
+        <div class="split">
+          <div class="split__copy" data-reveal>
+            <p class="label">Про компанію</p>
+            <h2 class="heading">Логістика без зайвих зупинок</h2>
+            <p class="text">Власний автопарк і склади в Польщі. Працюємо з бізнесом будь-якого масштабу — від разових відправок до регулярних поставок.</p>
+            <ul class="checklist">
+              <li>Міжнародні рейси Європа — Україна</li>
+              <li>Митне оформлення та супровід</li>
+              <li>Зберігання й комплектація на складах</li>
             </ul>
-
+          </div>
+          <div class="split__visual" data-reveal>
+            <img src="assets/images/about/about-v1-img2.jpg" alt="Склад і логістика" />
+            <div class="split__chip"><b>PL</b> склади в Польщі</div>
+          </div>
         </div>
-        <!-- /.mobile-nav__content -->
-    </div>
-    <!-- /.mobile-nav__wrapper -->
+      </div>
+    </section>
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="fas fa-search"></i>
-                    <span class="hover-btn hover-bx"></span>
-                    <span class="hover-btn hover-bx2"></span>
-                    <span class="hover-btn hover-bx3"></span>
-                    <span class="hover-btn hover-bx4"></span>
-                </button>
-            </form>
+    <!-- DOCK SCENE — continuous sticky scrub -->
+    <section class="dock" id="dock" data-dock aria-label="Анімація завантаження фури">
+      <div class="dock__sticky" data-dock-pin>
+        <div class="dock__stage" data-dock-stage>
+          <div class="dock__sky"></div>
+          <div class="dock__warehouse" aria-hidden="true">
+            <div class="dock__bay"></div>
+            <div class="dock__door" data-dock-door></div>
+            <div class="dock__sign">СКЛАД</div>
+          </div>
+          <div class="dock__ground"></div>
+          <div class="dock__road"></div>
+
+          <div class="dock__hud">
+            <p class="label label--mint">На складі</p>
+            <h2 class="dock__title" data-dock-title>Фура на рампі</h2>
+            <p class="dock__text" data-dock-text>Склад у Польщі. Вантаж підготовлений — прокручуйте далі, щоб побачити завантаження.</p>
+            <div class="dock__steps" aria-hidden="true">
+              <span data-dock-dot class="is-active"></span>
+              <span data-dock-dot></span>
+              <span data-dock-dot></span>
+              <span data-dock-dot></span>
+            </div>
+          </div>
+
+          <div class="dock__hint" data-dock-hint>
+            <span class="dock__hint-mouse" aria-hidden="true"><i></i></span>
+            <span class="dock__hint-label">Прокрутіть, щоб завантажити фуру</span>
+          </div>
+
+          <div class="dock__pallet" data-dock-pallet aria-hidden="true">
+            <span class="dock__box" data-dock-box></span>
+            <span class="dock__box" data-dock-box></span>
+            <span class="dock__box" data-dock-box></span>
+            <span class="dock__box" data-dock-box></span>
+            <span class="dock__box" data-dock-box></span>
+            <span class="dock__box" data-dock-box></span>
+          </div>
+
+          <div class="dock__truck" data-dock-truck aria-hidden="true">
+            <svg class="dock__truck-svg" viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+              <g class="truck-trailer">
+                <rect x="20" y="48" width="360" height="110" rx="8" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="3"/>
+                <rect x="34" y="62" width="332" height="82" rx="4" fill="#0f0f0f"/>
+                <text x="200" y="112" text-anchor="middle" fill="#e11d2e" font-family="Instrument Sans, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">МІЙ КУРС</text>
+              </g>
+              <g class="truck-cab">
+                <path d="M390 70h95c18 0 34 12 40 28l18 48H390V70z" fill="#e11d2e"/>
+                <path d="M410 78h70c10 0 18 7 21 16l8 24H410V78z" fill="#7ec8ff" opacity="0.85"/>
+                <rect x="390" y="146" width="160" height="18" fill="#111"/>
+                <circle cx="430" cy="175" r="28" fill="#222" stroke="#444" stroke-width="4"/>
+                <circle cx="430" cy="175" r="12" fill="#888"/>
+                <circle cx="520" cy="175" r="28" fill="#222" stroke="#444" stroke-width="4"/>
+                <circle cx="520" cy="175" r="12" fill="#888"/>
+              </g>
+              <g class="truck-wheels-trailer">
+                <circle cx="90" cy="175" r="28" fill="#222" stroke="#444" stroke-width="4"/>
+                <circle cx="90" cy="175" r="12" fill="#888"/>
+                <circle cx="170" cy="175" r="28" fill="#222" stroke="#444" stroke-width="4"/>
+                <circle cx="170" cy="175" r="12" fill="#888"/>
+                <circle cx="280" cy="175" r="28" fill="#222" stroke="#444" stroke-width="4"/>
+                <circle cx="280" cy="175" r="12" fill="#888"/>
+              </g>
+            </svg>
+            <div class="dock__cargo-stack" data-dock-cargo-stack>
+              <span class="dock__box dock__box--loaded" data-cargo-box></span>
+              <span class="dock__box dock__box--loaded" data-cargo-box></span>
+              <span class="dock__box dock__box--loaded" data-cargo-box></span>
+              <span class="dock__box dock__box--loaded" data-cargo-box></span>
+              <span class="dock__box dock__box--loaded" data-cargo-box></span>
+              <span class="dock__box dock__box--loaded" data-cargo-box></span>
+            </div>
+          </div>
+
+          <div class="dock__dust" data-dock-dust aria-hidden="true"></div>
         </div>
-        <!-- /.search-popup__content -->
+      </div>
+    </section>
+
+    <!-- JOURNEY — sticky stack -->
+    <section class="journey" id="flow" data-journey>
+      <div class="wrap journey__head" data-reveal>
+        <p class="label label--mint">Процес</p>
+        <h2 class="heading heading--light">Пʼять кроків від заявки до доставки</h2>
+        <p class="text text--dim">Гортайте — кожен етап залишається на екрані, поки не зʼявиться наступний.</p>
+      </div>
+      <div class="journey__stack">
+        <article class="journey__card" data-journey-card style="--card:0">
+          <div class="journey__media">
+            <img src="assets/images/about/about-v1-img1.jpg" alt="" />
+            <span class="journey__veil" data-journey-veil aria-hidden="true"></span>
+          </div>
+          <div class="journey__content">
+            <span class="journey__num">01</span>
+            <h3>Заявка</h3>
+            <p>Узгоджуємо маршрут, обʼєм і терміни під ваш вантаж.</p>
+          </div>
+        </article>
+        <article class="journey__card" data-journey-card style="--card:1">
+          <div class="journey__media">
+            <img src="assets/images/about/about-v1-img2.jpg" alt="" />
+            <span class="journey__veil" data-journey-veil aria-hidden="true"></span>
+          </div>
+          <div class="journey__content">
+            <span class="journey__num">02</span>
+            <h3>Завантаження</h3>
+            <p>Підбираємо транспорт і фіксуємо час подачі.</p>
+          </div>
+        </article>
+        <article class="journey__card" data-journey-card style="--card:2">
+          <div class="journey__media">
+            <img src="assets/images/resources/skill-v1-img1.jpg" alt="" />
+            <span class="journey__veil" data-journey-veil aria-hidden="true"></span>
+          </div>
+          <div class="journey__content">
+            <span class="journey__num">03</span>
+            <h3>Митниця</h3>
+            <p>Документи й супровід без зайвих затримок.</p>
+          </div>
+        </article>
+        <article class="journey__card" data-journey-card style="--card:3">
+          <div class="journey__media">
+            <img src="assets/images/resources/skill-v1-img2.jpg" alt="" />
+            <span class="journey__veil" data-journey-veil aria-hidden="true"></span>
+          </div>
+          <div class="journey__content">
+            <span class="journey__num">04</span>
+            <h3>Транзит</h3>
+            <p>Моніторинг рейсу на ключових точках маршруту.</p>
+          </div>
+        </article>
+        <article class="journey__card" data-journey-card style="--card:4">
+          <div class="journey__media">
+            <img src="assets/images/testimonial/testimonial-v1-img2.jpg" alt="" />
+            <span class="journey__veil" data-journey-veil aria-hidden="true"></span>
+          </div>
+          <div class="journey__content">
+            <span class="journey__num">05</span>
+            <h3>Доставка</h3>
+            <p>Передача вантажу й закриття рейсу.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ROUTE — continuous sticky scrub -->
+    <section class="route" id="route" data-route aria-label="Маршрут Європа — Україна">
+      <div class="route__pin" data-route-pin>
+        <div class="route__inner">
+          <div class="route__copy">
+            <p class="label label--mint">Маршрут</p>
+            <h2 class="route__title" data-route-title>Європа → Україна</h2>
+            <p class="route__text" data-route-text>Прокрутіть — фура пройде ключові точки коридору.</p>
+          </div>
+
+          <div class="route__track" aria-hidden="true">
+            <div class="route__line">
+              <span class="route__progress" data-route-progress></span>
+            </div>
+
+            <div class="route__stops">
+              <div class="route__stop is-active" data-route-stop>
+                <span class="route__dot"></span>
+                <strong>Варшава</strong>
+                <em>старт</em>
+              </div>
+              <div class="route__stop" data-route-stop>
+                <span class="route__dot"></span>
+                <strong>Кордон</strong>
+                <em>митниця</em>
+              </div>
+              <div class="route__stop" data-route-stop>
+                <span class="route__dot"></span>
+                <strong>Львів</strong>
+                <em>транзит</em>
+              </div>
+              <div class="route__stop" data-route-stop>
+                <span class="route__dot"></span>
+                <strong>Київ</strong>
+                <em>доставка</em>
+              </div>
+            </div>
+
+            <div class="route__truck" data-route-truck>
+              <svg viewBox="0 0 120 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="4" y="10" width="58" height="24" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="2"/>
+                <path d="M64 14h22c6 0 11 4 13 9l5 11H64V14z" fill="#e11d2e"/>
+                <rect x="70" y="17" width="18" height="10" rx="2" fill="#8fd0ff" opacity="0.9"/>
+                <circle cx="22" cy="38" r="7" fill="#222" stroke="#555" stroke-width="2"/>
+                <circle cx="48" cy="38" r="7" fill="#222" stroke="#555" stroke-width="2"/>
+                <circle cx="88" cy="38" r="7" fill="#222" stroke="#555" stroke-width="2"/>
+              </svg>
+            </div>
+          </div>
+
+          <p class="route__hint" data-route-hint>Прокрутіть, щоб провести рейс</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="block block--cream" id="services">
+      <div class="wrap">
+        <div class="block__head" data-reveal>
+          <p class="label">Послуги</p>
+          <h2 class="heading">Повний цикл для імпорту й дистрибуції</h2>
+        </div>
+        <div class="bento" data-tilt-group>
+          <a class="bento__item bento__item--lg" href="contact.html" data-reveal data-tilt>
+            <img class="bento__img" src="assets/images/resources/skill-v1-img1.jpg" alt="Транспортна логістика" loading="lazy" />
+            <span class="bento__tag">01</span>
+            <h3>Транспортна логістика</h3>
+            <p>FTL / LTL рейси Європою та Україною.</p>
+          </a>
+          <a class="bento__item" href="contact.html" data-reveal data-tilt>
+            <img class="bento__img" src="assets/images/resources/skill-v1-img2.jpg" alt="Склади" loading="lazy" />
+            <span class="bento__tag">02</span>
+            <h3>Склади</h3>
+            <p>Зберігання та обробка в Польщі.</p>
+          </a>
+          <a class="bento__item" href="contact.html" data-reveal data-tilt>
+            <img class="bento__img" src="assets/images/about/about-v1-img1.jpg" alt="Митниця" loading="lazy" />
+            <span class="bento__tag">03</span>
+            <h3>Митниця</h3>
+            <p>Оформлення й консультації.</p>
+          </a>
+          <a class="bento__item" href="contact.html" data-reveal data-tilt>
+            <img class="bento__img" src="assets/images/about/about-v1-img2.jpg" alt="Аутсорсинг ВЕД" loading="lazy" />
+            <span class="bento__tag">04</span>
+            <h3>Аутсорсинг ВЕД</h3>
+            <p>Зовнішньоекономічні процеси під ключ.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALC -->
+    <section class="block" id="calc">
+      <div class="wrap">
+        <div class="calc" data-reveal data-glow>
+          <div class="calc__intro">
+            <p class="label label--mint">Прорахунок</p>
+            <h2 class="heading heading--light">Отримайте пропозицію під ваш вантаж</h2>
+            <p class="text text--dim">Заповніть короткі параметри — менеджер підготує детальний розрахунок.</p>
+          </div>
+          <form class="calc__form" id="deliveryCalculator">
+            <label>
+              <span>Звідки</span>
+              <input type="text" id="from" name="from" list="cities" placeholder="Місто відправлення" />
+            </label>
+            <label>
+              <span>Куди</span>
+              <input type="text" id="to" name="to" list="cities" placeholder="Місто призначення" />
+            </label>
+            <datalist id="cities">
+              <option value="Київ"></option>
+              <option value="Одеса"></option>
+              <option value="Львів"></option>
+              <option value="Варшава"></option>
+              <option value="Берлін"></option>
+              <option value="Гданськ"></option>
+            </datalist>
+            <label>
+              <span>Вага, кг</span>
+              <input type="number" id="weight" name="weight" min="1" placeholder="1000" />
+            </label>
+            <label>
+              <span>Обʼєм, м³</span>
+              <input type="number" id="volume" name="volume" min="0.1" step="0.1" placeholder="10.5" />
+            </label>
+            <label>
+              <span>Тип транспорту</span>
+              <input type="text" id="vehicle" name="vehicle" placeholder="Тент / реф / контейнер" />
+            </label>
+            <label>
+              <span>Терміновість</span>
+              <input type="text" id="urgency" name="urgency" placeholder="Звичайна / термінова" />
+            </label>
+            <label class="calc__full">
+              <span>Примітки</span>
+              <textarea id="notes" name="notes" rows="3" placeholder="Особливості вантажу..."></textarea>
+            </label>
+            <button class="site-btn calc__submit" type="button" onclick="submitToContactForm()">Отримати пропозицію</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTES -->
+    <section class="block block--cream">
+      <div class="wrap">
+        <div class="block__head" data-reveal>
+          <p class="label">Відгуки</p>
+          <h2 class="heading">Нам довіряють</h2>
+        </div>
+        <div class="quotes">
+          <blockquote class="quote" data-reveal>
+            <p>«Постійний супровід, швидке завантаження та оформлення. Все згідно домовленостей.»</p>
+            <cite>Мартиняк Роман</cite>
+          </blockquote>
+          <blockquote class="quote" data-reveal>
+            <p>«Особливо підкреслюю постійний супровід під час транспортування. Рекомендуємо.»</p>
+            <cite>Крутько С. С.</cite>
+          </blockquote>
+          <blockquote class="quote" data-reveal>
+            <p>«Чудовий, надійний, відповідальний партнер. Приємно працювати.»</p>
+            <cite>Лісний Дмитро</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO LINKS -->
+    <section class="block">
+      <div class="wrap">
+        <div class="info-row" data-reveal>
+          <h2 class="heading heading--light">Корисна інформація</h2>
+          <div class="info-links">
+            <a href="container-sizes.html">Розміри контейнерів <span>→</span></a>
+            <a href="truck-specs.html">Розміри тентів <span>→</span></a>
+            <a href="heavy-cargo-transport.html">Важкі вантажі <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="finale">
+      <div class="wrap finale__inner" data-reveal>
+        <h2 data-split-line>Готові відправити вантаж?</h2>
+        <p>Напишіть нам — підберемо маршрут і умови під ваш бізнес.</p>
+        <div class="hero__cta">
+          <a class="site-btn" data-magnetic href="contact.html">Написати</a>
+          <a class="site-btn site-btn--ghost" data-magnetic href="tel:+380996608810">+380 996 60 8810</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__grid">
+      <div>
+        <img src="assets/images/resources/footer-logo.svg" alt="МІЙ КУРС" class="site-footer__logo" />
+        <p>ТОВ «МІЙ КУРС» — логістика Європа ↔ Україна.</p>
+      </div>
+      <div>
+        <h4>Навігація</h4>
+        <a href="index.html">Головна</a>
+        <a href="about.html">Про нас</a>
+        <a href="contact.html">Контакти</a>
+      </div>
+      <div>
+        <h4>Пошта</h4>
+        <a href="mailto:logist@myroute.com.ua">logist@myroute.com.ua</a>
+        <a href="mailto:manager@myroute.com.ua">manager@myroute.com.ua</a>
+      </div>
+      <div>
+        <h4>Телефони</h4>
+        <a href="tel:+380996608810">+380 996 60 8810</a>
+        <a href="tel:+380994737583">+380 994 73 7583</a>
+      </div>
     </div>
-    <!-- /.search-popup -->
+    <div class="wrap site-footer__bottom">
+      <p>© 2026 МІЙ КУРС. Усі права захищено.</p>
+    </div>
+  </footer>
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
-        <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
-        <span class="scroll-to-top__text"> Вгору -> </span>
-    </a>
-
-
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/jarallax.min.js"></script>
-    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/js/jquery.appear.min.js"></script>
-    <script src="assets/js/swiper.min.js"></script>
-    <script src="assets/js/jquery.circle-progress.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.validate.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/wNumb.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/jquery.circleType.js"></script>
-    <script src="assets/js/jquery.lettering.min.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/marquee.min.js"></script>
-    <script src="assets/js/countdown.min.js"></script>
-    <script src="assets/js/jquery-sidebar-content.js"></script>
-    <script src="assets/js/gsap.js"></script>
-    <script src="assets/js/ScrollTrigger.js"></script>
-    <script src="assets/js/SplitText.js"></script>
-    <script src="assets/js/curved-text/jquery.fittext.js"></script>
-
-    <!-- template js -->
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/preloader-fix.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    
-    <script>
-        // Dark theme scroll animations
-        $(document).ready(function() {
-            // Add animation classes to elements
-            $('.about-one, .services-one, .why-choose-one, .testimonial-one, .cta-one').addClass('fade-in');
-            
-            // Intersection Observer for scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe all animated elements
-            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-                observer.observe(el);
-            });
-            
-            // Enhanced hover effects for cards
-            $('.container-card, .loading-scheme-card').hover(
-                function() {
-                    $(this).css('transform', 'translateY(-8px) scale(1.02)');
-                },
-                function() {
-                    $(this).css('transform', 'translateY(0) scale(1)');
-                }
-            );
-            
-            // Smooth scroll for anchor links
-            $('a[href^="#"]').on('click', function(event) {
-                var target = $(this.getAttribute('href'));
-                if (target.length) {
-                    event.preventDefault();
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 80
-                    }, 1000, 'easeInOutExpo');
-                }
-            });
-            
-            // Delivery Calculator
-            function calculateDelivery() {
-                const from = document.getElementById('from').value;
-                const to = document.getElementById('to').value;
-                const weight = parseFloat(document.getElementById('weight').value) || 0;
-                const volume = parseFloat(document.getElementById('volume').value) || 0;
-                const vehicle = document.getElementById('vehicle').value;
-                const urgency = document.getElementById('urgency').value;
-                
-                if (!from || !to || !weight || !volume || !vehicle) {
-                    document.getElementById('calculatorResult').style.display = 'none';
-                    return;
-                }
-                
-                // Base price calculation
-                let basePrice = 0;
-                
-                // Distance multiplier (simplified)
-                const distances = {
-                    'kyiv-odesa': 500, 'odesa-kyiv': 500,
-                    'kyiv-lviv': 600, 'lviv-kyiv': 600,
-                    'kyiv-kharkiv': 500, 'kharkiv-kyiv': 500,
-                    'kyiv-dnipro': 400, 'dnipro-kyiv': 400,
-                    'odesa-lviv': 800, 'lviv-odesa': 800,
-                    'odesa-kharkiv': 600, 'kharkiv-odesa': 600,
-                    'odesa-dnipro': 300, 'dnipro-odesa': 300,
-                    'lviv-kharkiv': 700, 'kharkiv-lviv': 700,
-                    'lviv-dnipro': 600, 'dnipro-lviv': 600,
-                    'kharkiv-dnipro': 200, 'dnipro-kharkiv': 200
-                };
-                
-                const distance = distances[`${from}-${to}`] || 400;
-                basePrice = distance * 2; // Base rate per km
-                
-                // Weight factor
-                if (weight > 1000) basePrice += weight * 0.5;
-                else basePrice += weight * 0.8;
-                
-                // Volume factor
-                basePrice += volume * 50;
-                
-                // Vehicle type multiplier
-                const vehicleMultipliers = {
-                    'tent': 1.0,
-                    'refrigerator': 1.5,
-                    'container': 1.3,
-                    'special': 2.0
-                };
-                basePrice *= vehicleMultipliers[vehicle] || 1.0;
-                
-                // Urgency multiplier
-                const urgencyMultipliers = {
-                    'normal': 1.0,
-                    'urgent': 1.3,
-                    'express': 1.8
-                };
-                basePrice *= urgencyMultipliers[urgency] || 1.0;
-                
-                // Display result
-                const result = Math.round(basePrice);
-                document.getElementById('calculatedPrice').textContent = result.toLocaleString();
-                document.getElementById('calculatorResult').style.display = 'block';
-                
-                // Animate result appearance
-                $('#calculatorResult').hide().fadeIn(500);
-            }
-            
-            // Add event listeners to calculator inputs
-            $('#deliveryCalculator input, #deliveryCalculator select').on('input change', calculateDelivery);
-            
-            // Function to submit calculator data to contact form
-            window.submitToContactForm = function() {
-                const formData = {
-                    from: document.getElementById('from').value,
-                    to: document.getElementById('to').value,
-                    weight: document.getElementById('weight').value,
-                    volume: document.getElementById('volume').value,
-                    vehicle: document.getElementById('vehicle').value,
-                    urgency: document.getElementById('urgency').value,
-                    notes: document.getElementById('notes').value
-                };
-                
-                // Create query string for contact form
-                const queryParams = new URLSearchParams();
-                queryParams.append('from', formData.from);
-                queryParams.append('to', formData.to);
-                queryParams.append('weight', formData.weight);
-                queryParams.append('volume', formData.volume);
-                queryParams.append('vehicle', formData.vehicle);
-                queryParams.append('urgency', formData.urgency);
-                queryParams.append('notes', formData.notes);
-                queryParams.append('source', 'calculator');
-                
-                // Redirect to contact form with pre-filled data
-                window.location.href = `contact.html?${queryParams.toString()}`;
-            };
-        });
-
-        // Enhanced Map Animation System
-        window.addEventListener('DOMContentLoaded', () => {
-            const svg = document.querySelector('.map-overlay svg');
-            if (!svg) {
-                console.log('SVG not found');
-                return;
-            }
-            console.log('SVG found, initializing enhanced map animation');
-            
-            const q = id => document.getElementById(id);
-
-            // Define routes with weights/probabilities as specified
-            const routeDefinitions = [
-                {
-                    id: 'route1',
-                    segments: ['p_gdynia_waw', 'p_waw_yah', 'p_yah_kyiv', 'p_kyiv_odesa'],
-                    weight: 30,
-                    description: 'Гдиня/Гданськ → Варшава → Ягодин → Київ → Одеса'
-                },
-                {
-                    id: 'route2', 
-                    segments: ['p_waw_yah', 'p_yah_kyiv', 'p_kyiv_dnipro'],
-                    weight: 15,
-                    description: 'Варшава → Ягодин → Дніпро'
-                },
-                {
-                    id: 'route3',
-                    segments: ['p_odesa_lviv'],
-                    weight: 10,
-                    description: 'Одеса → Львів'
-                },
-                {
-                    id: 'route4',
-                    segments: ['p_odesa_yah', 'p_yah_chelm'],
-                    weight: 10,
-                    description: 'Одеса → Ягодин → Хелм'
-                },
-                {
-                    id: 'route5',
-                    segments: ['p_lviv_chern'],
-                    weight: 10,
-                    description: 'Львів → Чернівці'
-                },
-                {
-                    id: 'route6',
-                    segments: ['p_kyiv_dnipro', 'p_dnipro_odesa'],
-                    weight: 10,
-                    description: 'Київ → Дніпро → Одеса'
-                },
-                {
-                    id: 'route7',
-                    segments: ['p_gdynia_waw', 'p_waw_lviv'],
-                    weight: 10,
-                    description: 'Гдиня → Варшава → Львів'
-                },
-                {
-                    id: 'route8',
-                    segments: ['p_rotterdam_chelm', 'p_chelm_yah', 'p_yah_khmelnytskyi'],
-                    weight: 15,
-                    description: 'Ротердам → Хелм → Ягодин → Хмельницький'
-                },
-                {
-                    id: 'route9',
-                    segments: ['p_hamburg_yah', 'p_yah_kyiv'],
-                    weight: 10,
-                    description: 'Гамбург → Ягодин → Київ'
-                },
-                {
-                    id: 'route10',
-                    segments: ['p_berlin_rava', 'p_rava_kyiv'],
-                    weight: 10,
-                    description: 'Берлін → Рава-Руська → Київ'
-                },
-                {
-                    id: 'route11',
-                    segments: ['p_paris_yah', 'p_yah_kyiv'],
-                    weight: 10,
-                    description: 'Париж → Ягодин → Київ'
-                },
-                {
-                    id: 'route12',
-                    segments: ['p_rome_rava', 'p_rava_kyiv'],
-                    weight: 10,
-                    description: 'Рим → Рава-Руська → Київ'
-                },
-                {
-                    id: 'route13',
-                    segments: ['p_budapest_yah', 'p_yah_kyiv'],
-                    weight: 10,
-                    description: 'Будапешт → Ягодин → Київ'
-                },
-                {
-                    id: 'route14',
-                    segments: ['p_debrecen_rava', 'p_rava_kyiv'],
-                    weight: 10,
-                    description: 'Дебрецен → Рава-Руська → Київ'
-                },
-                {
-                    id: 'route15',
-                    segments: ['p_bucharest_yah', 'p_yah_kyiv'],
-                    weight: 10,
-                    description: 'Бухарест → Ягодин → Київ'
-                },
-                {
-                    id: 'route16',
-                    segments: ['p_cluj_rava', 'p_rava_kyiv'],
-                    weight: 10,
-                    description: 'Клуж → Рава-Руська → Київ'
-                },
-                {
-                    id: 'route17',
-                    segments: ['p_nuremberg_yah', 'p_yah_kyiv'],
-                    weight: 10,
-                    description: 'Нюрнберг → Ягодин → Київ'
-                }
-            ];
-
-            // Additional route segments for complex routes
-            const additionalRoutes = {
-                'p_gdynia_waw': {s: 'gdynia', e: 'warsaw'},
-                'p_waw_lviv': {s: 'warsaw', e: 'lviv'},
-                'p_odesa_yah': {s: 'odesa', e: 'yahodyn'},
-                'p_dnipro_odesa': {s: 'dnipro', e: 'odesa'},
-                'p_rotterdam_chelm': {s: 'rotterdam', e: 'chelm'},
-                'p_chelm_yah': {s: 'chelm', e: 'yahodyn'},
-                'p_yah_khmelnytskyi': {s: 'yahodyn', e: 'khmelnytskyi'},
-                'p_hamburg_yah': {s: 'hamburg', e: 'yahodyn'},
-                'p_hamburg_rava': {s: 'hamburg', e: 'rava'},
-                'p_berlin_yah': {s: 'berlin', e: 'yahodyn'},
-                'p_berlin_rava': {s: 'berlin', e: 'rava'},
-                'p_paris_yah': {s: 'paris', e: 'yahodyn'},
-                'p_paris_rava': {s: 'paris', e: 'rava'},
-                'p_rome_yah': {s: 'rome', e: 'yahodyn'},
-                'p_rome_rava': {s: 'rome', e: 'rava'},
-                'p_budapest_yah': {s: 'budapest', e: 'yahodyn'},
-                'p_budapest_rava': {s: 'budapest', e: 'rava'},
-                'p_debrecen_yah': {s: 'debrecen', e: 'yahodyn'},
-                'p_debrecen_rava': {s: 'debrecen', e: 'rava'},
-                'p_bucharest_yah': {s: 'bucharest', e: 'yahodyn'},
-                'p_bucharest_rava': {s: 'bucharest', e: 'rava'},
-                'p_cluj_yah': {s: 'cluj', e: 'yahodyn'},
-                'p_cluj_rava': {s: 'cluj', e: 'rava'},
-                'p_nuremberg_yah': {s: 'nuremberg', e: 'yahodyn'},
-                'p_nuremberg_rava': {s: 'nuremberg', e: 'rava'}
-            };
-
-            const routes = {
-                p_gdansk_yah: {s: 'gdansk', e: 'yahodyn'}, 
-                p_gdansk_rava: {s: 'gdansk', e: 'rava'},
-                p_gdynia_yah: {s: 'gdynia', e: 'yahodyn'}, 
-                p_gdynia_rava: {s: 'gdynia', e: 'rava'},
-                p_waw_yah: {s: 'warsaw', e: 'yahodyn'},
-                p_yah_kyiv: {s: 'yahodyn', e: 'kyiv'}, 
-                p_rava_kyiv: {s: 'rava', e: 'kyiv'}, 
-                p_yah_chelm: {s: 'yahodyn', e: 'chelm'},
-                p_kyiv_odesa: {s: 'kyiv', e: 'odesa'}, 
-                p_odesa_lviv: {s: 'odesa', e: 'lviv'}, 
-                p_kyiv_dnipro: {s: 'kyiv', e: 'dnipro'}, 
-                p_lviv_chern: {s: 'lviv', e: 'chernivtsi'},
-                ...additionalRoutes
-            };
-
-            const pulses = Object.fromEntries([...document.querySelectorAll('#pulses > .pulse')].map(el => [el.id.replace('pulse-', ''), el]));
-            const cities = Object.fromEntries([...document.querySelectorAll('#cities > g')].map(g => [g.id, g]));
-            const flies = [...document.querySelectorAll('#flies > circle')];
-            
-            console.log('Pulses found:', Object.keys(pulses).length);
-            console.log('Cities found:', Object.keys(cities).length);
-            console.log('Flies found:', flies.length);
-            
-            if (typeof anime === 'undefined') {
-                console.log('Anime.js not loaded');
-                return;
-            }
-            console.log('Anime.js loaded successfully');
-
-            function pulse(el, d = 750) { 
-                return anime({targets: el, opacity: [0, .9, 0], r: [12, 18, 12], duration: d, easing: 'easeOutQuad'}); 
-            }
-            
-            function dimCity(id) { 
-                return anime({targets: cities[id], opacity: [1, .35, 1], duration: 500, easing: 'easeInOutSine'}); 
-            }
-
-            function clonePath(id) {
-                const t = q(id).cloneNode(); 
-                t.removeAttribute('id'); 
-                t.classList.add('route');
-                svg.appendChild(t);
-                const L = t.getTotalLength(); 
-                t.style.strokeDasharray = L; 
-                t.style.strokeDashoffset = L; 
-                return {el: t, len: L};
-            }
-            
-            function moveAlong(p, dot, dur) {
-                const M = anime.path(p);
-                return anime({
-                    targets: dot, 
-                    translateX: M('x'), 
-                    translateY: M('y'), 
-                    duration: dur, 
-                easing: 'easeInOutSine',
-                    opacity: [{value: 1, duration: 160}, {value: .95, duration: dur - 240}, {value: 0, duration: 80}]
-                });
-            }
-            
-            function revealStroke(el, len, dur) { 
-                return anime({targets: el, strokeDashoffset: [len, 0], duration: dur, easing: 'easeInOutSine'}); 
-            }
-
-            async function leg(id, fly, dur) {
-                const meta = routes[id];
-                if (!meta) return;
-                
-                const {el, len} = clonePath(id);
-                dimCity(meta.s); 
-                pulse(pulses[meta.s], 600);
-                const a = revealStroke(el, len, dur); 
-                const b = moveAlong(el, fly, dur);
-                await Promise.all([a.finished, b.finished]);
-                pulse(pulses[meta.e], 640);
-                await anime({targets: el, opacity: [.68, 0], duration: 420, easing: 'linear'}).finished; 
-                el.remove();
-            }
-
-            async function executeRoute(routeDef) {
-                const fly = flies.find(f => !f.__busy); 
-                if (!fly) return; 
-                fly.__busy = true; 
-                active++;
-                
-                console.log(`Executing route: ${routeDef.description}`);
-                
-                for (const segmentId of routeDef.segments) { 
-                    const dur = 3000 + Math.random() * 3000; // 3-6 seconds as specified
-                    await leg(segmentId, fly, dur); 
-                    await new Promise(r => setTimeout(r, 120 + Math.random() * 220)); 
-                }
-                fly.__busy = false; 
-                active--; 
-            }
-
-            function selectRandomRoute() {
-                const totalWeight = routeDefinitions.reduce((sum, route) => sum + route.weight, 0);
-                let random = Math.random() * totalWeight;
-                
-                for (const route of routeDefinitions) {
-                    random -= route.weight;
-                    if (random <= 0) {
-                        return route;
-                    }
-                }
-                return routeDefinitions[0]; // fallback
-            }
-
-            // Enhanced city pulsing for major cities
-            anime({
-                targets: ['#kyiv .city.core', '#odesa .city.core'], 
-                r: [7, 8, 7], 
-                duration: 2500, 
-                direction: 'alternate',
-                easing: 'easeInOutSine',
-                loop: true
-            });
-
-            let active = 0;
-            function tick() {
-                if (active >= 3) return; // Max 3 concurrent routes as specified
-                if (Math.random() < 0.6) { 
-                    const selectedRoute = selectRandomRoute();
-                    executeRoute(selectedRoute);
-                }
-            }
-            
-            // Start animation with random delays (1-4 seconds as specified)
-            setInterval(tick, 1000 + Math.random() * 3000); 
-            setTimeout(tick, 1000 + Math.random() * 3000); 
-            setTimeout(tick, 2000 + Math.random() * 2000);
-        });
-    </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="assets/js/site.js?v=20260713c"></script>
+  <script>
+    window.submitToContactForm = function () {
+      var q = new URLSearchParams();
+      ['from', 'to', 'weight', 'volume', 'vehicle', 'urgency', 'notes'].forEach(function (id) {
+        var el = document.getElementById(id);
+        q.append(id, el ? el.value : '');
+      });
+      q.append('source', 'calculator');
+      window.location.href = 'contact.html?' + q.toString();
+    };
+  </script>
 </body>
-
 </html>
