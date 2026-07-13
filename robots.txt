@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /archive/
+Disallow: /assets/inc/
+
+Sitemap: https://myroute.com.ua/sitemap.xml

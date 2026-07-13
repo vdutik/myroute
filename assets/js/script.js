@@ -578,10 +578,10 @@
                         required: true,
                         email: true,
                     },
-                    message: {
+                    Phone: {
                         required: true,
                     },
-                    subject: {
+                    message: {
                         required: true,
                     },
                 },
@@ -779,6 +779,12 @@
     if ($(".dynamic-year").length) {
         let date = new Date();
         $(".dynamic-year").html(date.getFullYear());
+    }
+
+    // Auto-update copyright year
+    if ($(".copyright-year").length) {
+        let date = new Date();
+        $(".copyright-year").html(date.getFullYear());
     }
 
     if ($(".wow").length) {

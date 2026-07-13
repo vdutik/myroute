@@ -3,9 +3,22 @@
    To override any conflicting styles
 ============================================ */
 
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 767px) {
+    * {
+        max-width: 100vw !important;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+}
+
 .page-wrapper .delivery-calculator-section {
     padding: 120px 0 !important;
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%) !important;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
     position: relative !important;
 }
 
@@ -16,24 +29,26 @@
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    background: radial-gradient(circle at 30% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%) !important;
+    background: radial-gradient(circle at 30% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%) !important;
     pointer-events: none !important;
 }
 
 .page-wrapper .delivery-calculator {
-    background: linear-gradient(145deg, var(--secondary-dark) 0%, rgba(26, 26, 26, 0.95) 100%) !important;
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.9) 100%) !important;
     border-radius: 32px !important;
     padding: 80px !important;
-    border: 3px solid rgba(64, 64, 64, 0.3) !important;
+    border: 2px solid rgba(102, 126, 234, 0.2) !important;
     box-shadow: 
-        0 35px 100px rgba(0, 0, 0, 0.5),
-        0 0 0 2px rgba(220, 38, 38, 0.15),
-        inset 0 2px 0 rgba(255, 255, 255, 0.08) !important;
+        0 35px 100px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(102, 126, 234, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.05) !important;
     margin: 0 auto !important;
     max-width: 1200px !important;
     position: relative !important;
     overflow: hidden !important;
     backdrop-filter: blur(25px) !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
 }
 
 .page-wrapper .delivery-calculator::before {
@@ -43,22 +58,20 @@
     left: 0 !important;
     right: 0 !important;
     height: 4px !important;
-    background: var(--gradient-red) !important;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
     border-radius: 32px 32px 0 0 !important;
 }
 
 .page-wrapper .calculator-title {
     font-size: 3.5rem !important;
-    font-weight: 900 !important;
+    font-weight: 800 !important;
     color: #ffffff !important;
     margin-bottom: 60px !important;
     text-align: center !important;
-    text-shadow: 
-        4px 4px 15px rgba(0, 0, 0, 0.8),
-        0 0 40px rgba(220, 38, 38, 0.4) !important;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6) !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important;
     position: relative !important;
-    letter-spacing: 0.8px !important;
+    letter-spacing: 0.5px !important;
+    font-family: 'Manrope', 'Inter', sans-serif !important;
 }
 
 .page-wrapper .calculator-title::after {
@@ -69,9 +82,9 @@
     transform: translateX(-50%) !important;
     width: 80px !important;
     height: 4px !important;
-    background: var(--gradient-red) !important;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
     border-radius: 2px !important;
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.5) !important;
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.4) !important;
 }
 
 .page-wrapper .calculator-form {
@@ -95,27 +108,25 @@
 }
 
 .page-wrapper .form-group:hover {
-    background: linear-gradient(145deg, rgba(26, 26, 26, 0.9) 0%, rgba(20, 20, 20, 0.95) 100%) !important;
-    border-color: rgba(220, 38, 38, 0.4) !important;
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.95) 0%, rgba(22, 33, 62, 0.95) 100%) !important;
+    border-color: rgba(102, 126, 234, 0.4) !important;
     transform: translateY(-4px) !important;
     box-shadow: 
-        0 15px 50px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(220, 38, 38, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+        0 15px 50px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(102, 126, 234, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
 .page-wrapper .form-group label {
     display: block !important;
-    color: var(--text-secondary) !important;
-    font-weight: 800 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 600 !important;
     margin-bottom: 20px !important;
-    font-size: 1.3rem !important;
-    text-shadow: 
-        2px 2px 10px rgba(0, 0, 0, 0.8),
-        0 0 25px rgba(220, 38, 38, 0.3) !important;
-    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.5) !important;
+    font-size: 1.2rem !important;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5) !important;
     position: relative !important;
-    letter-spacing: 0.4px !important;
+    letter-spacing: 0.3px !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .page-wrapper .form-group label::after {
@@ -125,9 +136,9 @@
     left: 0 !important;
     width: 50px !important;
     height: 3px !important;
-    background: var(--gradient-red) !important;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
     border-radius: 2px !important;
-    box-shadow: 0 0 15px rgba(220, 38, 38, 0.4) !important;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3) !important;
 }
 
 .page-wrapper .form-group input,
@@ -156,13 +167,13 @@
 .page-wrapper .form-group select:focus,
 .page-wrapper .form-group textarea:focus {
     outline: none !important;
-    border-color: var(--accent-red) !important;
+    border-color: #667eea !important;
     box-shadow: 
-        inset 0 4px 15px rgba(0, 0, 0, 0.4),
-        0 0 0 4px rgba(220, 38, 38, 0.2),
-        0 0 30px rgba(220, 38, 38, 0.4),
-        0 5px 20px rgba(220, 38, 38, 0.2) !important;
-    background: linear-gradient(145deg, var(--secondary-dark) 0%, var(--tertiary-dark) 100%) !important;
+        inset 0 4px 15px rgba(0, 0, 0, 0.3),
+        0 0 0 4px rgba(102, 126, 234, 0.15),
+        0 0 25px rgba(102, 126, 234, 0.3),
+        0 5px 20px rgba(102, 126, 234, 0.15) !important;
+    background: linear-gradient(145deg, rgba(22, 33, 62, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%) !important;
     transform: translateY(-2px) !important;
 }
 
@@ -175,8 +186,8 @@
 
 .page-wrapper .form-group.full-width {
     grid-column: 1 / -1 !important;
-    background: rgba(26, 26, 26, 0.7) !important;
-    border: 1px solid rgba(220, 38, 38, 0.2) !important;
+    background: rgba(26, 26, 46, 0.7) !important;
+    border: 1px solid rgba(102, 126, 234, 0.2) !important;
 }
 
 .page-wrapper .calculator-submit-btn {
@@ -184,20 +195,16 @@
     margin-top: 50px !important;
     padding: 28px 60px !important;
     font-size: 1.4rem !important;
-    font-weight: 900 !important;
+    font-weight: 700 !important;
     border-radius: 22px !important;
-    background: var(--gradient-red) !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     border: none !important;
-    color: var(--text-primary) !important;
-    text-shadow: 
-        2px 2px 10px rgba(0, 0, 0, 0.8),
-        0 0 30px rgba(255, 255, 255, 0.4) !important;
-    -webkit-text-stroke: 0.7px rgba(0, 0, 0, 0.6) !important;
+    color: #ffffff !important;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3) !important;
     box-shadow: 
-        0 20px 60px rgba(220, 38, 38, 0.5),
-        inset 0 3px 0 rgba(255, 255, 255, 0.3),
-        0 0 0 3px rgba(220, 38, 38, 0.4),
-        0 0 50px rgba(220, 38, 38, 0.3) !important;
+        0 20px 60px rgba(102, 126, 234, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2),
+        0 0 0 2px rgba(102, 126, 234, 0.3) !important;
     cursor: pointer !important;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     position: relative !important;
@@ -206,7 +213,8 @@
     align-items: center !important;
     justify-content: center !important;
     gap: 0 !important;
-    letter-spacing: 0.6px !important;
+    letter-spacing: 0.5px !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .page-wrapper .calculator-submit-btn::before {
@@ -223,11 +231,11 @@
 .page-wrapper .calculator-submit-btn:hover {
     transform: translateY(-5px) !important;
     box-shadow: 
-        0 25px 60px rgba(220, 38, 38, 0.6),
-        inset 0 2px 0 rgba(255, 255, 255, 0.4),
-        0 0 0 2px rgba(220, 38, 38, 0.5),
-        0 0 50px rgba(220, 38, 38, 0.4) !important;
-    background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%) !important;
+        0 25px 60px rgba(102, 126, 234, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        0 0 0 2px rgba(102, 126, 234, 0.4),
+        0 0 50px rgba(102, 126, 234, 0.35) !important;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 50%, #764ba2 100%) !important;
 }
 
 .page-wrapper .calculator-submit-btn:hover::before {
@@ -237,8 +245,8 @@
 .page-wrapper .calculator-submit-btn:active {
     transform: translateY(-1px) !important;
     box-shadow: 
-        0 8px 25px rgba(220, 38, 38, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+        0 8px 25px rgba(102, 126, 234, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 /* Datalist and select styling with high specificity */
@@ -297,6 +305,377 @@
     min-height: 100px !important;
     font-family: inherit !important;
     line-height: 1.6 !important;
+}
+
+/* Mobile responsive - all blocks in one column */
+@media (max-width: 772px) {
+    .page-wrapper .calculator-form {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .page-wrapper .form-group.full-width {
+        grid-column: 1 !important;
+    }
+}
+
+/* Mobile fixes - calculator width and spacing */
+@media (max-width: 767px) {
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+    }
+    
+    .delivery-calculator-section {
+        padding: 40px 0 !important;
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .delivery-calculator-section .container {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+    
+    .page-wrapper .delivery-calculator-section {
+        padding: 40px 0 !important;
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .page-wrapper .delivery-calculator-section .container {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+    
+    .delivery-calculator {
+        padding: 20px 8px !important;
+        border-radius: 16px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .page-wrapper .delivery-calculator {
+        padding: 20px 8px !important;
+        border-radius: 16px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .calculator-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 20px !important;
+        padding: 0 5px !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .page-wrapper .calculator-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 20px !important;
+        padding: 0 5px !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .page-wrapper .calculator-title::after {
+        width: 50px !important;
+        height: 2px !important;
+    }
+    
+    .page-wrapper .calculator-form {
+        gap: 15px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .form-group {
+        padding: 12px 8px !important;
+        border-radius: 12px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .page-wrapper .form-group {
+        padding: 12px 8px !important;
+        border-radius: 12px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .form-group label {
+        font-size: 0.85rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .page-wrapper .form-group label {
+        font-size: 0.85rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .form-group label::after {
+        width: 30px !important;
+        height: 2px !important;
+    }
+    
+    .page-wrapper .form-group label::after {
+        width: 30px !important;
+        height: 2px !important;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px !important;
+        font-size: 0.85rem !important;
+        border-radius: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .page-wrapper .form-group input,
+    .page-wrapper .form-group select,
+    .page-wrapper .form-group textarea {
+        padding: 10px 12px !important;
+        font-size: 0.85rem !important;
+        border-radius: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .form-group input[list] {
+        padding-right: 35px !important;
+        background-size: 14px !important;
+        background-position: right 10px center !important;
+    }
+    
+    .page-wrapper .form-group input[list] {
+        padding-right: 35px !important;
+        background-size: 14px !important;
+        background-position: right 10px center !important;
+    }
+    
+    .form-group select {
+        padding-right: 35px !important;
+        background-size: 14px !important;
+        background-position: right 10px center !important;
+    }
+    
+    .page-wrapper .form-group select {
+        padding-right: 35px !important;
+        background-size: 14px !important;
+        background-position: right 10px center !important;
+    }
+    
+    .page-wrapper .calculator-submit-btn {
+        padding: 16px 20px !important;
+        font-size: 1rem !important;
+        border-radius: 14px !important;
+        margin-top: 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (max-width: 480px) {
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+    
+    .delivery-calculator-section {
+        padding: 25px 0 !important;
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .delivery-calculator-section .container {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+    
+    .page-wrapper .delivery-calculator-section {
+        padding: 25px 0 !important;
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .page-wrapper .delivery-calculator-section .container {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+    }
+    
+    .delivery-calculator {
+        padding: 15px 6px !important;
+        border-radius: 14px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .page-wrapper .delivery-calculator {
+        padding: 15px 6px !important;
+        border-radius: 14px !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .calculator-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.2 !important;
+        padding: 0 5px !important;
+    }
+    
+    .page-wrapper .calculator-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px !important;
+        line-height: 1.2 !important;
+        padding: 0 5px !important;
+    }
+    
+    .page-wrapper .calculator-title::after {
+        width: 40px !important;
+        height: 2px !important;
+    }
+    
+    .page-wrapper .calculator-form {
+        gap: 12px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .form-group {
+        padding: 10px 6px !important;
+        border-radius: 10px !important;
+    }
+    
+    .page-wrapper .form-group {
+        padding: 10px 6px !important;
+        border-radius: 10px !important;
+    }
+    
+    .form-group label {
+        font-size: 0.8rem !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .page-wrapper .form-group label {
+        font-size: 0.8rem !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .form-group label::after {
+        width: 25px !important;
+        height: 1.5px !important;
+    }
+    
+    .page-wrapper .form-group label::after {
+        width: 25px !important;
+        height: 1.5px !important;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px 10px !important;
+        font-size: 0.8rem !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .page-wrapper .form-group input,
+    .page-wrapper .form-group select,
+    .page-wrapper .form-group textarea {
+        padding: 8px 10px !important;
+        font-size: 0.8rem !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+    
+    .form-group input[list] {
+        padding-right: 30px !important;
+        background-size: 12px !important;
+        background-position: right 8px center !important;
+    }
+    
+    .page-wrapper .form-group input[list] {
+        padding-right: 30px !important;
+        background-size: 12px !important;
+        background-position: right 8px center !important;
+    }
+    
+    .form-group select {
+        padding-right: 30px !important;
+        background-size: 12px !important;
+        background-position: right 8px center !important;
+    }
+    
+    .page-wrapper .form-group select {
+        padding-right: 30px !important;
+        background-size: 12px !important;
+        background-position: right 8px center !important;
+    }
+    
+    .page-wrapper .calculator-submit-btn {
+        padding: 14px 18px !important;
+        font-size: 0.9rem !important;
+        border-radius: 12px !important;
+        margin-top: 10px !important;
+    }
 }
 
 /* Mobile responsive select styles */
@@ -407,5 +786,259 @@
         font-weight: 800 !important;
         box-shadow: 0 0 25px rgba(220, 38, 38, 0.7) !important;
         border: 1px solid rgba(220, 38, 38, 0.6) !important;
+    }
+}
+
+/* ============================================
+   Testimonials - Black Text Color
+   Highest priority override
+============================================ */
+
+.testimonial-one__single-inner .text-box p,
+.testimonial-one__single-inner .text-box,
+.page-wrapper .testimonial-one__single-inner .text-box p,
+.page-wrapper .testimonial-one__single-inner .text-box,
+body .testimonial-one__single-inner .text-box p,
+body .testimonial-one__single-inner .text-box {
+    color: #000000 !important;
+    font-weight: 400 !important;
+    -webkit-text-fill-color: #000000 !important;
+    -webkit-text-stroke: none !important;
+    text-shadow: none !important;
+}
+
+/* ============================================
+   FAQ/Advantages - Black Text Color
+   Highest priority override - must override dark-theme.css
+============================================ */
+
+body .faq-one__content .accrodion-content .inner p,
+body .accrodion-content .inner p,
+body .faq-one .accrodion-content .inner p,
+body .faq-one .accrodion-content .inner,
+body .faq-one__content .accrodion-content .inner,
+.page-wrapper .faq-one__content .accrodion-content .inner p,
+.page-wrapper .faq-one .accrodion-content .inner p,
+.page-wrapper .faq-one .accrodion-content .inner,
+body .page-wrapper .faq-one__content .accrodion-content .inner p,
+body .page-wrapper .faq-one .accrodion-content .inner p {
+    color: #000000 !important;
+    font-weight: 400 !important;
+    -webkit-text-fill-color: #000000 !important;
+    -webkit-text-stroke: none !important;
+    text-shadow: none !important;
+}
+
+/* ============================================
+   FAQ/Advantages - White Text on Mobile
+   For specific text "Дотримуємося термінів..."
+============================================ */
+
+@media (max-width: 767px) {
+    body .faq-one__content .accrodion-content .inner p,
+    body .accrodion-content .inner p,
+    body .faq-one .accrodion-content .inner p,
+    body .faq-one .accrodion-content .inner,
+    body .faq-one__content .accrodion-content .inner,
+    .page-wrapper .faq-one__content .accrodion-content .inner p,
+    .page-wrapper .faq-one .accrodion-content .inner p,
+    .page-wrapper .faq-one .accrodion-content .inner,
+    body .page-wrapper .faq-one__content .accrodion-content .inner p,
+    body .page-wrapper .faq-one .accrodion-content .inner p {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+/* ============================================
+   Testimonials Carousel - Mobile Fix
+   Fix carousel overflow on mobile devices
+============================================ */
+
+@media (max-width: 767px) {
+    .testimonial-one__carousel.owl-carousel {
+        overflow: hidden !important;
+    }
+    
+    .testimonial-one__carousel .owl-stage-outer {
+        overflow: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+    }
+    
+    .testimonial-one__carousel .owl-stage {
+        display: flex !important;
+        transform: translate3d(0px, 0px, 0px) !important;
+        width: 100% !important;
+        position: relative !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    .testimonial-one__carousel .owl-item {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+        position: relative !important;
+        left: 0 !important;
+        transform: translateX(0) !important;
+    }
+    
+    .testimonial-one__carousel .owl-item:not(.active) {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+    
+    .testimonial-one__carousel .owl-item.active {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: translateX(0) !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    .testimonial-one__single {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        transform: translateX(0) !important;
+    }
+    
+    .testimonial-one__single-inner {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 20px 15px !important;
+    }
+    
+    .testimonial-one__content {
+        overflow: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .testimonial-one__carousel .owl-stage-outer {
+        overflow: hidden !important;
+        position: relative !important;
+    }
+    
+    .testimonial-one__single .text-box {
+        padding: 15px 0 !important;
+    }
+    
+    .testimonial-one__single .text-box p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        color: #000000 !important;
+    }
+    
+    .testimonial-one__single h2 {
+        font-size: 18px !important;
+        margin-bottom: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-one__single {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .testimonial-one__single-inner {
+        padding: 15px 10px !important;
+    }
+    
+    .testimonial-one__single .text-box {
+        padding: 12px 0 !important;
+    }
+    
+    .testimonial-one__single .text-box p {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .testimonial-one__single h2 {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+/* ============================================
+   Sliding Text - Mobile Responsive
+============================================ */
+
+@media (max-width: 767px) {
+    .sliding-text-one {
+        margin-top: -60px !important;
+        padding: 20px 0 !important;
+        overflow: hidden !important;
+    }
+    
+    .sliding-text-one__wrap {
+        overflow: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .sliding-text__list {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    .sliding-text__list li {
+        margin-right: 20px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .sliding-text__title {
+        font-size: 32px !important;
+        line-height: 1.2em !important;
+        gap: 15px !important;
+        -webkit-text-stroke: 1px #E4E4E4 !important;
+    }
+    
+    .sliding-text__title img {
+        width: 20px !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .sliding-text-one {
+        margin-top: -40px !important;
+        padding: 15px 0 !important;
+    }
+    
+    .sliding-text__list li {
+        margin-right: 15px !important;
+    }
+    
+    .sliding-text__title {
+        font-size: 24px !important;
+        line-height: 1.2em !important;
+        gap: 10px !important;
+    }
+    
+    .sliding-text__title img {
+        width: 16px !important;
     }
 }
