@@ -300,6 +300,47 @@
     return clamp01((p - a) / (b - a));
   }
 
+  function easeInOutCubic(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  /** Scroll-scrub with inertia: lerps displayed progress toward the scroll target */
+  function smoothScrub(getTarget, apply) {
+    var current = -1;
+    var rafId = null;
+
+    function tick() {
+      var target = getTarget();
+      if (current < 0) current = target;
+      var diff = target - current;
+      if (Math.abs(diff) < 0.0004) {
+        current = target;
+        apply(current);
+        rafId = null;
+        return;
+      }
+      current += diff * 0.12;
+      apply(current);
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function request() {
+      if (rafId === null) rafId = requestAnimationFrame(tick);
+    }
+
+    window.addEventListener('scroll', request, { passive: true });
+    window.addEventListener('resize', request);
+    window.addEventListener('load', request);
+    window.addEventListener('pageshow', request);
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) request();
+    });
+    request();
+    setTimeout(request, 0);
+    setTimeout(request, 100);
+    setTimeout(request, 400);
+  }
+
   /** 0..1 through a tall sticky section — both directions, after reload */
   function sceneProgress(section) {
     var vh = window.innerHeight || 1;
@@ -337,6 +378,7 @@
 
     var title = root.querySelector('[data-dock-title]');
     var text = root.querySelector('[data-dock-text]');
+    var eyebrow = root.querySelector('[data-dock-eyebrow]');
     var dots = root.querySelectorAll('[data-dock-dot]');
     var truck = root.querySelector('[data-dock-truck]');
     var door = root.querySelector('[data-dock-door]');
@@ -344,23 +386,35 @@
     var cargoBoxes = root.querySelectorAll('[data-cargo-box]');
     var dust = root.querySelector('[data-dock-dust]');
     var hint = root.querySelector('[data-dock-hint]');
+    var loadLabel = root.querySelector('[data-dock-load-label]');
+    var loadPct = root.querySelector('[data-dock-load-pct]');
+    var loadFill = root.querySelector('[data-dock-load-fill]');
+    var loadSteps = root.querySelectorAll('[data-dock-load-step]');
 
     var captions = [
       {
-        title: 'Фура на рампі',
-        text: 'Склад у Польщі. Вантаж підготовлений — прокручуйте далі, щоб побачити завантаження.'
+        title: 'Фура під рампою',
+        text: 'Склад у Польщі. Тент подано під рампу — вантаж підготовлений до завантаження.',
+        eyebrow: 'На складі',
+        load: 'Очікування'
       },
       {
-        title: 'Завантаження на рампі',
-        text: 'Палети зі складу заходять у причіп. Кожна позиція фіксується перед виїздом.'
+        title: 'Завантаження в авто',
+        text: 'Палети зі складу заходять у причіп. Кожна позиція фіксується перед виїздом.',
+        eyebrow: 'На складі',
+        load: 'Завантаження'
       },
       {
-        title: 'Ворота відкриті',
-        text: 'Фура готова. Перевірка документів — і можна рушати на маршрут.'
+        title: 'Перевірка документів',
+        text: 'Документи і фотографія вантажу готові — можна рушати в дорогу.',
+        eyebrow: 'На складі',
+        load: 'Перевірка'
       },
       {
-        title: 'Рейс виїхав',
-        text: 'Транспорт прямує Європа ↔ Україна. Далі — митниця, транзит і доставка.'
+        title: 'Фура вирушила',
+        text: 'Вантаж у дорозі. Митниця, транзит і доставка — під нашим супроводом.',
+        eyebrow: 'В дорозі',
+        load: 'Виїзд'
       }
     ];
 
@@ -371,8 +425,14 @@
       var cap = captions[step] || captions[0];
       if (title) title.textContent = cap.title;
       if (text) text.textContent = cap.text;
+      if (eyebrow) eyebrow.textContent = cap.eyebrow;
+      if (loadLabel) loadLabel.textContent = cap.load;
       dots.forEach(function (d, i) {
         d.classList.toggle('is-active', i === step);
+      });
+      loadSteps.forEach(function (s, i) {
+        s.classList.toggle('is-active', i === step);
+        s.classList.toggle('is-done', i < step);
       });
     }
 
@@ -384,6 +444,11 @@
       else if (p >= 0.48) step = 2;
       else if (p >= 0.12) step = 1;
       setStep(step);
+
+      var loadP = easeInOutCubic(seg(p, 0.08, 0.72));
+      var pct = Math.round(loadP * 100);
+      if (loadPct) loadPct.textContent = pct + '%';
+      if (loadFill) loadFill.style.width = pct + '%';
 
       if (hint) hint.classList.toggle('is-hidden', p > 0.04);
 
@@ -403,7 +468,7 @@
       var doorT = seg(p, 0.42, 0.56);
       if (door) door.style.transform = 'scaleX(' + (1 - doorT * 0.88) + ')';
 
-      var driveT = seg(p, 0.55, 0.92);
+      var driveT = easeInOutCubic(seg(p, 0.55, 0.92));
       if (truck) truck.style.transform = 'translateX(' + (driveT * 58) + '%)';
 
       if (dust) {
@@ -419,9 +484,9 @@
       return;
     }
 
-    onScrollFrame(function () {
-      applyProgress(sceneProgress(root));
-    });
+    smoothScrub(function () {
+      return sceneProgress(root);
+    }, applyProgress);
   }
 
   function initRouteScene() {
@@ -474,9 +539,9 @@
       return;
     }
 
-    onScrollFrame(function () {
-      applyProgress(sceneProgress(root));
-    });
+    smoothScrub(function () {
+      return sceneProgress(root);
+    }, applyProgress);
   }
 
   ready(function () {

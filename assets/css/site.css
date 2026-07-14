@@ -1992,6 +1992,37 @@ html.has-cursor [data-tilt] {
   z-index: 2;
 }
 
+.dock__ramp {
+  position: absolute;
+  right: -2%;
+  bottom: -2%;
+  width: 34%;
+  height: 14%;
+  z-index: 3;
+  background: linear-gradient(180deg, #3a3a3e 0%, #252528 55%, #1a1a1c 100%);
+  border: 1px solid #4a4a50;
+  border-right: 0;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.12),
+    0 8px 18px rgba(0, 0, 0, 0.45);
+  clip-path: polygon(0 35%, 12% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.dock__ramp::after {
+  content: '';
+  position: absolute;
+  left: 18%;
+  right: 8%;
+  top: 38%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(225, 29, 46, 0.75) 0 10px,
+    rgba(255, 255, 255, 0.35) 10px 20px
+  );
+  opacity: 0.7;
+}
+
 .dock__sign {
   position: absolute;
   top: 10%;
@@ -2000,6 +2031,115 @@ html.has-cursor [data-tilt] {
   font-size: clamp(0.65rem, 1.4vw, 0.9rem);
   font-weight: 700;
   letter-spacing: 0.18em;
+  z-index: 2;
+}
+
+.dock__load {
+  position: absolute;
+  top: 9%;
+  left: calc(8% + 5.5rem);
+  z-index: 3;
+  width: min(42%, 168px);
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(8, 8, 8, 0.82);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+.dock__load-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.dock__load-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.dock__load-pct {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.dock__load-track {
+  position: relative;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.dock__load-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #9c111e, var(--accent-hot));
+  box-shadow: 0 0 10px rgba(225, 29, 46, 0.45);
+  will-change: width;
+}
+
+.dock__load-steps {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.22rem;
+}
+
+.dock__load-steps li {
+  position: relative;
+  padding-left: 0.85rem;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.3s ease;
+}
+
+.dock__load-steps li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.28em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid rgba(225, 29, 46, 0.4);
+  background: transparent;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dock__load-steps li.is-done {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.dock__load-steps li.is-done::before {
+  background: rgba(225, 29, 46, 0.55);
+  border-color: rgba(225, 29, 46, 0.55);
+}
+
+.dock__load-steps li.is-active {
+  color: #fff;
+}
+
+.dock__load-steps li.is-active::before {
+  background: var(--accent-hot);
+  border-color: var(--accent-hot);
+  box-shadow: 0 0 8px rgba(225, 29, 46, 0.7);
 }
 
 .dock__hint {
@@ -2080,9 +2220,9 @@ html.has-cursor [data-tilt] {
 
 .dock__pallet {
   position: absolute;
-  left: 18%;
-  bottom: 30%;
-  width: 140px;
+  left: 8%;
+  bottom: 38%;
+  width: 120px;
   height: 90px;
   z-index: 4;
 }
@@ -2114,9 +2254,9 @@ html.has-cursor [data-tilt] {
 
 .dock__truck {
   position: absolute;
-  left: 8%;
-  bottom: 14%;
-  width: min(62%, 560px);
+  left: -2%;
+  bottom: 12%;
+  width: min(66%, 600px);
   z-index: 5;
   will-change: transform;
 }
@@ -2171,12 +2311,13 @@ html.has-cursor [data-tilt] {
   .dock__warehouse { width: 48%; }
 
   .dock__truck {
-    width: 78%;
-    left: 4%;
+    width: 84%;
+    left: -6%;
   }
 
   .dock__pallet {
-    left: 10%;
+    left: 6%;
+    bottom: 32%;
     transform: scale(0.85);
     transform-origin: left bottom;
   }
@@ -2187,6 +2328,17 @@ html.has-cursor [data-tilt] {
     bottom: 3.6rem;
     width: auto;
     padding: 0.85rem 1rem;
+  }
+
+  .dock__load {
+    left: 8%;
+    top: calc(10% + 1.35rem);
+    width: min(54%, 148px);
+    padding: 0.45rem 0.55rem;
+  }
+
+  .dock__load-steps {
+    display: none;
   }
 
   .dock__hint-label {
