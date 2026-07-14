@@ -2490,10 +2490,10 @@ html.has-cursor [data-tilt] {
 
 .route__truck {
   position: absolute;
-  top: 1.55rem;
+  top: 1.2rem;
   left: 4%;
-  width: 88px;
-  margin-left: -44px;
+  width: 104px;
+  margin-left: -52px;
   z-index: 2;
   will-change: left;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45));
@@ -2530,8 +2530,8 @@ html.has-cursor [data-tilt] {
   }
 
   .route__truck {
-    width: 68px;
-    margin-left: -34px;
+    width: 82px;
+    margin-left: -41px;
   }
 }
 
